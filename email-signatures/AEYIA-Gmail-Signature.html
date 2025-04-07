@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AEYIA Email Signature Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #474747;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .team-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        button {
+            background-color: #474747;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        button:hover {
+            background-color: #666;
+        }
+        #signature-preview {
+            margin-top: 20px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+            border-left: 4px solid #4682b4;
+        }
+        .copy-btn {
+            display: block;
+            margin: 20px auto;
+            background-color: #4682b4;
+            padding: 12px 25px;
+            font-size: 16px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AEYIA Email Signature Generator</h1>
+
+        <div class="team-buttons">
+            <button onclick="generateSignature('Leah Rettenmaier', 'leah@aeyia.com', '0412589075')">Leah</button>
+            <button onclick="generateSignature('Kurtis Rettenmaier', 'kurt@aeyia.com', '0432525567')">Kurtis</button>
+            <button onclick="generateSignature('Michael Dundas', 'michael@aeyia.com', '0418922321')">Michael</button>
+            <button onclick="generateSignature('Sarah Thompson', 'sarah@aeyia.com', '0435870220')">Sarah</button>
+            <button onclick="generateSignature('Jerram Watters', 'jerram@aeyia.com', '0402569390')">Jerram</button>
+            <button onclick="generateSignature('Sylvia Martini', 'sylvia@aeyia.com', '0420525918')">Sylvia</button>
+            <button onclick="generateSignature('Ryan Barraclough', 'ryan@aeyia.com', '0420987054')">Ryan</button>
+            <button onclick="generateSignature('Mia Weber', 'mia@aeyia.com', '0412205944')">Mia</button>
+            <button onclick="generateSignature('Mitch Barraclough', 'mitch@aeyia.com', '0431283271')">Mitch</button>
+        </div>
+
+        <div id="copy-section" class="hidden">
+            <button id="copy-btn" class="copy-btn" onclick="copyToClipboard()">Copy Signature to Clipboard</button>
+        </div>
+
+        <div id="signature-preview" class="hidden"></div>
+
+        <div class="instructions hidden" id="instructions">
+            <h3>How to add this signature to Gmail:</h3>
+            <ol>
+                <li>Click the "Copy Signature to Clipboard" button above</li>
+                <li>In Gmail, click the gear icon in the top right, then "See all settings"</li>
+                <li>Scroll down to the "Signature" section</li>
+                <li>Click "Create new" or edit an existing signature</li>
+                <li>Paste the copied signature in the editor</li>
+                <li>Scroll down and click "Save Changes"</li>
+            </ol>
+            <p><strong>Note:</strong> You may need to update the image paths if you're hosting them on a different server.</p>
+        </div>
+    </div>
+
+    <script>
+        function generateSignature(name, email, phone) {
+            const signatureHTML = `
+<div style="font-family: Arial, sans-serif; color: #474747; max-width: 500px;">
+    <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+        <tr>
+            <td style="padding-right: 15px; vertical-align: top; border-right: 1px solid #666666;">
+                <div style="font-size: 17pt; color: #212025; font-weight: normal; padding-bottom: 5px;">${name}</div>
+                <div style="padding-top: 5px;">
+                    <a href="https://www.instagram.com/aeyia_/" style="text-decoration: none; margin-right: 5px;">
+                        <img src="images/instagram.png" alt="Instagram" style="width: 21px; height: 21px; border: 0;">
+                    </a>
+                    <a href="http://www.facebook.com/aeyia.au" style="text-decoration: none; margin-right: 5px;">
+                        <img src="images/facebook.png" alt="Facebook" style="width: 21px; height: 21px; border: 0;">
+                    </a>
+                    <a href="http://www.tiktok.com/@aeyia__" style="text-decoration: none; margin-right: 5px;">
+                        <img src="images/tiktok.png" alt="TikTok" style="width: 21px; height: 21px; border: 0;">
+                    </a>
+                    <a href="https://www.youtube.com/@AEYIAWellness" style="text-decoration: none;">
+                        <img src="images/youtube.png" alt="YouTube" style="width: 21px; height: 21px; border: 0;">
+                    </a>
+                </div>
+            </td>
+            <td style="padding-left: 15px; vertical-align: top;">
+                <div style="margin-bottom: 5px;">
+                    <img src="images/phone.png" alt="" style="width: 12px; height: 12px; vertical-align: middle;">
+                    <span style="font-size: 8pt; color: #212025; vertical-align: middle;">&nbsp;&nbsp;${phone}</span>
+                </div>
+                <div style="margin-bottom: 5px;">
+                    <img src="images/mail.png" alt="" style="width: 12px; height: 12px; vertical-align: middle;">
+                    <a href="mailto:${email}" style="font-size: 8pt; color: #212025; text-decoration: none; vertical-align: middle;">&nbsp;&nbsp;${email}</a>
+                </div>
+                <div style="margin-bottom: 5px;">
+                    <img src="images/web.png" alt="" style="width: 12px; height: 12px; vertical-align: middle;">
+                    <a href="http://www.aeyia.com" style="font-size: 8pt; color: #212025; text-decoration: none; vertical-align: middle;">&nbsp;&nbsp;www.aeyia.com</a>
+                </div>
+                <div>
+                    <img src="images/map.png" alt="" style="width: 12px; height: 12px; vertical-align: middle;">
+                    <span style="font-size: 8pt; color: #212025; vertical-align: middle;">&nbsp;&nbsp;6/7 Grevillea Street, Byron Bay</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top: 15px;">
+                <img src="images/aeyia-logo.png" alt="AEYIA" style="max-width: 350px; height: auto; border: 0;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-top: 15px;">
+                <p style="font-size: 6pt; color: #808080; margin: 0; padding-bottom: 5px;">AEYIA respectfully acknowledges the Traditional Owners of the land on which we live and work. We pay our respects to Elders past, present, and future and recognise their ongoing connection to land, waters, and culture. Their wisdom and resilience continue to inspire and guide us.</p>
+                <p style="font-size: 6pt; color: #808080; margin: 0; padding-bottom: 5px;">CONFIDENTIALITY NOTICE: The contents of this email are confidential to the ordinary user of the email address to which it is addressed and may also be privileged. If you are not the addressee of this email, you may not copy, forward, disclose or otherwise use it or any part of it in any form whatsoever. If you have received this email by error, please email the sender by replying to this message.</p>
+                <p style="font-size: 6pt; color: #808080; margin: 0;">Please consider the environment before printing this e-mail.</p>
+            </td>
+        </tr>
+    </table>
+</div>`;
+
+            // Show the signature preview
+            const previewElement = document.getElementById('signature-preview');
+            previewElement.innerHTML = signatureHTML;
+            previewElement.classList.remove('hidden');
+
+            // Show the copy button and instructions
+            document.getElementById('copy-section').classList.remove('hidden');
+            document.getElementById('instructions').classList.remove('hidden');
+
+            // Store the signature HTML for copying
+            window.currentSignature = signatureHTML;
+        }
+
+        function copyToClipboard() {
+            // Create a textarea element to hold the HTML
+            const textarea = document.createElement('textarea');
+            textarea.value = window.currentSignature;
+            document.body.appendChild(textarea);
+
+            // Select and copy the content
+            textarea.select();
+            document.execCommand('copy');
+
+            // Remove the textarea
+            document.body.removeChild(textarea);
+
+            // Change button text temporarily
+            const copyBtn = document.getElementById('copy-btn');
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => {
+                copyBtn.textContent = originalText;
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
