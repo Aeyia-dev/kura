@@ -11,6 +11,11 @@ Route::get('/', function () {
     ]);
 });
 
+// Email signatures route - publicly accessible
+Route::get('/email-signatures', function () {
+    return view('email-signatures');
+})->name('email-signatures');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

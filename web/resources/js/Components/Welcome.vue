@@ -11,7 +11,7 @@ const techSpikes = [
         title: 'Email signature builder',
         description: 'Simple email signature generator',
         status: 'in-progress',
-        demoLink: null
+        demoLink: '/email-signatures'
     },
     {
         title: 'Video Session Platform',
@@ -216,8 +216,8 @@ const getStatusDisplay = (status) => {
                                       :class="[getStatusClasses(spike.status).bg, getStatusClasses(spike.status).text]">
                                     {{ getStatusDisplay(spike.status) }}
                                 </span>
-                                <a v-if="spike.demoLink" :href="spike.demoLink" class="text-xs text-blue-600 hover:underline">
-                                    View Demo
+                                <a v-if="spike.demoLink" :href="spike.demoLink" class="text-xs text-blue-600 hover:underline ml-2">
+                                    View Demo →
                                 </a>
                             </div>
                         </div>
