@@ -10,12 +10,39 @@ This document outlines the technical configuration choices for our Laravel appli
 - ✅ Run `composer install` (or use `sail composer install` if Sail is already working)
 - ✅ Generate application key with `php artisan key:generate` (or `sail artisan key:generate`)
 - ✅ Run database migrations with `sail artisan migrate`
-- [ ] Seed the database with `sail artisan db:seed`
-- [ ] Install frontend dependencies with `sail npm install`
-- [ ] Compile frontend assets with `sail npm run dev` or `sail npm run build`
-- [ ] Create a symbolic link for storage with `sail artisan storage:link`
-- [ ] Verify installation with `sail artisan about`
+- ✅ Seed the database with `sail artisan db:seed`
+- ✅ Install frontend dependencies with `sail npm install`
+- ✅ Compile frontend assets with `sail npm run dev` or `sail npm run build`
+- ✅ Create a symbolic link for storage with `sail artisan storage:link`
+- ✅ Verify installation with `sail artisan about`
+- ✅ Install Jetstream with Inertia.js and Vue (`sail composer require laravel/jetstream` and `sail artisan jetstream:install inertia`)
+- ✅ Configure database connection in `.env` file
+- ✅ Install Spatie Permissions package (`sail composer require spatie/laravel-permission`)
+- ✅ Publish Spatie Permission migrations (`sail artisan vendor:publish --provider="Spatie\Permission\PermissionServiceProvider"`)
+- ✅ Create Role and Permission Seeder (`sail artisan make:seeder RolesAndPermissionsSeeder`)
+- ✅ Run Role and Permission Seeder (`sail artisan db:seed --class=RolesAndPermissionsSeeder`)
+- ✅ Install AWS SDK for SNS integration (`sail composer require aws/aws-sdk-php`)
+- [ ] move vendor and node_modules out of the docker web root, so we arent syncing theose files to host
 
+
+
+
+
+
+
+<!--
+- [ ] Create Two-Factor Authentication service (`sail artisan make:provider TwoFactorAuthServiceProvider`)
+- [ ] Configure AWS SNS in `config/services.php` and `.env`
+- [ ] Configure email verification settings in `config/fortify.php`
+- [ ] Set up mail settings in `.env`
+- [ ] Replace Tailwind with Bootstrap (remove tailwind dependencies, install bootstrap)
+- [ ] Update `vite.config.js` for Vue 3 and Bootstrap
+- [ ] Create `resources/css/app.scss` with Bootstrap imports
+- [ ] Update `resources/js/app.js` for Bootstrap and Vue 3
+- [ ] Publish Docker files for customization (`sail artisan sail:publish`)
+- [ ] Modify `docker-compose.yml` to restrict external port bindings
+- [ ] Restart Sail to apply Docker configuration changes (`sail down` and `sail up -d`)
+ -->
 ## Core Framework Selection
 
 - **Laravel Version: 11.x**  
@@ -63,7 +90,7 @@ cd kura
 DB_CONNECTION=mysql
 DB_HOST=mariadb
 DB_PORT=3306
-DB_DATABASE=kura
+DB_DATABASE=aeyia_dev
 DB_USERNAME=sail
 DB_PASSWORD=password
 
@@ -251,6 +278,37 @@ MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS=noreply@example.com
 MAIL_FROM_NAME="${APP_NAME}"
 ```
+
+
+Mail::raw('Testing AWS SES credentials', function($message) {
+    $message->to('tech@aeyia.com')
+            ->subject('AWS SES Credentials Test');
+});
+
+
+$ses = new \Aws\Ses\SesClient([
+    'version' => 'latest',
+    'region' => config('services.ses.region'),
+    'credentials' => [
+        'key' => config('services.ses.key'),
+        'secret' => config('services.ses.secret'),
+    ],
+]);
+
+// Verify a new email address
+$result = $ses->verifyEmailIdentity([
+    'EmailAddress' => 'new-email@example.com' // Replace with the email you want to verify
+]);
+
+dump($result);
+
+$result = $ses->verifyEmailIdentity([
+    'EmailAddress' => 'mia@aeyia.com' // Replace with the email you want to verify
+]);
+
+
+
+
 
 ### 6. Frontend Tooling
 
