@@ -1,0 +1,314 @@
+user_flow:
+  name: Aeyia Platform User Journey
+  description: High-level user flow through the Aeyia platform with technical spike focus areas
+  
+  components:
+    # Marketing & Discovery Phase
+    marketing_site:
+      name: Marketing Site
+      description: Platform discovery and initial engagement
+      user_actions:
+        - Learn about platform
+        - View practitioner showcase
+        - Read testimonials
+        - Explore wellness content
+      tech_spike: 
+        id: 12
+        name: Marketing Site Implementation
+        focus: Determining optimal approach for marketing site integration with the platform
+    
+    # User Registration & Authentication
+    authentication:
+      name: User Authentication
+      description: User registration and login process
+      user_actions:
+        - Create account
+        - Social login
+        - Verify identity
+        - Set preferences
+      
+    # Practitioner Discovery
+    discovery:
+      name: Practitioner Discovery
+      description: Finding and exploring practitioners
+      user_actions:
+        - Search for practitioners
+        - Filter by modality
+        - View practitioner profiles
+        - Read reviews
+      tech_spike:
+        id: 4
+        name: Search Implementation with Algolia
+        focus: Designing effective practitioner search experience with natural language capabilities
+    
+    # Practitioner Verification (Admin/Practitioner Flow)
+    practitioner_verification:
+      name: Practitioner Verification
+      description: Onboarding and verification process for practitioners
+      user_actions:
+        - Submit application
+        - Upload credentials
+        - Complete identity verification
+        - Set up profile and services
+      tech_spike:
+        id: 6
+        name: Practitioner Verification Process
+        focus: Creating secure but efficient verification system
+    
+    # Initial Engagement
+    discovery_call:
+      name: Discovery Call
+      description: Initial consultation with practitioner
+      user_actions:
+        - Schedule discovery call
+        - Complete pre-call questionnaire
+        - Attend video session
+        - Receive recommendations
+      tech_spikes:
+        - id: 8
+          name: Form & Questionnaire System
+          focus: Determining best approach for complex intake forms
+        - id: 1
+          name: Video Session Platform
+          focus: Determining best video platform for secure therapy sessions
+    
+    # Booking Process
+    booking:
+      name: Session Booking
+      description: Scheduling appointments with practitioners
+      user_actions:
+        - View practitioner availability
+        - Select session type
+        - Choose time slot
+        - Process payment
+        - Receive confirmation
+      tech_spikes:
+        - id: 2
+          name: Calendar Integration
+          focus: Determining optimal calendar solution for booking management
+        - id: 5
+          name: Credits System Implementation
+          focus: Designing flexible credit system for session payment
+    
+    # Pre-Session Preparation
+    pre_session:
+      name: Pre-Session Preparation
+      description: Activities before scheduled session
+      user_actions:
+        - Receive reminders
+        - Complete pre-session forms
+        - Review practitioner notes
+        - Prepare space for session
+      tech_spike:
+        id: 7
+        name: Client File Security System
+        focus: Creating secure system for sensitive client information
+    
+    # Session Experience
+    session:
+      name: Session Experience
+      description: Actual therapy/wellness session
+      user_actions:
+        - Join video session
+        - Share screen if needed
+        - Exchange files securely
+        - Complete in-session activities
+      tech_spike:
+        id: 1
+        name: Video Session Platform
+        focus: Determining best video platform for secure therapy sessions
+    
+    # Post-Session Activities
+    post_session:
+      name: Post-Session Activities
+      description: Follow-up activities after session
+      user_actions:
+        - Review session notes
+        - Access resources shared
+        - Leave review/testimonial
+        - Schedule follow-up
+      tech_spike:
+        id: 7
+        name: Client File Security System
+        focus: Creating secure system for sensitive client information
+    
+    # Membership & Ongoing Engagement
+    membership:
+      name: Membership & Ongoing Engagement
+      description: Recurring platform usage and benefits
+      user_actions:
+        - Manage membership
+        - Use/purchase credits
+        - Access member benefits
+        - Manage subscription
+      tech_spike:
+        id: 11
+        name: Membership & Subscription Model
+        focus: Testing implementation of tiered membership system
+    
+    # Digital Library Access
+    digital_library:
+      name: Digital Library
+      description: Accessing educational content
+      user_actions:
+        - Browse content library
+        - Watch videos
+        - Complete courses
+        - Track progress
+      tech_spike:
+        id: 3
+        name: Digital Library & Course Platform
+        focus: Selecting right platform for educational content delivery
+    
+    # Community Engagement
+    community:
+      name: Community Engagement
+      description: Participating in platform community
+      user_actions:
+        - Join community groups
+        - Attend live events
+        - Participate in discussions
+        - Connect with others
+      tech_spike:
+        id: 9
+        name: Circle Community Integration
+        focus: Assessing feasibility of Circle for community features
+    
+    # Support & Assistance
+    support:
+      name: Support & Assistance
+      description: Getting help with platform issues
+      user_actions:
+        - Contact support
+        - Browse help center
+        - Submit tickets
+        - Request assistance
+    
+    # Financial Operations
+    financial:
+      name: Financial Operations
+      description: Payment and financial activities
+      user_actions:
+        - Make payments
+        - Manage payment methods
+        - View transaction history
+        - Submit insurance claims
+      tech_spikes:
+        - id: 5
+          name: Credits System Implementation
+          focus: Designing flexible credit system for session payment
+        - id: 10
+          name: Health Fund Integration
+          focus: Determining complexity of health insurance integration
+
+  # Flow relationships showing user journey progression
+  flow:
+    - from: marketing_site
+      to: [authentication, discovery]
+      description: User discovers platform and either creates account or explores practitioners
+    
+    - from: authentication
+      to: [discovery, practitioner_verification]
+      description: After authentication, clients discover practitioners or practitioners begin verification
+    
+    - from: discovery
+      to: [discovery_call, booking]
+      description: User either books discovery call or proceeds directly to booking
+    
+    - from: practitioner_verification
+      to: null
+      description: Admin side process separate from main user flow
+    
+    - from: discovery_call
+      to: [booking]
+      description: After discovery call, users may book regular sessions
+    
+    - from: booking
+      to: [pre_session]
+      description: After booking, user prepares for session
+    
+    - from: pre_session
+      to: [session]
+      description: Preparation leads to actual session
+    
+    - from: session
+      to: [post_session]
+      description: Session is followed by post-session activities
+    
+    - from: post_session
+      to: [booking, digital_library, community]
+      description: After session, user may book again, access content, or join community
+    
+    - from: membership
+      to: [booking, digital_library, community]
+      description: Membership provides access to various platform features
+    
+    - from: support
+      to: null
+      description: Support is accessible throughout entire user journey
+    
+    - from: financial
+      to: null
+      description: Financial operations occur at various points in user journey
+
+  # Technical spikes detailed list for reference
+  tech_spikes:
+    - id: 1
+      name: Video Session Platform
+      focus: Determining best video platform for secure therapy sessions
+      components: [discovery_call, session]
+    
+    - id: 2
+      name: Calendar Integration
+      focus: Determining optimal calendar solution for booking management
+      components: [booking]
+    
+    - id: 3
+      name: Digital Library & Course Platform
+      focus: Selecting right platform for educational content delivery
+      components: [digital_library]
+    
+    - id: 4
+      name: Search Implementation with Algolia
+      focus: Designing effective practitioner search experience
+      components: [discovery]
+    
+    - id: 5
+      name: Credits System Implementation
+      focus: Designing flexible credit system for session payment
+      components: [booking, financial]
+    
+    - id: 6
+      name: Practitioner Verification Process
+      focus: Creating secure but efficient verification system
+      components: [practitioner_verification]
+    
+    - id: 7
+      name: Client File Security System
+      focus: Creating secure system for sensitive client information
+      components: [pre_session, post_session]
+    
+    - id: 8
+      name: Form & Questionnaire System
+      focus: Determining best approach for complex intake forms
+      components: [discovery_call, pre_session]
+    
+    - id: 9
+      name: Circle Community Integration
+      focus: Assessing feasibility of Circle for community features
+      components: [community]
+    
+    - id: 10
+      name: Health Fund Integration
+      focus: Determining complexity of health insurance integration
+      components: [financial]
+    
+    - id: 11
+      name: Membership & Subscription Model
+      focus: Testing implementation of tiered membership system
+      components: [membership]
+    
+    - id: 12
+      name: Marketing Site Implementation
+      focus: Determining optimal approach for marketing site integration
+      components: [marketing_site]

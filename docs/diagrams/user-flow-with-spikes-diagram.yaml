@@ -1,0 +1,246 @@
+diagram:
+  type: "flow-diagram"
+  title: "Aeyia Platform User Journey with Technical Spike Focus Areas"
+  description: "High-level user flow through the platform highlighting technical spike intersections"
+  
+  nodes:
+    - id: "marketing-site"
+      label: "Marketing Site"
+      type: "entry"
+      position: { x: 100, y: 100 }
+      spike_id: 12
+    
+    - id: "authentication"
+      label: "User Authentication"
+      type: "process"
+      position: { x: 300, y: 100 }
+    
+    - id: "discovery"
+      label: "Practitioner Discovery"
+      type: "process"
+      position: { x: 300, y: 200 }
+      spike_id: 4
+    
+    - id: "practitioner-verification"
+      label: "Practitioner Verification"
+      type: "process"
+      position: { x: 500, y: 50 }
+      spike_id: 6
+    
+    - id: "discovery-call"
+      label: "Discovery Call"
+      type: "process"
+      position: { x: 500, y: 200 }
+      spike_ids: [1, 8]
+    
+    - id: "booking"
+      label: "Session Booking"
+      type: "process"
+      position: { x: 500, y: 300 }
+      spike_ids: [2, 5]
+    
+    - id: "pre-session"
+      label: "Pre-Session Preparation"
+      type: "process"
+      position: { x: 700, y: 300 }
+      spike_ids: [7, 8]
+    
+    - id: "session"
+      label: "Session Experience"
+      type: "process"
+      position: { x: 900, y: 300 }
+      spike_id: 1
+    
+    - id: "post-session"
+      label: "Post-Session Activities"
+      type: "process"
+      position: { x: 1100, y: 300 }
+      spike_id: 7
+    
+    - id: "membership"
+      label: "Membership & Ongoing Engagement"
+      type: "process"
+      position: { x: 700, y: 400 }
+      spike_id: 11
+    
+    - id: "digital-library"
+      label: "Digital Library"
+      type: "process"
+      position: { x: 900, y: 400 }
+      spike_id: 3
+    
+    - id: "community"
+      label: "Community Engagement"
+      type: "process"
+      position: { x: 1100, y: 400 }
+      spike_id: 9
+    
+    - id: "support"
+      label: "Support & Assistance"
+      type: "global"
+      position: { x: 500, y: 500 }
+    
+    - id: "financial"
+      label: "Financial Operations"
+      type: "global"
+      position: { x: 700, y: 500 }
+      spike_ids: [5, 10]
+  
+  edges:
+    - from: "marketing-site"
+      to: "authentication"
+      label: "Create account"
+    
+    - from: "marketing-site"
+      to: "discovery"
+      label: "Browse practitioners"
+    
+    - from: "authentication"
+      to: "discovery"
+      label: "Find practitioners"
+    
+    - from: "authentication"
+      to: "practitioner-verification"
+      label: "Apply as practitioner"
+    
+    - from: "discovery"
+      to: "discovery-call"
+      label: "Schedule intro call"
+    
+    - from: "discovery"
+      to: "booking"
+      label: "Book session"
+    
+    - from: "discovery-call"
+      to: "booking"
+      label: "Book follow-up"
+    
+    - from: "booking"
+      to: "pre-session"
+      label: "Prepare"
+    
+    - from: "pre-session"
+      to: "session"
+      label: "Attend"
+    
+    - from: "session"
+      to: "post-session"
+      label: "Follow up"
+    
+    - from: "post-session"
+      to: "booking"
+      label: "Book again"
+    
+    - from: "post-session"
+      to: "digital-library"
+      label: "Access resources"
+    
+    - from: "post-session"
+      to: "community"
+      label: "Join community"
+    
+    - from: "membership"
+      to: "booking"
+      label: "Use credits"
+    
+    - from: "membership"
+      to: "digital-library"
+      label: "Access content"
+    
+    - from: "membership"
+      to: "community"
+      label: "Participate"
+  
+  # Technical spikes visual representation
+  tech_spikes:
+    - id: 1
+      name: "Video Session Platform"
+      color: "#FF5733"
+      nodes: ["discovery-call", "session"]
+    
+    - id: 2
+      name: "Calendar Integration"
+      color: "#33FF57"
+      nodes: ["booking"]
+    
+    - id: 3
+      name: "Digital Library Platform"
+      color: "#3357FF"
+      nodes: ["digital-library"]
+    
+    - id: 4
+      name: "Search Implementation"
+      color: "#FF33A8"
+      nodes: ["discovery"]
+    
+    - id: 5
+      name: "Credits System"
+      color: "#33FFF5"
+      nodes: ["booking", "financial"]
+    
+    - id: 6
+      name: "Practitioner Verification"
+      color: "#F3FF33"
+      nodes: ["practitioner-verification"]
+    
+    - id: 7
+      name: "Client File Security"
+      color: "#FF9033"
+      nodes: ["pre-session", "post-session"]
+    
+    - id: 8
+      name: "Form & Questionnaire System"
+      color: "#9033FF"
+      nodes: ["discovery-call", "pre-session"]
+    
+    - id: 9
+      name: "Circle Community Integration"
+      color: "#33FFB8"
+      nodes: ["community"]
+    
+    - id: 10
+      name: "Health Fund Integration"
+      color: "#FFD433"
+      nodes: ["financial"]
+    
+    - id: 11
+      name: "Membership & Subscription"
+      color: "#33B8FF"
+      nodes: ["membership"]
+    
+    - id: 12
+      name: "Marketing Site Implementation"
+      color: "#FF3375"
+      nodes: ["marketing-site"]
+  
+  # Visual style for the diagram
+  styles:
+    background_color: "#FFFFFF"
+    node_default:
+      fill: "#E8F4F8"
+      stroke: "#1A5276"
+      text_color: "#000000"
+    
+    node_types:
+      entry:
+        fill: "#D6EAF8"
+        stroke: "#2874A6"
+      
+      process:
+        fill: "#E8F8F5"
+        stroke: "#117A65"
+      
+      global:
+        fill: "#F8E8E8"
+        stroke: "#943126"
+        style: "dashed"
+    
+    edge_default:
+      stroke: "#5D6D7E"
+      arrow_style: "triangle"
+      text_color: "#34495E"
+    
+    tech_spike_highlight:
+      stroke_width: 3
+      opacity: 0.7
+      style: "highlight"

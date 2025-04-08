@@ -1,0 +1,79 @@
+architecture:
+  name: Aeyia Platform
+  components:
+    frontend:
+      - name: Client Application
+        type: Web (w/ future Mobile support)
+        description: Interface for clients to find practitioners and book sessions
+      - name: Practitioner Platform
+        type: Web
+        description: Interface for practitioners to manage services and clients
+      - name: Admin Portal
+        type: Web
+        description: Interface for platform administration
+      - name: Marketing Site
+        type: Web
+        description: Platform marketing, discovery and acquisition
+        integrations:
+          - Webflow (TBD)
+
+    backend:
+      - name: API Gateway
+        description: Central entry point for all service requests
+      - name: Authentication Service
+        description: Manages user identity and access control
+        integrations:
+          - SSO Providers
+          - FrankieOne (KYC)
+      - name: Booking Engine
+        description: Handles scheduling and calendar management
+        integrations:
+          - Calendar System (TBD)
+      - name: Payment Processing
+        description: Manages financial transactions
+        integrations:
+          - Stripe Connect
+          - Stripe Link
+      - name: Notification System
+        description: Handles emails, SMS, and in-app alerts
+        integrations:
+          - AWS SMS
+          - AWS SES/Klaviyo
+      - name: Search Service
+        description: Powers practitioner discovery
+        integrations:
+          - Algolia with GPT
+      - name: File Management
+        description: Handles secure document storage and access
+      - name: Content Service
+        description: Manages digital library and courses
+        integrations:
+          - Contentful
+          - Kajabi/Thinkific
+      - name: Community Service
+        description: Handles forums and events
+        integrations:
+          - Circle
+      - name: Support Service
+        description: Customer support integration
+        integrations:
+          - Zendesk
+      - name: Marketing Integrations
+        description: Handle marketing site integration with platform
+        integrations:
+          - Webflow (TBD)
+          - Lead capture forms
+
+    data_stores:
+      - name: User Database
+        description: Client and practitioner profile information
+      - name: Sessions Database
+        description: Booking, appointment, and session data
+      - name: Content Repository
+        description: Digital library content and courses
+      - name: Financial Database
+        description: Transactions, credits, and membership data
+      - name: Interaction Database
+        description: Reviews, messages, and engagement data
+      - name: Marketing Database
+        description: Leads, analytics, and marketing data
