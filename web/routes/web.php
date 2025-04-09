@@ -11,9 +11,8 @@ Route::get('/', function () {
     ]);
 });
 
-// Email signatures route - publicly accessible
 Route::get('/email-signatures', function () {
-    return view('email-signatures');
+    return Inertia::render('EmailSignatures');
 })->name('email-signatures');
 
 Route::middleware([
