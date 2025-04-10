@@ -165,7 +165,9 @@ const getFirstName = (fullName) => {
     <Head title="AEYIA Email Signature Generator" />
     <div class="body-container">
         <div class="container">
-            <h1>AEYIA Email Signature Generator v0.2</h1>
+            <h1>AEYIA Email Signature Generator v2 - broken CSS</h1>
+
+            <p>Tailwind CSS lib is replacing all handcoded email signature CSS with Tailwind CSS, and breaking the email signature in Gmail.</p>
 
             <div class="team-buttons">
                 <button

@@ -11,6 +11,12 @@ Route::get('/', function () {
     ]);
 });
 
+// Email signatures route - publicly accessible
+Route::get('/email-signatures-popup', function () {
+    return view('email-signatures');
+})->name('email-signatures-popup');
+
+
 Route::get('/email-signatures', function () {
     return Inertia::render('EmailSignatures');
 })->name('email-signatures');

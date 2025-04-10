@@ -1,4 +1,17 @@
 <script setup>
+import { ref } from 'vue';
+import Modal from '@/Components/Modal.vue';
+
+// Modal state
+const showDemoModal = ref(false);
+const currentDemoUrl = ref('');
+
+// Open demo in modal instead of new tab
+const openDemoModal = (url) => {
+    currentDemoUrl.value = url;
+    showDemoModal.value = true;
+};
+
 // Define the tech spikes with their status
 const techSpikes = [
     {
@@ -11,7 +24,7 @@ const techSpikes = [
         title: 'Email signature builder',
         description: 'Simple email signature generator',
         status: 'in-progress',
-        demoLink: '/email-signatures'
+        demoLink: '/email-signatures-popup'
     },
     {
         title: 'Video Session Platform',
@@ -216,7 +229,18 @@ const getStatusDisplay = (status) => {
                                       :class="[getStatusClasses(spike.status).bg, getStatusClasses(spike.status).text]">
                                     {{ getStatusDisplay(spike.status) }}
                                 </span>
-                                <a v-if="spike.demoLink" :href="spike.demoLink" class="text-xs text-blue-600 hover:underline ml-2">
+                                <button
+                                    v-if="spike.demoLink === '/email-signatures-popup'"
+                                    @click="openDemoModal(spike.demoLink)"
+                                    class="text-xs text-blue-600 hover:underline ml-2"
+                                >
+                                    View Demo →
+                                </button>
+                                <a
+                                    v-else-if="spike.demoLink"
+                                    :href="spike.demoLink"
+                                    class="text-xs text-blue-600 hover:underline ml-2"
+                                >
                                     View Demo →
                                 </a>
                             </div>
@@ -225,6 +249,23 @@ const getStatusDisplay = (status) => {
                 </div>
             </div>
         </div>
+        <!-- Demo Modal -->
+        <Modal :show="showDemoModal" @close="showDemoModal = false" max-width="xl">
+                <div class="flex justify-between items-center mb-4">
+                    <button @click="showDemoModal = false" class="text-gray-400 hover:text-gray-500">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <iframe
+                    v-if="currentDemoUrl"
+                    :src="currentDemoUrl"
+                    class="w-full"
+                    style="height: 1000px; width: 100%;"
+                    frameborder="0"
+                ></iframe>
+        </Modal>
     </div>
 </template>
 
