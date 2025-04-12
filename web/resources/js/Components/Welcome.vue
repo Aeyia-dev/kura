@@ -160,7 +160,8 @@ const getStatusDisplay = (status) => {
 
 
             <p class="mt-6 text-gray-500 leading-relaxed">
-                The Kura project is the technical spike and prototyping phase for the Aeyia platform. This dashboard displays our progress implementing spikes for key technical challenges, helping to reduce uncertainty before full development.
+                The Kura project is the technical spike and prototyping phase for the Aeyia platform.
+                This website displays our progress implementing spikes for key technical challenges, laying the path for production development.
             </p>
 
             <!-- Progress Bar -->
