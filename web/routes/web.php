@@ -11,16 +11,6 @@ Route::get('/', function () {
     ]);
 });
 
-// Email signatures route - publicly accessible
-Route::get('/email-signatures-popup', function () {
-    return view('email-signatures');
-})->name('email-signatures-popup');
-
-
-Route::get('/email-signatures', function () {
-    return Inertia::render('EmailSignatures');
-})->name('email-signatures');
-
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -29,4 +19,12 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+
+    Route::get('/email-signatures-iframe', function () {
+        return Inertia::render('EmailSignaturesIframe');
+    })->name('email-signatures-iframe');
+
+    Route::get('/email-signatures-popup', function () {
+        return view('email-signatures');
+    })->name('email-signatures-popup');
 });

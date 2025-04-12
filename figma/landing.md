@@ -1,16 +1,28 @@
 # AEYIA Landing Page Analysis and Responsive Plan
 
-### Current Problems
-- [ ] I need the login / nav from jetstream on the landing page - look and see what else went missing
-   - git diff web/resources/js/Pages/Landing.vue
-   - applying the template has wiped out the laravel nav.
-   - quantify the changes and add the soluiton to the Implementation Plan checklist below:
+!! Review claude/ways-of-working.md before working
 
-### Implementation Plan
-
+### Current Actions
 
 
 ### Done
+- [x] Move the /email-signatures-popup iframe from a modal to its own new page
+   - [x] make a new page called web/resources/js/Pages/EmailSignaturesIframe.vue
+   - [x] use welcome.vue as the basis - we want the top nav etc
+   - [x] add this new signatures page to the nav for auth'd users
+   - [x] make the body of EmailSignaturesIframe an iframe just like in Welcome and load /email-signatures-popup
+   - [x] edit the welcome and remove the modal and change the link to go to the new page
+- the register page is not templated
+   - [x] copy the style guide to web/resources/js/Pages/Auth/Register.vue
+- [x] Restore Jetstream authentication nav that was removed during landing page redesign:
+   - The complete authentication section was replaced (lines 16-38 in old file)
+   - Added back the authentication navigation to the top of the page
+   - Styled with a modern translucent look to match the landing page design
+   - Positioned with absolute positioning to not interfere with existing layout
+- [-] Remove custom "society", "about", "contact" links (or make them real links)
+   - Keep the placeholders do not touch them
+- [-] Ensure all Laravel/Inertia routing is properly preserved
+   - Dont do this
 - [x] The placeholder text "Email" appears to be too bright instead of a more subdued/transparent white
 - [x] In the Vue template (Landing.vue), the email input has a rectangular border instead of a rounded input field
 - [x] elevate well / coming soon / email signup needs to be centered

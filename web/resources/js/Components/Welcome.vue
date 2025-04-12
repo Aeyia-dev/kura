@@ -1,16 +1,8 @@
 <script setup>
 import { ref } from 'vue';
-import Modal from '@/Components/Modal.vue';
+import { Link } from '@inertiajs/vue3';
 
-// Modal state
-const showDemoModal = ref(false);
-const currentDemoUrl = ref('');
-
-// Open demo in modal instead of new tab
-const openDemoModal = (url) => {
-    currentDemoUrl.value = url;
-    showDemoModal.value = true;
-};
+// Modal functionality has been replaced with a dedicated page
 
 // Define the tech spikes with their status
 const techSpikes = [
@@ -229,13 +221,13 @@ const getStatusDisplay = (status) => {
                                       :class="[getStatusClasses(spike.status).bg, getStatusClasses(spike.status).text]">
                                     {{ getStatusDisplay(spike.status) }}
                                 </span>
-                                <button
+                                <Link
                                     v-if="spike.demoLink === '/email-signatures-popup'"
-                                    @click="openDemoModal(spike.demoLink)"
+                                    :href="route('email-signatures-iframe')"
                                     class="text-xs text-blue-600 hover:underline ml-2"
                                 >
-                                    View Demo →
-                                </button>
+                                    View →
+                                </Link>
                                 <a
                                     v-else-if="spike.demoLink"
                                     :href="spike.demoLink"
@@ -249,23 +241,7 @@ const getStatusDisplay = (status) => {
                 </div>
             </div>
         </div>
-        <!-- Demo Modal -->
-        <Modal :show="showDemoModal" @close="showDemoModal = false" max-width="xl">
-                <div class="flex justify-between items-center mb-4">
-                    <button @click="showDemoModal = false" class="text-gray-400 hover:text-gray-500">
-                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-                <iframe
-                    v-if="currentDemoUrl"
-                    :src="currentDemoUrl"
-                    class="w-full"
-                    style="height: 1000px; width: 100%;"
-                    frameborder="0"
-                ></iframe>
-        </Modal>
+        <!-- Modal has been removed and replaced with a dedicated page -->
     </div>
 </template>
 
