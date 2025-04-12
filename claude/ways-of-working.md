@@ -15,3 +15,4 @@
 3. **Review**:
    - After implementation, summarize the changes made
    - Ensure all work matches the approved plan
+   - move completed tasks under the done heading

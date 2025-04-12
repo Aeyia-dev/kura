@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link, useForm } from '@inertiajs/vue3';
+import { onMounted } from 'vue';
 import AuthenticationCard from '@/Components/AuthenticationCard.vue';
 import AuthenticationCardLogo from '@/Components/AuthenticationCardLogo.vue';
 import Checkbox from '@/Components/Checkbox.vue';
@@ -8,9 +9,15 @@ import InputLabel from '@/Components/InputLabel.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
+// Get the email from URL if present
+const getEmailFromURL = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('email') || '';
+};
+
 const form = useForm({
     name: '',
-    email: '',
+    email: getEmailFromURL(),
     password: '',
     password_confirmation: '',
     terms: false,

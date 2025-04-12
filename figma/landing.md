@@ -7,6 +7,24 @@
 ### Done Items for Latest Update
 
 ### Done
+- [x] Updated Modal component with a bg-gray-50 background
+   - [x] Changed the modal background from white to light gray (bg-gray-50)
+   - [x] Maintained all other modal styling and functionality
+- [x] Make the registration limit error a popup modal
+   - [x] Replaced inline error message with a styled modal popup
+   - [x] Added close button to dismiss the modal
+   - [x] Implemented form clearing when closing the modal
+   - [x] Added warning icon and formatted the message for better readability
+- [x] Added handling to the Join Now button
+   - [x] Added domain validation to check for aeyia.com emails
+   - [x] Redirect to Jetstream register screen with pre-populated email for valid domains
+   - [x] Display validation message for non-aeyia.com domains
+   - [x] Enhanced form to display error messages with appropriate styling
+   - [x] Updated Register.vue to read email parameter from URL
+- [x] Removed blue border when focusing on the email input on web/resources/js/Pages/Landing.vue
+   - Added focus:ring-0 and focus:outline-none to the input element
+   - Added global CSS to override default browser focus styles
+   - Ensured consistent styling with the design by maintaining white borders only
 - [x] Fix mobile menu not showing when hamburger button is clicked
    - Added debug logging to troubleshoot toggle function
    - Changed menu from v-if to v-show for smoother transitions

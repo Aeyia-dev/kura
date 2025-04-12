@@ -12,7 +12,7 @@
             <slot name="logo" />
         </div>
 
-        <div class="w-full sm:max-w-md mt-6 px-6 py-8 bg-white/10 backdrop-blur-md shadow-xl overflow-hidden sm:rounded-2xl border border-white/20 z-20 relative text-white">
+        <div class="w-full sm:max-w-md mt-6 px-6 py-8 bg-white/70 backdrop-blur-md shadow-xl overflow-hidden sm:rounded-2xl border border-white/20 z-20 relative text-white">
             <slot />
         </div>
 

@@ -1,6 +1,7 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import { ref } from 'vue';
+import Modal from '@/Components/Modal.vue';
 
 defineProps({
     canLogin: {
@@ -11,11 +12,51 @@ defineProps({
     },
 });
 
-// Form handling
+// Form handling and modal state
 const email = ref('');
+const errorMessage = ref('');
+const isFormValid = ref(true);
+const showErrorModal = ref(false);
+
+const resetForm = () => {
+    email.value = '';
+    errorMessage.value = '';
+    isFormValid.value = true;
+    showErrorModal.value = false;
+};
+
+const closeErrorModal = () => {
+    showErrorModal.value = false;
+    resetForm();
+};
+
 const submitForm = () => {
-    // Form submission logic will be implemented when needed
-    console.log('Form submitted with email:', email.value);
+    // Reset validation state
+    errorMessage.value = '';
+    isFormValid.value = true;
+    showErrorModal.value = false;
+
+    // Basic email validation
+    if (!email.value || !email.value.includes('@')) {
+        errorMessage.value = 'Please enter a valid email address.';
+        isFormValid.value = false;
+        return;
+    }
+
+    // Extract the domain from the email
+    const emailParts = email.value.split('@');
+    const domain = emailParts[1].toLowerCase();
+
+    // Check if it's an aeyia.com email
+    if (domain === 'aeyia.com') {
+        // Redirect to registration page with email pre-populated
+        window.location.href = `/register?email=${encodeURIComponent(email.value)}`;
+    } else {
+        // Show validation message for closed beta in a popup
+        errorMessage.value = 'We are in closed Beta: Registration is only available with an aeyia.com email address.';
+        isFormValid.value = false;
+        showErrorModal.value = true;
+    }
 };
 
 // Mobile menu state
@@ -135,12 +176,13 @@ const toggleMobileMenu = () => {
 
                     <!-- Email Form -->
                     <div class="w-full max-w-md mx-auto">
-                        <form @submit.prevent="submitForm" class="flex items-center border border-white rounded-full overflow-hidden shadow-sm">
+                        <form @submit.prevent="submitForm" class="flex items-center border border-white rounded-full overflow-hidden shadow-sm" :class="{ 'border-red-500': !isFormValid }">
                             <input
                                 v-model="email"
                                 type="email"
                                 placeholder="Email"
-                                class="bg-transparent text-white py-3 px-5 flex-grow outline-none placeholder-styling border-none text-sm md:text-base"
+                                class="bg-transparent text-white py-3 px-5 flex-grow outline-none placeholder-styling border-none text-sm md:text-base focus:ring-0 focus:outline-none"
+                                :class="{ 'text-red-300': !isFormValid }"
                             >
                             <div class="p-1 pr-1.5">
                                 <button
@@ -151,6 +193,7 @@ const toggleMobileMenu = () => {
                                 </button>
                             </div>
                         </form>
+                        <!-- Error message inline display removed, now using modal instead -->
                     </div>
                 </div>
             </main>
@@ -222,6 +265,31 @@ const toggleMobileMenu = () => {
             </footer>
         </div>
     </div>
+
+    <!-- Error Modal -->
+    <Modal :show="showErrorModal" @close="closeErrorModal" max-width="md">
+        <div class="p-6">
+            <div class="flex items-center mb-4">
+                <div class="rounded-full bg-red-100 p-2 mr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                </div>
+                <h3 class="text-lg font-medium text-gray-900">Registration Limited</h3>
+            </div>
+            <div class="mb-6">
+                <p class="text-gray-600">{{ errorMessage }}</p>
+            </div>
+            <div class="flex justify-end">
+                <button
+                    @click="closeErrorModal"
+                    class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-semibold text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
+    </Modal>
 </template>
 
 <style scoped>
@@ -234,6 +302,15 @@ const toggleMobileMenu = () => {
 .placeholder-styling::placeholder {
     color: rgba(255, 255, 255, 0.6);
     opacity: 1; /* Firefox */
+}
+
+/* Remove default blue focus border/ring */
+input:focus,
+button:focus {
+    outline: none !important;
+    box-shadow: none !important;
+    border-color: white !important;
+    ring-width: 0 !important;
 }
 
 /* Mobile menu animation */
