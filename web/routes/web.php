@@ -20,9 +20,9 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::get('/email-signatures-iframe', function () {
+    Route::get('/email-signatures', function () {
         return Inertia::render('EmailSignaturesIframe');
-    })->name('email-signatures-iframe');
+    })->name('email-signatures');
 
     Route::get('/email-signatures-popup', function () {
         return view('email-signatures');

@@ -9,19 +9,19 @@ const techSpikes = [
     {
         title: 'Development framework and hosting setup',
         description: 'Scaffold the hosting and website for the tech spikes and prototype',
-        status: 'in-progress',
+        status: 'completed',
         demoLink: null
     },
     {
         title: 'Email signature builder',
         description: 'Simple email signature generator',
-        status: 'in-progress',
-        demoLink: '/email-signatures-popup'
+        status: 'completed',
+        demoLink: '/email-signatures'
     },
     {
         title: 'Video Session Platform',
         description: 'Determine the best video platform for secure therapy sessions',
-        status: 'upcoming',
+        status: 'in-progress',
         demoLink: null
     },
     {
@@ -222,8 +222,8 @@ const getStatusDisplay = (status) => {
                                     {{ getStatusDisplay(spike.status) }}
                                 </span>
                                 <Link
-                                    v-if="spike.demoLink === '/email-signatures-popup'"
-                                    :href="route('email-signatures-iframe')"
+                                    v-if="spike.demoLink === '/email-signatures'"
+                                    :href="route('email-signatures')"
                                     class="text-xs text-blue-600 hover:underline ml-2"
                                 >
                                     View →

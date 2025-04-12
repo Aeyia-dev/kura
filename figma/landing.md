@@ -4,8 +4,26 @@
 
 ### Current Actions
 
+### Done Items for Latest Update
 
 ### Done
+- [x] Fix mobile menu not showing when hamburger button is clicked
+   - Added debug logging to troubleshoot toggle function
+   - Changed menu from v-if to v-show for smoother transitions
+   - Improved positioning with fixed position on mobile
+   - Added min-width to ensure menu is properly sized
+   - Added CSS transitions for smooth animation effects
+- [x] add login and register to the hamburger menu and main navigation
+   - Removed the separate top-right authentication nav
+   - Added auth links (login/register/dashboard) to the mobile hamburger menu
+   - Integrated auth links into the desktop navigation with proper styling
+   - Made the dashboard and email signatures links accessible for logged-in users
+   - Ensured consistent styling across all navigation elements
+- [x] reduce the body content across the board to fix overflow issues
+   - Reduced "Elevate well" heading size
+   - Decreased "coming soon" text size to prevent wrapping
+   - Reduced email input and button sizes
+   - Made social icons smaller and more appropriately sized
 - [x] Move the /email-signatures-popup iframe from a modal to its own new page
    - [x] make a new page called web/resources/js/Pages/EmailSignaturesIframe.vue
    - [x] use welcome.vue as the basis - we want the top nav etc
@@ -38,5 +56,3 @@
    - rename the assets to useful naming convention eg the logos etc
    - changes will be nessesary and sufficient
    - dont make changes outside this task
-
-

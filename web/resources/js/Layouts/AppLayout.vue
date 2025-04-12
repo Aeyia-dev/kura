@@ -51,7 +51,7 @@ const logout = () => {
                                 <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
                                 </NavLink>
-                                <NavLink :href="route('email-signatures-iframe')" :active="route().current('email-signatures-iframe')">
+                                <NavLink :href="route('email-signatures')" :active="route().current('email-signatures')">
                                     Email Signatures
                                 </NavLink>
                             </div>
@@ -197,7 +197,7 @@ const logout = () => {
                         <ResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                             Dashboard
                         </ResponsiveNavLink>
-                        <ResponsiveNavLink :href="route('email-signatures-iframe')" :active="route().current('email-signatures-iframe')">
+                        <ResponsiveNavLink :href="route('email-signatures')" :active="route().current('email-signatures')">
                             Email Signatures
                         </ResponsiveNavLink>
                     </div>
