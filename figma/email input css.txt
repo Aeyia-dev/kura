@@ -1,0 +1,80 @@
+appearance none
+background-color rgba(0, 0, 0, 0)
+border-bottom-color rgb(107, 114, 128)
+border-bottom-left-radius 0px
+border-bottom-right-radius 0px
+border-bottom-style solid
+border-bottom-width 1px
+border-image-outset 0
+border-image-repeat stretch
+border-image-slice 100%
+border-image-source none
+border-image-width 1
+border-left-color rgb(107, 114, 128)
+border-left-style solid
+border-left-width 1px
+border-right-color rgb(107, 114, 128)
+border-right-style solid
+border-right-width 1px
+border-top-color rgb(107, 114, 128)
+border-top-left-radius 0px
+border-top-right-radius 0px
+border-top-style solid
+border-top-width 1px
+box-sizing border-box
+color rgb(255, 255, 255)
+cursor text
+display block
+flex-grow 1
+font-family Figtree, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+font-feature-settings normal
+font-kerning auto
+font-optical-sizing auto
+font-size 16px
+font-size-adjust none
+font-stretch 100%
+font-style normal
+font-variant-alternates normal
+font-variant-caps normal
+font-variant-east-asian normal
+font-variant-emoji normal
+font-variant-ligatures normal
+font-variant-numeric normal
+font-variant-position normal
+font-variation-settings normal
+font-weight 400
+height 58px
+letter-spacing normal
+line-height 24px
+margin-bottom 0px
+margin-left 0px
+margin-right 0px
+margin-top 0px
+outline-color rgba(0, 0, 0, 0)
+outline-offset 2px
+outline-style solid
+outline-width 2px
+overflow-clip-margin 0px
+overflow-x clip
+overflow-y clip
+padding-block-end 16px
+padding-block-start 16px
+padding-bottom 16px
+padding-inline-end 24px
+padding-inline-start 24px
+padding-left 24px
+padding-right 24px
+padding-top 16px
+tab-size 4
+text-align start
+text-indent 0px
+text-rendering auto
+text-shadow none
+text-size-adjust 100%
+text-transform none
+width 290.844px
+word-spacing 0px
+-webkit-font-smoothing antialiased
+-webkit-rtl-ordering logical
+-webkit-tap-highlight-color rgba(0, 0, 0, 0)
+-webkit-border-image none
