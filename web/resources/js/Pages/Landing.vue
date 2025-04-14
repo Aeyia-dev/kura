@@ -94,12 +94,8 @@ const toggleMobileMenu = () => {
 
                     <!-- Navigation Menu - Hidden on mobile, visible on tablet/desktop -->
                     <nav class="hidden md:flex items-center space-x-6 lg:space-x-8">
-                        <a href="#" class="text-white text-base md:text-lg lg:text-xl font-medium">society</a>
-                        <a href="#" class="text-white text-base md:text-lg lg:text-xl font-medium">about</a>
-                        <a href="#" class="text-white text-base md:text-lg lg:text-xl font-medium">contact</a>
-
                         <!-- Desktop Auth Navigation -->
-                        <div v-if="canLogin" class="flex items-center space-x-4 pl-4 border-l border-white/20">
+                        <div v-if="canLogin" class="flex items-center space-x-4">
                             <template v-if="$page.props.auth.user">
                                 <Link :href="route('dashboard')" class="text-white bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm hover:bg-white/40 transition-colors duration-200">
                                     Dashboard
@@ -136,18 +132,14 @@ const toggleMobileMenu = () => {
                         class="fixed md:absolute top-20 right-4 mt-2 bg-black/80 backdrop-blur-sm rounded-lg p-4 z-50 shadow-xl border border-white/10 min-w-[200px]"
                     >
                         <nav class="flex flex-col space-y-3">
-                            <a href="#" class="text-white text-lg font-medium hover:text-white/80 transition-colors">society</a>
-                            <a href="#" class="text-white text-lg font-medium hover:text-white/80 transition-colors">about</a>
-                            <a href="#" class="text-white text-lg font-medium hover:text-white/80 transition-colors">contact</a>
-
                             <!-- Auth Navigation -->
-                            <div v-if="canLogin" class="pt-2 border-t border-white/20">
-                                <div v-if="$page.props.auth.user" class="flex flex-col space-y-3 pt-2">
+                            <div v-if="canLogin" class="pt-2">
+                                <div v-if="$page.props.auth.user" class="flex flex-col space-y-3">
                                     <Link :href="route('dashboard')" class="text-white text-lg font-medium hover:text-white/80 transition-colors">
                                         Dashboard
                                     </Link>
                                 </div>
-                                <div v-else class="flex flex-col space-y-3 pt-2">
+                                <div v-else class="flex flex-col space-y-3">
                                     <Link :href="route('login')" class="text-white text-lg font-medium hover:text-white/80 transition-colors">
                                         Log in
                                     </Link>
@@ -174,27 +166,6 @@ const toggleMobileMenu = () => {
                         Coming soon — we're excited to share what we've been working on.
                     </p>
 
-                    <!-- Email Form -->
-                    <div class="w-full max-w-md mx-auto">
-                        <form @submit.prevent="submitForm" class="flex items-center border border-white rounded-full overflow-hidden shadow-sm" :class="{ 'border-red-500': !isFormValid }">
-                            <input
-                                v-model="email"
-                                type="email"
-                                placeholder="Email"
-                                class="bg-transparent text-white py-3 px-5 flex-grow outline-none placeholder-styling border-none text-sm md:text-base focus:ring-0 focus:outline-none"
-                                :class="{ 'text-red-300': !isFormValid }"
-                            >
-                            <div class="p-1 pr-1.5">
-                                <button
-                                    type="submit"
-                                    class="bg-white text-gray-900 rounded-full px-6 py-3 text-sm md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200"
-                                >
-                                    Join Now
-                                </button>
-                            </div>
-                        </form>
-                        <!-- Error message inline display removed, now using modal instead -->
-                    </div>
                 </div>
             </main>
 
