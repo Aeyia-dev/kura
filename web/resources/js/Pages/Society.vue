@@ -68,55 +68,55 @@ const toggleMobileMenu = () => {
 </script>
 
 <template>
-    <Head title="AEYIA - Elevate Well" />
+    <Head title="AEYIA - Society" />
 
     <!-- Authentication nav has been integrated into the hamburger menu for mobile and desktop nav -->
 
     <!-- Main container -->
-    <div class="relative h-screen overflow-hidden">
+    <div class="relative min-h-screen overflow-auto">
         <!-- Background image -->
         <div class="absolute inset-0 z-0">
             <picture>
                 <!-- Mobile version (WebP) -->
                 <source
                     media="(max-width: 767px)"
-                    srcset="/images/background/optimized/mobile/mobile-background-03.webp"
+                    srcset="/images/background/optimized/mobile/mobile-background-02.webp"
                     type="image/webp">
 
                 <!-- Mobile version (JPG fallback) -->
                 <source
                     media="(max-width: 767px)"
-                    srcset="/images/background/optimized/mobile/mobile-background-03.jpg"
+                    srcset="/images/background/optimized/mobile/mobile-background-02.jpg"
                     type="image/jpeg">
 
                 <!-- Tablet version (WebP) -->
                 <source
                     media="(max-width: 1199px)"
-                    srcset="/images/background/optimized/tablet/tablet-background-03.webp"
+                    srcset="/images/background/optimized/tablet/tablet-background-02.webp"
                     type="image/webp">
 
                 <!-- Tablet version (JPG fallback) -->
                 <source
                     media="(max-width: 1199px)"
-                    srcset="/images/background/optimized/tablet/tablet-background-03.jpg"
+                    srcset="/images/background/optimized/tablet/tablet-background-02.jpg"
                     type="image/jpeg">
 
                 <!-- Standard desktop version (WebP - 1920px resized) -->
                 <source
                     media="(max-width: 1999px)"
-                    srcset="/images/background/optimized/desktop-resized/desktop-background-03.webp"
+                    srcset="/images/background/optimized/desktop-resized/desktop-background-02.webp"
                     type="image/webp">
 
                 <!-- Large 4K desktop version (WebP - original) -->
                 <source
-                    srcset="/images/background/optimized/desktop/desktop-background-03.webp"
+                    srcset="/images/background/optimized/desktop/desktop-background-02.webp"
                     type="image/webp">
 
                 <!-- Fallback image -->
                 <img
-                    src="/images/background/optimized/desktop/desktop-background-03.jpg"
+                    src="/images/background/optimized/desktop/desktop-background-02.jpg"
                     alt="Background"
-                    class="object-cover w-full h-full"
+                    class="object-cover w-full h-full fixed"
                     loading="eager">
             </picture>
         </div>
@@ -125,23 +125,23 @@ const toggleMobileMenu = () => {
         <div class="absolute inset-0 z-10 bg-black bg-opacity-20"></div>
 
         <!-- Content Container -->
-        <div class="relative z-20 flex flex-col h-full">
+        <div class="relative z-20 flex flex-col min-h-screen">
             <!-- Header -->
             <header class="w-full p-4 md:p-6 lg:p-8">
                 <div class="flex justify-between items-center">
-                    <!-- Logo -->
-                    <div class="w-40 md:w-64 lg:w-auto lg:max-w-md">
-                        <img src="/images/landing/aeyia-logo-white.png" alt="AEYIA Logo" class="w-full">
+                    <!-- Logo - Using "society" text logo as shown in design -->
+                    <div class="w-40 md:w-64">
+                        <h1 class="text-white text-4xl md:text-5xl font-bold">society</h1>
                     </div>
 
                     <!-- Navigation Menu - Hidden on mobile, visible on tablet/desktop -->
                     <nav class="hidden md:flex items-start space-x-6 lg:space-x-8">
-                        <a href="/society" class="text-white text-2xl font-medium">society</a>
-                        <a href="/about" class="text-white text-2xl font-medium">about</a>
-                        <a href="/contact" class="text-white text-2xl font-medium">contact</a>
+                        <a href="#" class="text-white text-xl font-medium">society</a>
+                        <a href="#" class="text-white text-xl font-medium">about</a>
+                        <a href="#" class="text-white text-xl font-medium">contact</a>
 
                         <!-- Desktop Auth Navigation -->
-                        <div v-if="canLogin" class="flex items-center space-x-4 mt-2">
+                        <div v-if="canLogin" class="flex items-center space-x-4 mt-1">
                             <template v-if="$page.props.auth.user">
                                 <Link :href="route('dashboard')" class="text-white bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm hover:bg-white/40 transition-colors duration-200">
                                     Dashboard
@@ -179,8 +179,8 @@ const toggleMobileMenu = () => {
                     >
                         <!-- Close button -->
                         <div class="p-4 md:p-6 lg:p-8 flex justify-between items-center">
-                            <div class="w-40 md:w-64 lg:w-auto lg:max-w-md">
-                                <img src="/images/landing/aeyia-logo-white.png" alt="AEYIA Logo" class="w-full">
+                            <div class="w-40 md:w-64">
+                                <h1 class="text-white text-4xl md:text-5xl font-bold">society</h1>
                             </div>
                             <button
                                 @click="toggleMobileMenu"
@@ -196,10 +196,9 @@ const toggleMobileMenu = () => {
                         <!-- Navigation links in page -->
                         <div class="flex justify-center items-center h-full -mt-20">
                             <nav class="flex flex-col space-y-10 w-36">
-                                <a href="/" @click="toggleMobileMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Home</a>
-                                <a href="/about" @click="toggleMobileMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">About</a>
-                                <a href="/society" @click="toggleMobileMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Society</a>
-                                <a href="/contact" @click="toggleMobileMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Contact</a>
+                                <a href="#" @click="toggleMobileMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Society</a>
+                                <a href="#" @click="toggleMobileMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">About</a>
+                                <a href="#" @click="toggleMobileMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Contact</a>
 
                                 <!-- Auth Navigation -->
                                 <div v-if="canLogin" class="pt-6 flex flex-col space-y-10">
@@ -223,13 +222,13 @@ const toggleMobileMenu = () => {
                         <!-- Footer social icons -->
                         <div class="p-6 flex justify-center">
                             <div class="flex space-x-6">
-                                <a href="//www.facebook.com/aeyia.au" class="block" target="_blank">
+                                <a href="//www.facebook.com/aeyia.au" class="block">
                                     <img src="/images/landing/social-facebook.png" alt="Facebook" class="w-10 h-10">
                                 </a>
-                                <a href="//www.instagram.com/aeyia_/" class="block" target="_blank">
+                                <a href="#" class="block">
                                     <img src="/images/landing/social-instagram.png" alt="Instagram" class="w-10 h-10">
                                 </a>
-                                <a href="//www.youtube.com/@AEYIAWellness" class="block" target="_blank">
+                                <a href="#" class="block">
                                     <img src="/images/landing/social-youtube.png" alt="YouTube" class="w-10 h-10">
                                 </a>
                             </div>
@@ -238,115 +237,134 @@ const toggleMobileMenu = () => {
                         <!-- Copyright -->
                         <div class="pb-8 text-center">
                             <p class="text-white text-sm font-medium">
-                                &copy; AEYIA {{ new Date().getFullYear() }}
+                                © AEYIA {{ new Date().getFullYear() }}
                             </p>
                         </div>
                     </div>
                 </div>
             </header>
 
-            <!-- Main Content - Centered -->
-            <main class="flex-grow flex flex-col justify-center items-center text-center px-4">
-                <div class="max-w-4xl mx-auto">
-                    <!-- Main Headline -->
-                    <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 md:mb-4">
-                        Elevate well.<span class="text-2xl md:text-3xl lg:text-4xl align-top">™</span>
-                    </h1>
-
-                    <!-- Subtitle -->
-                    <p class="text-white text-lg md:text-xl lg:text-2xl font-medium leading-snug mb-8 md:mb-10 mx-auto max-w-2xl">
-                        Coming soon — we're excited to share what we've been working on.
-                    </p>
-
-
-                    <!-- Email Form -->
-                    <div class="w-full max-w-md mx-auto">
-                        <form @submit.prevent="submitForm" class="flex items-center border border-white rounded-full overflow-hidden shadow-sm" :class="{ 'border-red-500': !isFormValid }">
-                            <input
-                                v-model="email"
-                                type="email"
-                                placeholder="Email"
-                                class="bg-transparent text-white py-3 px-5 flex-grow outline-none placeholder-styling border-none text-sm md:text-base focus:ring-0 focus:outline-none"
-                                :class="{ 'text-red-300': !isFormValid }"
-                            >
-                            <div class="p-1 pr-1.5">
-                                <button
-                                    type="submit"
-                                    class="bg-white text-gray-900 rounded-full px-6 py-3 text-sm md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200"
-                                >
-                                    Join Now
-                                </button>
-                            </div>
-                        </form>
-                        <!-- Error message inline display removed, now using modal instead -->
+            <!-- Hero Section -->
+            <section class="flex flex-col items-center min-h-[80vh] text-center px-4 py-8 relative">
+                <div class="absolute bottom-14 md:bottom-20 left-0 right-0">
+                    <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold max-w-5xl mx-auto mb-8">
+                        Small changes. Big transformations.
+                    </h2>
+                    
+                    <!-- Down arrow icon -->
+                    <div class="mt-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                        </svg>
                     </div>
-
                 </div>
+            </section>
+
+            <!-- Main Content -->
+            <main class="flex-grow">
+                <!-- Mission Section -->
+                <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="mb-8">
+                            <p class="text-gray-800 text-lg md:text-xl mb-6">
+                                We believe that even the smallest changes can spark powerful
+                                transformations. That's why our mission is to make transformative tools,
+                                habits, insights, and support more accessible.
+                            </p>
+
+                            <p class="text-gray-800 text-lg md:text-xl mb-6">
+                                Real change often begins with a single step—and everyone deserves the
+                                chance to take it.
+                            </p>
+
+                            <p class="text-gray-700 text-sm md:text-base">
+                                AEYIA™ Society is a DGRI registered charity committed to expanding access to educational tools, online
+                                resources and support services for individuals experiencing hardship, social disadvantages, mental health
+                                challenges and vulnerable life circumstances. This initiative is currently evolving and will be available soon.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Contact Section -->
+                <section class="bg-gray-100 py-12 px-4 md:px-8 lg:px-16">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="flex flex-col md:flex-row justify-between">
+                            <div class="mb-8 md:mb-0">
+                                <h3 class="text-2xl md:text-3xl font-semibold mb-4">Contact us.</h3>
+                                <p class="text-gray-700">society@aeyia.com</p>
+                            </div>
+
+                            <div>
+                                <p class="text-gray-700 mb-2">ABN: 14628727542</p>
+                                <a href="#" class="text-gray-700 underline">See more information</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Newsletter Section -->
+                <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
+                    <div class="max-w-5xl mx-auto">
+                        <div class="flex flex-col md:flex-row items-center justify-between">
+                            <div class="mb-6 md:mb-0">
+                                <h3 class="text-2xl md:text-3xl font-semibold">Stay in the loop.</h3>
+                            </div>
+
+                            <div class="w-full md:w-auto">
+                                <form @submit.prevent="submitForm" class="flex">
+                                    <input
+                                        v-model="email"
+                                        type="email"
+                                        placeholder="Email"
+                                        class="py-3 px-5 border border-gray-300 rounded-l-full flex-grow text-sm md:text-base focus:outline-none"
+                                    >
+                                    <button
+                                        type="submit"
+                                        class="bg-black text-white rounded-r-full px-6 py-3 text-sm md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200"
+                                    >
+                                        Join Now
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </main>
 
             <!-- Footer -->
-            <footer class="w-full px-4 md:px-8 py-6 md:py-10">
-                <!-- Mobile footer layout -->
-                <div class="flex flex-col items-center md:hidden">
-                    <!-- Social Media Icons -->
-                    <div class="flex justify-center space-x-6 mb-4">
-                        <a href="//www.facebook.com/aeyia.au" class="block" target="_blank">
-                            <img src="/images/landing/social-facebook.png" alt="Facebook" class="w-8 h-8">
-                        </a>
-                        <a href="//www.instagram.com/aeyia_/" class="block" target="_blank">
-                            <img src="/images/landing/social-instagram.png" alt="Instagram" class="w-8 h-8">
-                        </a>
-                        <a href="//www.youtube.com/@AEYIAWellness" class="block" target="_blank">
-                            <img src="/images/landing/social-youtube.png" alt="YouTube" class="w-8 h-8">
-                        </a>
-                    </div>
-
-                    <!-- Copyright -->
-                    <div class="mb-4">
-                        <p class="text-white text-xs font-medium">
-                            &copy; AEYIA {{ new Date().getFullYear() }}
-                        </p>
-                    </div>
-
-                    <!-- Legal Links -->
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-white text-xs font-medium">Privacy Policy</a>
-                        <span class="text-white">|</span>
-                        <a href="#" class="text-white text-xs font-medium">Terms & Conditions</a>
-                    </div>
+            <footer class="bg-white w-full py-6 md:py-10 text-center">
+                <!-- Social Media Links -->
+                <div class="flex justify-center space-x-6 mb-6">
+                    <a href="//www.facebook.com/aeyia.au" class="block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="block">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                        </svg>
+                    </a>
                 </div>
 
-                <!-- Desktop/Tablet footer layout -->
-                <div class="hidden md:block relative">
-                    <div class="flex justify-between items-end">
-                        <!-- Copyright -->
-                        <div>
-                            <p class="text-white text-xs font-medium">
-                                &copy; AEYIA {{ new Date().getFullYear() }}
-                            </p>
-                        </div>
+                <!-- Copyright -->
+                <div class="mb-2">
+                    <p class="text-gray-700 text-xs">
+                        © AEYIA {{ new Date().getFullYear() }}
+                    </p>
+                </div>
 
-                        <!-- Social Media Icons - Centered -->
-                        <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 mb-6">
-                            <div class="flex space-x-6">
-                                <a href="//www.facebook.com/aeyia.au" class="block" target="_blank">
-                                    <img src="/images/landing/social-facebook.png" alt="Facebook" class="w-8 h-8 md:w-10 md:h-10">
-                                </a>
-                                <a href="//www.instagram.com/aeyia_/" class="block" target="_blank">
-                                    <img src="/images/landing/social-instagram.png" alt="Instagram" class="w-8 h-8 md:w-10 md:h-10">
-                                </a>
-                                <a href="//www.youtube.com/@AEYIAWellness" class="block" target="_blank">
-                                    <img src="/images/landing/social-youtube.png" alt="YouTube" class="w-8 h-8 md:w-10 md:h-10">
-                                </a>
-                            </div>
-                        </div>
-
-                        <!-- Legal Links - Vertical on right side -->
-                        <div class="flex flex-col items-end space-y-8 absolute right-0 bottom-0 mr-4 mb-32">
-                            <a href="#" class="text-white text-xs font-medium vertical-text">Privacy Policy</a>
-                            <a href="#" class="text-white text-xs font-medium vertical-text">Terms & Conditions</a>
-                        </div>
-                    </div>
+                <!-- Terms Links -->
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="text-gray-700 text-xs">Terms & Conditions</a>
+                    <span class="text-gray-700">|</span>
+                    <a href="#" class="text-gray-700 text-xs">Privacy</a>
                 </div>
             </footer>
         </div>

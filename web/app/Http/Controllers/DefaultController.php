@@ -34,11 +34,11 @@ class DefaultController extends Controller
     /**
      * Display the society page.
      *
-     * @return \Illuminate\View\View
+     * @return \Inertia\Response
      */
     public function society()
     {
-        return view('society.home');
+        return Inertia::render('Society');
     }
 
     /**
