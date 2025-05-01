@@ -80,41 +80,41 @@ const toggleMobileMenu = () => {
                 <!-- Mobile version (WebP) -->
                 <source
                     media="(max-width: 767px)"
-                    srcset="/images/background/optimized/mobile/mobile-2806_william-desena.webp"
+                    srcset="/images/background/optimized/mobile/mobile-background-03.webp"
                     type="image/webp">
 
                 <!-- Mobile version (JPG fallback) -->
                 <source
                     media="(max-width: 767px)"
-                    srcset="/images/background/optimized/mobile/mobile-2806_william-desena.jpg"
+                    srcset="/images/background/optimized/mobile/mobile-background-03.jpg"
                     type="image/jpeg">
 
                 <!-- Tablet version (WebP) -->
                 <source
                     media="(max-width: 1199px)"
-                    srcset="/images/background/optimized/tablet/tablet-2806_william-desena.webp"
+                    srcset="/images/background/optimized/tablet/tablet-background-03.webp"
                     type="image/webp">
 
                 <!-- Tablet version (JPG fallback) -->
                 <source
                     media="(max-width: 1199px)"
-                    srcset="/images/background/optimized/tablet/tablet-2806_william-desena.jpg"
+                    srcset="/images/background/optimized/tablet/tablet-background-03.jpg"
                     type="image/jpeg">
 
                 <!-- Standard desktop version (WebP - 1920px resized) -->
                 <source
                     media="(max-width: 1999px)"
-                    srcset="/images/background/optimized/desktop-resized/desktop-2806_william-desena.webp"
+                    srcset="/images/background/optimized/desktop-resized/desktop-background-03.webp"
                     type="image/webp">
 
                 <!-- Large 4K desktop version (WebP - original) -->
                 <source
-                    srcset="/images/background/optimized/desktop/desktop-2806_william-desena.webp"
+                    srcset="/images/background/optimized/desktop/desktop-background-03.webp"
                     type="image/webp">
 
                 <!-- Fallback image -->
                 <img
-                    src="/images/background/optimized/desktop/desktop-2806_william-desena.jpg"
+                    src="/images/background/optimized/desktop/desktop-background-03.jpg"
                     alt="Background"
                     class="object-cover w-full h-full"
                     loading="eager">
