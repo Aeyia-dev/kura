@@ -35,6 +35,13 @@ const props = defineProps({
         default: '/images/landing/aeyia-logo-white.png'
     },
     /**
+     * Whether to show main navigation menu links (society, about, contact)
+     */
+    showMenuLinks: {
+        type: Boolean,
+        default: true
+    },
+    /**
      * Whether to show login/register links 
      */
     canLogin: {
@@ -101,6 +108,7 @@ const closeMenu = () => {
             <nav class="flex flex-col space-y-10 w-36">
                 <NavigationLinks 
                     :isMobile="true"
+                    :showMenuLinks="showMenuLinks"
                     :canLogin="canLogin"
                     :canRegister="canRegister"
                     :authUser="authUser"

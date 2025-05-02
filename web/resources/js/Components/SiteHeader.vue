@@ -35,6 +35,13 @@ const props = defineProps({
         required: true
     },
     /**
+     * Whether to show main navigation menu links (society, about, contact)
+     */
+    showMenuLinks: {
+        type: Boolean,
+        default: true
+    },
+    /**
      * Whether to show login/register links
      */
     canLogin: {
@@ -85,8 +92,9 @@ const toggleMobileMenu = () => {
 
             <!-- Navigation Menu - Hidden on mobile, visible on tablet/desktop -->
             <nav class="hidden md:flex items-start space-x-6 lg:space-x-8">
-                <NavigationLinks 
-                    :isMobile="false" 
+                <NavigationLinks
+                    :isMobile="false"
+                    :showMenuLinks="showMenuLinks"
                     :canLogin="canLogin"
                     :canRegister="canRegister"
                     :authUser="authUser"

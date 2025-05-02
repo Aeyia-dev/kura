@@ -2,7 +2,7 @@
 import { Link } from '@inertiajs/vue3';
 
 /**
- * Shared navigation links component to maintain consistent navigation 
+ * Shared navigation links component to maintain consistent navigation
  * across desktop and mobile views and across different pages
  */
 defineProps({
@@ -12,6 +12,13 @@ defineProps({
     isMobile: {
         type: Boolean,
         default: false
+    },
+    /**
+     * Whether to show main navigation menu links (society, about, contact)
+     */
+    showMenuLinks: {
+        type: Boolean,
+        default: true
     },
     /**
      * Whether to show login/register links (passed from parent)
@@ -48,10 +55,15 @@ defineProps({
     <!-- Regular navigation links -->
     <!-- Mobile version -->
     <template v-if="isMobile">
-        <a href="/" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Home</a>
-        <a href="/society" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Society</a>
-        <a href="/about" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">About</a>
-        <a href="/contact" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Contact</a>
+        <!-- Only show Home link if showMenuLinks is true -->
+        <a v-if="showMenuLinks" href="/" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Home</a>
+
+        <!-- Menu links conditionally displayed -->
+        <template v-if="showMenuLinks">
+            <a href="/society" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Society</a>
+            <a href="/about" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">About</a>
+            <a href="/contact" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Contact</a>
+        </template>
 
         <!-- Auth Navigation -->
         <div v-if="canLogin" class="pt-6 flex flex-col space-y-10">
@@ -73,9 +85,12 @@ defineProps({
 
     <!-- Desktop version -->
     <template v-else>
-        <a href="/society" class="text-white text-2xl font-medium">society</a>
-        <a href="/about" class="text-white text-2xl font-medium">about</a>
-        <a href="/contact" class="text-white text-2xl font-medium">contact</a>
+        <!-- Menu links conditionally displayed -->
+        <template v-if="showMenuLinks">
+            <a href="/society" class="text-white text-2xl font-medium">society</a>
+            <a href="/about" class="text-white text-2xl font-medium">about</a>
+            <a href="/contact" class="text-white text-2xl font-medium">contact</a>
+        </template>
 
         <!-- Desktop Auth Navigation -->
         <div v-if="canLogin" class="flex items-center space-x-4 mt-2">
