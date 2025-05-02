@@ -1,5 +1,7 @@
 # TODO
 
+!! Review claude/ways-of-working.md before working
+
 ## Requirements Breakdown
 - [x] Identify duplicated links between desktop and mobile navigation
 - [x] Identify duplicated navigation/footer templates across multiple pages (Holding.vue and Society.vue)
@@ -26,7 +28,7 @@
 
 ### Component Props and Slots
 1. `SiteHeader.vue`
-   - Props: 
+   - Props:
      - `logoType` - Switch between image and text logo (for Society page)
      - `logoText` - Text to display when using text logo
      - `logoImagePath` - Path to logo image
@@ -64,46 +66,46 @@
 
 ## Todo Items for Implementation
 
-1. [ ] Create base component files in `resources/js/Components`:
-   - [ ] NavigationLinks.vue
-   - [ ] SiteHeader.vue
-   - [ ] SiteFooter.vue
-   - [ ] MobileMenu.vue
-   - [ ] BackgroundImage.vue
+1. [x] Create base component files in `resources/js/Components`:
+   - [x] NavigationLinks.vue
+   - [x] SiteHeader.vue
+   - [x] SiteFooter.vue
+   - [x] MobileMenu.vue
+   - [x] BackgroundImage.vue
 
-2. [ ] Implement NavigationLinks.vue:
-   - [ ] Extract shared navigation links
-   - [ ] Accept mobile/desktop styling props
-   - [ ] Include authentication links conditionally
+2. [x] Implement NavigationLinks.vue:
+   - [x] Extract shared navigation links
+   - [x] Accept mobile/desktop styling props
+   - [x] Include authentication links conditionally
 
-3. [ ] Implement BackgroundImage.vue:
-   - [ ] Extract responsive image management
-   - [ ] Add configurable image number
-   - [ ] Support fixed/scroll behavior
+3. [x] Implement BackgroundImage.vue:
+   - [x] Extract responsive image management
+   - [x] Add configurable image number
+   - [x] Support fixed/scroll behavior
 
-4. [ ] Implement SiteHeader.vue:
-   - [ ] Add support for text/image logo
-   - [ ] Integrate with NavigationLinks
-   - [ ] Include mobile menu toggle button
+4. [x] Implement SiteHeader.vue:
+   - [x] Add support for text/image logo
+   - [x] Integrate with NavigationLinks
+   - [x] Include mobile menu toggle button
 
-5. [ ] Implement MobileMenu.vue:
-   - [ ] Extract mobile menu functionality
-   - [ ] Use NavigationLinks component
-   - [ ] Add close button and animation
+5. [x] Implement MobileMenu.vue:
+   - [x] Extract mobile menu functionality
+   - [x] Use NavigationLinks component
+   - [x] Add close button and animation
 
-6. [ ] Implement SiteFooter.vue:
-   - [ ] Extract both mobile and desktop layouts
-   - [ ] Support different styling (transparent/white)
-   - [ ] Include social links and copyright
+6. [x] Implement SiteFooter.vue:
+   - [x] Extract both mobile and desktop layouts
+   - [x] Support different styling (transparent/white)
+   - [x] Include social links and copyright
 
-7. [ ] Update Holding.vue and Society.vue:
-   - [ ] Replace duplicated code with new components
-   - [ ] Move shared state to parent component
-   - [ ] Ensure consistent styling and behavior
+7. [x] Update Holding.vue and Society.vue:
+   - [x] Replace duplicated code with new components
+   - [x] Move shared state to parent component
+   - [x] Ensure consistent styling and behavior
 
 8. [x] Test functionality will be handled separately
 
-9. [ ] Document components with JSDoc comments
+9. [x] Document components with JSDoc comments
 
 ## Benefits
 - Single source of truth for navigation links
