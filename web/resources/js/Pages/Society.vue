@@ -85,9 +85,9 @@ const toggleMobileMenu = () => {
         <!-- Content Container -->
         <div class="relative z-20 flex flex-col min-h-screen">
             <!-- Header -->
-            <SiteHeader 
-                logoType="text" 
-                logoText="society" 
+            <SiteHeader
+                logoType="text"
+                logoText="society"
                 :mobileMenuOpen="mobileMenuOpen"
                 :canLogin="canLogin"
                 :canRegister="canRegister"
@@ -96,9 +96,9 @@ const toggleMobileMenu = () => {
             />
 
             <!-- Mobile Menu -->
-            <MobileMenu 
-                :isOpen="mobileMenuOpen" 
-                logoType="text" 
+            <MobileMenu
+                :isOpen="mobileMenuOpen"
+                logoType="text"
                 logoText="society"
                 :canLogin="canLogin"
                 :canRegister="canRegister"
@@ -112,7 +112,7 @@ const toggleMobileMenu = () => {
                     <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold max-w-5xl mx-auto mb-8">
                         Small changes. Big transformations.
                     </h2>
-                    
+
                     <!-- Down arrow icon -->
                     <div class="mt-8">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -133,12 +133,12 @@ const toggleMobileMenu = () => {
                                 transformations. That's why our mission is to make transformative tools,
                                 habits, insights, and support more accessible.
                             </p>
-                            
+
                             <p class="text-gray-800 text-lg md:text-xl mb-6">
-                                Real change often begins with a single step—and everyone deserves the
+                                Real change often begins with a single step - and everyone deserves the
                                 chance to take it.
                             </p>
-                            
+
                             <p class="text-gray-700 text-sm md:text-base">
                                 AEYIA™ Society is a DGRI registered charity committed to expanding access to educational tools, online
                                 resources and support services for individuals experiencing hardship, social disadvantages, mental health
@@ -147,7 +147,7 @@ const toggleMobileMenu = () => {
                         </div>
                     </div>
                 </section>
-                
+
                 <!-- Contact Section -->
                 <section class="bg-gray-100 py-12 px-4 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
@@ -156,7 +156,7 @@ const toggleMobileMenu = () => {
                                 <h3 class="text-2xl md:text-3xl font-semibold mb-4">Contact us.</h3>
                                 <p class="text-gray-700">society@aeyia.com</p>
                             </div>
-                            
+
                             <div>
                                 <p class="text-gray-700 mb-2">ABN: 14628727542</p>
                                 <a href="#" class="text-gray-700 underline">See more information</a>
@@ -164,7 +164,7 @@ const toggleMobileMenu = () => {
                         </div>
                     </div>
                 </section>
-                
+
                 <!-- Newsletter Section -->
                 <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
@@ -172,7 +172,7 @@ const toggleMobileMenu = () => {
                             <div class="mb-6 md:mb-0">
                                 <h3 class="text-2xl md:text-3xl font-semibold">Stay in the loop.</h3>
                             </div>
-                            
+
                             <div class="w-full md:w-auto">
                                 <form @submit.prevent="submitForm" class="flex">
                                     <input
