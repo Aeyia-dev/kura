@@ -72,22 +72,21 @@ const toggleMobileMenu = () => {
 </script>
 
 <template>
-    <Head title="AEYIA - Elevate Well" />
+    <Head title="AEYIA - About Us" />
 
     <!-- Main container -->
-    <div class="relative h-screen overflow-hidden">
-        <!-- Background image -->
-        <BackgroundImage imageName="desktop-background-03.jpg" :fixed="false" />
+    <div class="relative h-screen overflow-hidden bg-[#212026]">
+        <!-- Background image with CharcoalAeyia background color -->
+        <BackgroundImage imageName="desktop-background-01-with-bar.jpg" :fixed="true" backgroundColor="bg-[#212026]" />
 
-        <!-- Overlay for better text readability -->
-        <div class="absolute inset-0 z-10 bg-black bg-opacity-20"></div>
+        <!-- No need for global overlay with the BackgroundImage60 component -->
 
         <!-- Content Container -->
         <div class="relative z-20 flex flex-col h-full">
             <!-- Header -->
-            <SiteHeader 
-                logoType="image" 
-                logoImagePath="/images/landing/aeyia-logo-white.png" 
+            <SiteHeader
+                logoType="image"
+                logoImagePath="/images/landing/aeyia-logo-white.png"
                 :mobileMenuOpen="mobileMenuOpen"
                 :canLogin="canLogin"
                 :canRegister="canRegister"
@@ -96,9 +95,9 @@ const toggleMobileMenu = () => {
             />
 
             <!-- Mobile Menu -->
-            <MobileMenu 
-                :isOpen="mobileMenuOpen" 
-                logoType="image" 
+            <MobileMenu
+                :isOpen="mobileMenuOpen"
+                logoType="image"
                 logoImagePath="/images/landing/aeyia-logo-white.png"
                 :canLogin="canLogin"
                 :canRegister="canRegister"
@@ -106,43 +105,41 @@ const toggleMobileMenu = () => {
                 @close="toggleMobileMenu"
             />
 
-            <!-- Main Content - Centered -->
-            <main class="flex-grow flex flex-col justify-center items-center text-center px-4">
-                <div class="max-w-4xl mx-auto">
-                    <!-- Main Headline -->
-                    <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 md:mb-4">
-                        Elevate well.<span class="text-2xl md:text-3xl lg:text-4xl align-top">™</span>
-                    </h1>
+            <!-- Hero Section -->
+            <section class="flex-grow px-6 md:px-12 lg:px-20 pt-2 md:pt-2 lg:pt-2 flex flex-col lg:items-start">
+                <!-- Centered column with left-aligned text -->
+                <div class="w-full max-w-2xl mx-auto lg:mx-0 lg:ml-[40%]">
+                    <div class="text-left">
+                        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+                            AEYIA™ is a global wellness company reimagining human potentiality and wellbeing by connecting insights, people, and transformative experiences.
+                        </h1>
 
-                    <!-- Subtitle -->
-                    <p class="text-white text-lg md:text-xl lg:text-2xl font-medium leading-snug mb-8 md:mb-10 mx-auto max-w-2xl">
-                        Coming soon — we're excited to share what we've been working on.
-                    </p>
+                        <p class="text-white text-xl md:text-2xl font-medium mt-8 mb-12">
+                            Elevated wellness™ – launching soon.
+                        </p>
 
-                    <!-- Email Form -->
-                    <div class="w-full max-w-md mx-auto">
-                        <form @submit.prevent="submitForm" class="flex items-center border border-white rounded-full overflow-hidden shadow-sm" :class="{ 'border-red-500': !isFormValid }">
-                            <input
-                                v-model="email"
-                                type="email"
-                                placeholder="Email"
-                                class="bg-transparent text-white py-3 px-5 flex-grow outline-none placeholder-styling border-none text-sm md:text-base focus:ring-0 focus:outline-none"
-                                :class="{ 'text-red-300': !isFormValid }"
-                            >
-                            <div class="p-1 pr-1.5">
+                        <!-- Email Form -->
+                        <div class="w-full max-w-md mt-8">
+                            <form @submit.prevent="submitForm" class="flex rounded-full overflow-hidden border border-white">
+                                <input
+                                    v-model="email"
+                                    type="email"
+                                    placeholder="Email"
+                                    class="bg-transparent text-white py-3 px-5 flex-grow outline-none placeholder-white/60 border-none text-sm md:text-base focus:ring-0 focus:outline-none w-1/2"
+                                />
                                 <button
                                     type="submit"
-                                    class="bg-white text-gray-900 rounded-full px-6 py-3 text-sm md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200"
+                                    class="bg-white text-gray-900 px-6 py-3 text-sm md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200 w-1/2"
                                 >
                                     Join Now
                                 </button>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </main>
+            </section>
 
-            <!-- Footer -->
+            <!-- Footer with transparent background -->
             <SiteFooter style="transparent" />
         </div>
     </div>
@@ -174,17 +171,20 @@ const toggleMobileMenu = () => {
 </template>
 
 <style scoped>
-.placeholder-styling::placeholder {
-    color: rgba(255, 255, 255, 0.6);
-    opacity: 1; /* Firefox */
-}
-
-/* Remove default blue focus border/ring */
+/* Form-specific styles */
 input:focus,
 button:focus {
     outline: none !important;
     box-shadow: none !important;
     border-color: white !important;
     ring-width: 0 !important;
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .hero-content {
+        width: 100%;
+        padding: 0 1rem;
+    }
 }
 </style>

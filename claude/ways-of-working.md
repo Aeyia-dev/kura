@@ -1,5 +1,7 @@
 # Ways of Working
 
+Note: The laravel codebase root is at ./web/
+
 ## Development Process
 
 1. **Plan Before Implementation**:

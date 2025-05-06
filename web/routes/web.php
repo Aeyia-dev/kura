@@ -15,6 +15,7 @@ Route::get('/', function () {
 
 Route::get('/holding', [DefaultController::class, 'holding'])->name('holding');
 Route::get('/society', [DefaultController::class, 'society'])->name('society');
+Route::get('/about', [DefaultController::class, 'about'])->name('about');
 
 Route::middleware([
     'auth:sanctum',

@@ -43,9 +43,9 @@ defineProps({
  * Get CSS classes based on footer style
  */
 const getColorClasses = (style) => {
-    return style === 'transparent' 
-        ? 'text-white' 
-        : 'text-gray-700';
+    return style === 'white'
+        ? 'text-gray-700'
+        : 'text-white';
 };
 
 /**
@@ -55,63 +55,32 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-    <!-- White background footer - used in Society page -->
-    <footer v-if="style === 'white'" class="bg-white w-full py-6 md:py-10 text-center">
-        <!-- Social Media Links -->
-        <div class="flex justify-center space-x-6 mb-6">
-            <a v-for="link in socialLinks" 
-               :key="link.alt" 
-               :href="link.url" 
-               class="block"
-               target="_blank">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor">
-                    <path :d="link.svgPath"/>
-                </svg>
-            </a>
-        </div>
-        
-        <!-- Copyright -->
-        <div class="mb-2">
-            <p class="text-gray-700 text-xs">
-                &copy; AEYIA {{ currentYear }}
-            </p>
-        </div>
-        
-        <!-- Terms Links -->
-        <div class="flex justify-center space-x-4">
-            <a href="#" class="text-gray-700 text-xs">Terms & Conditions</a>
-            <span class="text-gray-700">|</span>
-            <a href="#" class="text-gray-700 text-xs">Privacy</a>
-        </div>
-    </footer>
-
     <!-- Transparent footer - used in Holding page -->
-    <footer v-else class="w-full px-4 md:px-8 py-6 md:py-10">
+    <footer :class="['w-full px-4 md:px-8 py-6 md:py-10', getColorClasses(style)]">
         <!-- Mobile footer layout -->
         <div class="flex flex-col items-center md:hidden">
             <!-- Social Media Icons -->
-            <div class="flex justify-center space-x-6 mb-4">
-                <a v-for="link in socialLinks" 
-                   :key="link.alt" 
-                   :href="link.url" 
+            <div class="flex justify-center space-x-6 mb-4 mt-20">
+                <a v-for="link in socialLinks"
+                   :key="link.alt"
+                   :href="link.url"
                    class="block"
                    target="_blank">
-                    <img :src="link.icon" :alt="link.alt" class="w-8 h-8">
+                    <img :src="link.icon" :alt="link.alt" class="w-8 h-8" :style="style === 'white' ? 'filter: brightness(0)' : ''">
                 </a>
             </div>
 
             <!-- Copyright -->
             <div class="mb-4">
-                <p class="text-white text-xs font-medium">
+                <p class="text-xs font-medium">
                     &copy; AEYIA {{ currentYear }}
                 </p>
             </div>
 
             <!-- Legal Links -->
             <div class="flex space-x-4">
-                <a href="#" class="text-white text-xs font-medium">Privacy Policy</a>
-                <span class="text-white">|</span>
-                <a href="#" class="text-white text-xs font-medium">Terms & Conditions</a>
+                <a href="#" class="text-xs font-medium">Privacy Policy</a>
+                <a href="#" class="text-xs font-medium">Terms & Conditions</a>
             </div>
         </div>
 
@@ -120,28 +89,28 @@ const currentYear = new Date().getFullYear();
             <div class="flex justify-between items-end">
                 <!-- Copyright -->
                 <div>
-                    <p class="text-white text-xs font-medium">
+                    <p class="text-xs font-medium">
                         &copy; AEYIA {{ currentYear }}
                     </p>
                 </div>
 
                 <!-- Social Media Icons - Centered -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 mb-6">
+                <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 mb-6 mt-20">
                     <div class="flex space-x-6">
-                        <a v-for="link in socialLinks" 
-                           :key="link.alt" 
-                           :href="link.url" 
+                        <a v-for="link in socialLinks"
+                           :key="link.alt"
+                           :href="link.url"
                            class="block"
                            target="_blank">
-                            <img :src="link.icon" :alt="link.alt" class="w-8 h-8 md:w-10 md:h-10">
+                            <img :src="link.icon" :alt="link.alt" class="w-8 h-8 md:w-10 md:h-10" :style="style === 'white' ? 'filter: brightness(0)' : ''">
                         </a>
                     </div>
                 </div>
 
-                <!-- Legal Links - Vertical on right side -->
-                <div class="flex flex-col items-end space-y-8 absolute right-0 bottom-0 mr-4 mb-32">
-                    <a href="#" class="text-white text-xs font-medium vertical-text">Privacy Policy</a>
-                    <a href="#" class="text-white text-xs font-medium vertical-text">Terms & Conditions</a>
+                <!-- Legal Links - On right side -->
+                <div class="flex space-x-4 items-end">
+                    <a href="#" class="text-xs font-medium">Privacy Policy</a>
+                    <a href="#" class="text-xs font-medium">Terms & Conditions</a>
                 </div>
             </div>
         </div>

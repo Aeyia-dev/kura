@@ -42,6 +42,16 @@ class DefaultController extends Controller
     }
 
     /**
+     * Display the about page.
+     *
+     * @return \Inertia\Response
+     */
+    public function about()
+    {
+        return Inertia::render('About');
+    }
+
+    /**
      * Display the dashboard.
      *
      * @return \Inertia\Response

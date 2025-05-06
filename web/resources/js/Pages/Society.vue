@@ -77,10 +77,7 @@ const toggleMobileMenu = () => {
     <!-- Main container -->
     <div class="relative min-h-screen overflow-auto">
         <!-- Background image -->
-        <BackgroundImage imageNumber="02" :fixed="true" />
-
-        <!-- Overlay for better text readability -->
-        <div class="absolute inset-0 z-10 bg-black bg-opacity-20"></div>
+        <BackgroundImage imageName="desktop-background-02.jpg" :fixed="true" />
 
         <!-- Content Container -->
         <div class="relative z-20 flex flex-col min-h-screen">
@@ -123,7 +120,7 @@ const toggleMobileMenu = () => {
             </section>
 
             <!-- Main Content -->
-            <main class="flex-grow">
+            <main class="flex-grow mb-20">
                 <!-- Mission Section -->
                 <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
@@ -149,17 +146,19 @@ const toggleMobileMenu = () => {
                 </section>
 
                 <!-- Contact Section -->
-                <section class="bg-gray-100 py-12 px-4 md:px-8 lg:px-16">
+                <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
-                        <div class="flex flex-col md:flex-row justify-between">
-                            <div class="mb-8 md:mb-0">
-                                <h3 class="text-2xl md:text-3xl font-semibold mb-4">Contact us.</h3>
-                                <p class="text-gray-700">society@aeyia.com</p>
-                            </div>
+                        <div class="bg-[#e9e3db] bg-opacity-35 py-12 px-4 md:px-8 lg:px-16 rounded-[15px]">
+                            <div class="flex flex-col md:flex-row justify-between">
+                                <div class="mb-8 md:mb-0 ml-5">
+                                    <h3 class="text-2xl md:text-3xl font-semibold mb-4">Contact us.</h3>
+                                    <p class="text-gray-700 font-semibold">society@aeyia.com</p>
+                                </div>
 
-                            <div>
-                                <p class="text-gray-700 mb-2">ABN: 14628727542</p>
-                                <a href="#" class="text-gray-700 underline">See more information</a>
+                                <div class="mr-16">
+                                    <p class="text-gray-700 mb-2 font-semibold">ABN: 14628727542</p>
+                                    <a href="#" class="text-gray-700 underline text-xs">See more information</a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -169,7 +168,7 @@ const toggleMobileMenu = () => {
                 <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
                         <div class="flex flex-col md:flex-row items-center justify-between">
-                            <div class="mb-6 md:mb-0">
+                            <div class="mb-16 md:mb-0">
                                 <h3 class="text-2xl md:text-3xl font-semibold">Stay in the loop.</h3>
                             </div>
 
@@ -195,7 +194,7 @@ const toggleMobileMenu = () => {
             </main>
 
             <!-- Footer -->
-            <SiteFooter style="white" />
+            <SiteFooter :style="'white'" />
         </div>
     </div>
 
