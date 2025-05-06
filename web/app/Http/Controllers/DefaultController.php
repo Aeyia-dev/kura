@@ -52,6 +52,16 @@ class DefaultController extends Controller
     }
 
     /**
+     * Display the contact page.
+     *
+     * @return \Inertia\Response
+     */
+    public function contact()
+    {
+        return Inertia::render('Contact');
+    }
+
+    /**
      * Display the dashboard.
      *
      * @return \Inertia\Response
