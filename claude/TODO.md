@@ -3,30 +3,28 @@
 !! Review claude/ways-of-working.md before working
 
 
-- [ ] Use Aeyia font
+- [x] Use Aeyia font (Matter)
 
 ## Mobile QA review
 
 - holding page
-   - [ ] logo too small
-   - [ ] hamburger too small
-   - [ ] content too far up
-   - [ ] content too small
-   - [ ] email input form input too small
-   - [ ] icons too small
-   - [ ] copyright move down to bottom right
-   - [ ] send T&Cs links to the menu - only on landing page
+   - [x] logo too small
+   - [x] hamburger too small
+   - [x] content too far up
+   - [x] content too small
+   - [x] email input form input too small
+   - [x] icons too small
+   - [x] copyright move down to bottom right
+   - [x] send T&Cs links to the menu - only on landing page
 - mobile nav
-   - [ ] logo too small
-   - [ ] menu items font too small
-   - [ ] social icons too small
-   - [ ] float copyright bottom right
-   - [ ] show T&Cs / PP bottom right
+   - [x] logo too small
+   - [x] menu items font too small
+   - [x] social icons too small
+   - [x] float copyright bottom left
 - Society
-   - [ ] society logo too small
-   - [ ] left align hero text
-   - [ ] wrong down arrow icon
-   - [ ] widen page margin
-   - [ ] bold font
-   - [ ] contact us block padding
-   - [ ]
+   - [x] society logo too small
+   - [x] left align hero text
+   - [x] widen page margin
+   - [x] bold font
+   - [x] contact us block padding
+   - [x] wrong down arrow icon - use claude/tmp/society-figma/images/chevron.png (rotated 90)

@@ -108,15 +108,15 @@ const toggleMobileMenu = () => {
             />
 
             <!-- Main Content - Centered -->
-            <main class="flex-grow flex flex-col justify-center items-center text-center px-4">
+            <main class="flex-grow flex flex-col justify-center items-center text-center px-4 pt-72 md:pt-0">
                 <div class="max-w-4xl mx-auto">
                     <!-- Main Headline -->
-                    <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 md:mb-4">
-                        Elevate well.<span class="text-2xl md:text-3xl lg:text-4xl align-top">™</span>
+                    <h1 class="text-white text-5xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 md:mb-4">
+                        Elevate well.<span class="text-3xl md:text-3xl lg:text-4xl align-top">™</span>
                     </h1>
 
                     <!-- Subtitle -->
-                    <p class="text-white text-lg md:text-xl lg:text-2xl font-medium leading-snug mb-8 md:mb-10 mx-auto max-w-2xl">
+                    <p class="text-white text-xl md:text-xl lg:text-2xl font-medium leading-snug mb-20 md:mb-10 mx-auto max-w-2xl">
                         Coming soon — we're excited to share what we've been working on.
                     </p>
 

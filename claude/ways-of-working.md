@@ -6,6 +6,7 @@ Note: The laravel codebase root is at ./web/
 
 1. **Plan Before Implementation**:
    - All changes must be planned and documented in the list file claude/TODO.md stop and add your checklist in here first.
+   - Make the changes nessesary and sufficient - make the changes as simple as possible
    - dont delete any content from claude/TODO.md. oinly add or check tasks off. leave all other content in tact.
    - Get the plan approved before making any actual code changes
    - Prepare all related changes to be applied in a single batch, not incrementally

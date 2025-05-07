@@ -45,9 +45,9 @@ defineProps({
 
 const getIconSize = (size) => {
     switch(size) {
-        case 'sm': return 'w-6 h-6';
-        case 'lg': return 'w-10 h-10';
-        default: return 'w-8 h-8'; // medium (default)
+        case 'sm': return 'w-8 h-8';
+        case 'lg': return 'w-12 h-12';
+        default: return 'w-10 h-10'; // medium (default)
     }
 };
 </script>

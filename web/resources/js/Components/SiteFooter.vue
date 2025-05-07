@@ -33,13 +33,12 @@ const currentYear = new Date().getFullYear();
 <template>
     <!-- Transparent footer - used in Holding page -->
     <footer :class="['w-full px-4 md:px-8 py-6 md:py-10', getColorClasses(style)]">
-        <!-- Mobile footer layout -->
-        <div class="flex flex-col items-center md:hidden">
-            <!-- Social Media Icons -->
-            <div class="flex justify-center space-x-6 mb-4 mt-20">
-                <SocialIcons :dark="style === 'white'" size="md" />
-            </div>
+        <!-- Social Media Icons -->
+        <div class="flex justify-center space-x-6 mb-8 mt-20">
+            <SocialIcons :dark="style === 'white'" size="md" />
+        </div>
 
+        <div class="flex justify-between md:hidden">
             <!-- Copyright -->
             <div class="mb-4">
                 <p class="text-xs font-medium">
@@ -49,8 +48,8 @@ const currentYear = new Date().getFullYear();
 
             <!-- Legal Links -->
             <div class="flex space-x-4">
-                <a href="#" class="text-xs font-medium">Privacy Policy</a>
                 <a href="#" class="text-xs font-medium">Terms & Conditions</a>
+                <a href="#" class="text-xs font-medium">Privacy</a>
             </div>
         </div>
 

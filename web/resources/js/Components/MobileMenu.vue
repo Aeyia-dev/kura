@@ -42,7 +42,7 @@ const props = defineProps({
         default: true
     },
     /**
-     * Whether to show login/register links 
+     * Whether to show login/register links
      */
     canLogin: {
         type: Boolean,
@@ -82,7 +82,7 @@ const closeMenu = () => {
         <!-- Close button -->
         <div class="p-4 md:p-6 lg:p-8 flex justify-between items-center">
             <!-- Logo (image or text) -->
-            <div class="w-40 md:w-64 lg:w-auto lg:max-w-md">
+            <div class="w-48 md:w-64 lg:w-auto lg:max-w-md">
                 <!-- Text logo -->
                 <h1 v-if="logoType === 'text'" class="text-white text-4xl md:text-5xl font-bold">
                     {{ logoText }}
@@ -90,14 +90,14 @@ const closeMenu = () => {
                 <!-- Image logo -->
                 <img v-else :src="logoImagePath" alt="AEYIA Logo" class="w-full">
             </div>
-            
+
             <!-- Close button -->
             <button
                 @click="closeMenu"
                 type="button"
                 class="text-white p-2 focus:outline-none z-50 relative"
             >
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
@@ -106,7 +106,7 @@ const closeMenu = () => {
         <!-- Navigation links in page -->
         <div class="flex justify-center items-center h-full -mt-20">
             <nav class="flex flex-col space-y-10 w-36">
-                <NavigationLinks 
+                <NavigationLinks
                     :isMobile="true"
                     :showMenuLinks="showMenuLinks"
                     :canLogin="canLogin"
@@ -132,11 +132,15 @@ const closeMenu = () => {
             </div>
         </div>
 
-        <!-- Copyright -->
-        <div class="pb-8 text-center">
-            <p class="text-white text-sm font-medium">
-                &copy; AEYIA {{ new Date().getFullYear() }}
-            </p>
+        <!-- Copyright & T&Cs Links -->
+        <div class="pb-4 px-6 w-full">
+            <div class="flex justify-between items-end">
+                <div class="flex flex-col space-y-2 text-left">
+                    <p class="text-white text-xs font-medium">
+                        &copy; AEYIA {{ new Date().getFullYear() }}
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 </template>

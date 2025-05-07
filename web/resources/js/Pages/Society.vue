@@ -105,17 +105,21 @@ const toggleMobileMenu = () => {
             />
 
             <!-- Hero Section -->
-            <section class="flex flex-col items-center min-h-[80vh] text-center px-4 py-8 relative">
-                <div class="absolute bottom-14 md:bottom-20 left-0 right-0">
-                    <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold max-w-5xl mx-auto mb-8">
-                        Small changes. Big transformations.
+            <section class="flex flex-col items-center min-h-[80vh] px-4 py-8 relative">
+                <div class="absolute bottom-14 md:bottom-20 left-8 right-0">
+                    <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold max-w-5xl mx-auto mb-8 ">
+                        Small changes.
+                        <br class="sm:hidden">Big transformations.
                     </h2>
 
                     <!-- Down arrow icon -->
                     <div class="mt-8">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white animate-bounce mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                        </svg>
+                        <img
+                            src="/images/icons/chevron.png"
+                            alt="Scroll down"
+                            class="h-15 w-15 mx-auto transform rotate-90"
+                            style="filter: brightness(0) invert(1); height: 3rem; width: 3rem;"
+                        >
                     </div>
                 </div>
             </section>
@@ -123,21 +127,21 @@ const toggleMobileMenu = () => {
             <!-- Main Content -->
             <main class="flex-grow mb-20">
                 <!-- Mission Section -->
-                <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
+                <section class="bg-white py-12 px-12 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
                         <div class="mb-8">
-                            <p class="text-gray-800 text-lg md:text-xl mb-6">
+                            <p class="text-gray-800 text-2xl mb-6">
                                 We believe that even the smallest changes can spark powerful
                                 transformations. That's why our mission is to make transformative tools,
                                 habits, insights, and support more accessible.
                             </p>
 
-                            <p class="text-gray-800 text-lg md:text-xl mb-6">
+                            <p class="text-gray-800 text-2xl md:text-xl mb-6">
                                 Real change often begins with a single step - and everyone deserves the
                                 chance to take it.
                             </p>
 
-                            <p class="text-gray-700 text-sm md:text-base">
+                            <p class="text-gray-800 font-medium text-xl md:text-base">
                                 AEYIA™ Society is a DGRI registered charity committed to expanding access to educational tools, online
                                 resources and support services for individuals experiencing hardship, social disadvantages, mental health
                                 challenges and vulnerable life circumstances. This initiative is currently evolving and will be available soon.
@@ -147,16 +151,16 @@ const toggleMobileMenu = () => {
                 </section>
 
                 <!-- Contact Section -->
-                <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
+                <section class="bg-white py-12 px-8 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
                         <div class="bg-[#e9e3db] bg-opacity-35 py-12 px-4 md:px-8 lg:px-16 rounded-[15px]">
                             <div class="flex flex-col md:flex-row justify-between">
                                 <div class="mb-8 md:mb-0 ml-5">
-                                    <h3 class="text-2xl md:text-3xl font-semibold mb-4">Contact us.</h3>
-                                    <p class="text-gray-700 font-semibold">society@aeyia.com</p>
+                                    <h3 class="text-5xl md:text-3xl font-semibold mb-4">Contact us.</h3>
+                                    <p class="text-md text-gray-700 font-semibold">society@aeyia.com</p>
                                 </div>
 
-                                <div class="mr-16">
+                                <div class="mb-8 md:mb-0 ml-5 md:mr-16">
                                     <p class="text-gray-700 mb-2 font-semibold">ABN: 14628727542</p>
                                     <a href="#" class="text-gray-700 underline text-xs">See more information</a>
                                 </div>
@@ -166,11 +170,11 @@ const toggleMobileMenu = () => {
                 </section>
 
                 <!-- Newsletter Section -->
-                <section class="bg-white py-12 px-4 md:px-8 lg:px-16">
+                <section class="bg-white py-12 px-8 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
-                        <div class="flex flex-col md:flex-row items-center justify-between">
-                            <div class="mb-16 md:mb-0">
-                                <h3 class="text-2xl md:text-3xl font-semibold">Stay in the loop.</h3>
+                        <div class="flex flex-col md:flex-row  justify-between">
+                            <div class="mb-16 md:mb-0 text-left">
+                                <h3 class="text-3xl font-semibold">Stay in the loop.</h3>
                             </div>
 
                             <!-- Email Form -->

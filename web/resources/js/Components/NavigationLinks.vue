@@ -56,27 +56,27 @@ defineProps({
     <!-- Mobile version -->
     <template v-if="isMobile">
         <!-- Only show Home link if showMenuLinks is true -->
-        <a v-if="showMenuLinks" href="/holding" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Home</a>
+        <a v-if="showMenuLinks" href="/holding" @click="closeMenu" class="text-white text-4xl font-medium hover:text-white/80 transition-colors text-left">Home</a>
 
         <!-- Menu links conditionally displayed -->
         <template v-if="showMenuLinks">
-            <a href="/society" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Society</a>
-            <a href="/about" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">About</a>
-            <a href="/contact" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Contact</a>
+            <a href="/society" @click="closeMenu" class="text-white text-4xl font-medium hover:text-white/80 transition-colors text-left">Society</a>
+            <a href="/about" @click="closeMenu" class="text-white text-4xl font-medium hover:text-white/80 transition-colors text-left">About</a>
+            <a href="/contact" @click="closeMenu" class="text-white text-4xl font-medium hover:text-white/80 transition-colors text-left">Contact</a>
         </template>
 
         <!-- Auth Navigation -->
         <div v-if="canLogin" class="pt-6 flex flex-col space-y-10">
             <div v-if="authUser">
-                <Link :href="route('dashboard')" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">
+                <Link :href="route('dashboard')" @click="closeMenu" class="text-white text-4xl font-medium hover:text-white/80 transition-colors text-left">
                     Dashboard
                 </Link>
             </div>
             <div v-else class="flex flex-col space-y-10">
-                <Link :href="route('login')" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">
+                <Link :href="route('login')" @click="closeMenu" class="text-white text-4xl font-medium hover:text-white/80 transition-colors text-left">
                     Log in
                 </Link>
-                <Link v-if="canRegister" :href="route('register')" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">
+                <Link v-if="canRegister" :href="route('register')" @click="closeMenu" class="text-white text-4xl font-medium hover:text-white/80 transition-colors text-left">
                     Register
                 </Link>
             </div>
