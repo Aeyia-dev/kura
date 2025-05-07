@@ -25,20 +25,12 @@ defineProps({
     offsetPx: {
         type: Number,
         default: 0
-    },
-    /**
-     * Background color to use behind the image
-     */
-    backgroundColor: {
-        type: String,
-        default: "#212026"
     }
 });
 </script>
 <template>
     <div class="absolute inset-0 z-1" :style="{
-        height: offsetPx !== 0 ? `calc(100% + ${Math.abs(offsetPx)}px)` : '100%',
-        backgroundColor: backgroundColor
+        height: offsetPx !== 0 ? `calc(100% + ${Math.abs(offsetPx)}px)` : '100%'
     }">
         <picture class="relative block h-full w-full">
             <!-- Mobile version (WebP) -->

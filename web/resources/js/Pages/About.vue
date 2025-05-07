@@ -145,7 +145,7 @@ const toggleMobileMenu = () => {
             </section>
 
             <!-- Footer with transparent background -->
-            <SiteFooter :style="'white'" />
+            <SiteFooter white />
         </div>
     </div>
 

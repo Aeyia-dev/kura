@@ -12,6 +12,20 @@ defineProps({
         type: String,
         default: 'transparent',
         validator: (value) => ['transparent', 'white'].includes(value)
+    },
+    /**
+     * Whether the footer should be fixed to the bottom of the viewport
+     */
+    /**
+     * Positioning strategy for the footer:
+     * - 'sticky': Sticks to bottom even with short content
+     * - 'fixed': Fixed to viewport bottom
+     * - 'normal': Regular flow positioning
+     */
+    position: {
+        type: String,
+        default: 'normal',
+        validator: (value) => ['normal', 'sticky', 'fixed'].includes(value)
     }
 });
 
@@ -31,7 +45,12 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-    <footer :class="['w-full px-4 md:px-8 py-6 md:py-10', getColorClasses(style)]">
+    <footer :class="[
+        'w-full px-4 md:px-8 py-6 md:py-10 z-10',
+        getColorClasses(style),
+        position === 'fixed' ? 'fixed bottom-0 left-0' : '',
+        position === 'sticky' ? 'mt-auto' : ''
+    ]">
         <!-- Social Media Icons -->
         <div class="md:hidden flex justify-center space-x-6 mb-8 mt-20">
             <SocialIcons :dark="style === 'white'" size="md" />

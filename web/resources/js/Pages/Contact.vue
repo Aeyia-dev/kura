@@ -3,6 +3,8 @@ import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import Modal from '@/Components/Modal.vue';
 import SocialIcons from '@/Components/SocialIcons.vue';
+import BackgroundImage from '@/Components/BackgroundImage.vue';
+import SiteFooter from '@/Components/SiteFooter.vue';
 
 // Form handling and validation state
 const form = ref({
@@ -80,10 +82,12 @@ const toggleMobileMenu = () => {
 
 <template>
     <Head title="AEYIA - Contact Us" />
+    <div class="md:hidden">
+        <BackgroundImage imageName="desktop-background-04.jpg" :fixed="true" :offsetPx="900" />
+    </div>
 
     <div class="flex flex-col md:flex-row h-screen">
-        <!-- Left Side - Image (exactly 50%) -->
-        <div class="hidden md:block w-1/2 h-full relative" style="width: 50%;">
+        <div class="hidden md:block w-1/2 h-full relative">
             <!-- Background Image -->
             <img
                 src="/images/background/optimized/desktop/desktop-background-04.jpg"
@@ -92,18 +96,27 @@ const toggleMobileMenu = () => {
             />
         </div>
 
-        <!-- Right Side - Contact Form (exactly 50%) -->
-        <div class="w-full md:w-1/2 flex flex-col bg-white" style="width: 50%;">
+        <!-- Right Side - Contact Form  -->
+        <div class="w-full md:w-1/2 flex flex-col z-10" >
             <!-- Header Navigation -->
             <div class="w-full p-4 md:p-6 lg:p-8">
                 <div class="flex justify-end items-center">
                 <!-- Logo overlay -->
-                <div class="absolute top-0 left-0 p-6 z-20">
+                <div class="hidden md:block absolute top-0 left-0 p-6 z-20">
                     <a href="/holding">
                         <img
                             src="/images/landing/aeyia-logo-white.png"
                             alt="AEYIA Logo"
                             style="display: block; height: 200px; width: auto; max-width: none;"
+                        />
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <a href="/holding">
+                        <img
+                            src="/images/aeyia-logo.png"
+                            alt="AEYIA Logo"
+                            style="display: block; width: 100%; max-width: none;"
                         />
                     </a>
                 </div>
@@ -215,14 +228,16 @@ const toggleMobileMenu = () => {
                 </form>
 
                 <!-- Contact Information -->
-                <div class="mt-auto">
+                <div class="mt-5">
                     <p class="text-sm font-semibold mb-2"><a href="mailto:hello@aeyia.com">hello@aeyia.com</a></p>
                     <p class="text-sm font-semibold mb-2">6/7 Grevillea Street,<br/>Byron Bay, NSW, Australia</p>
                     <p class="text-sm font-semibold mb-6">Charity Enquiries: <a href="mailto:society@aeyia.com">society@aeyia.com</a></p>
-
-                    <!-- Social Media Icons -->
-                    <SocialIcons dark size="md" />
                 </div>
+
+                <!-- Social Media Icons -->
+                <div class="hidden md:block pt-10"><SiteFooter :style="'white'" position="normal" /></div>
+                <div class="md:hidden"><SiteFooter position="normal" /></div>
+
             </div>
         </div>
     </div>
@@ -263,4 +278,14 @@ button:focus {
     border-color: black !important;
     ring-width: 0 !important;
 }
+/* Add this CSS to your stylesheet */
+input::placeholder {
+  color: #333333; /* Darker color for placeholder text */
+  opacity: 1; /* Full opacity */
+}
+
+/* For older browsers that use different vendor prefixes */
+::-webkit-input-placeholder { color: #333333; }  /* Chrome/Safari/Opera */
+::-moz-placeholder { color: #333333; }           /* Firefox */
+:-ms-input-placeholder { color: #333333; }       /* Internet Explorer */
 </style>
