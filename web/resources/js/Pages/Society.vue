@@ -6,6 +6,7 @@ import SiteHeader from '@/Components/SiteHeader.vue';
 import SiteFooter from '@/Components/SiteFooter.vue';
 import MobileMenu from '@/Components/MobileMenu.vue';
 import BackgroundImage from '@/Components/BackgroundImage.vue';
+import EmailSubscription from '@/Components/EmailSubscription.vue';
 
 // Props passed from controller
 const props = defineProps({
@@ -83,8 +84,8 @@ const toggleMobileMenu = () => {
         <div class="relative z-20 flex flex-col min-h-screen">
             <!-- Header -->
             <SiteHeader
-                logoType="text"
-                logoText="society"
+                logoType="image"
+                logoImagePath="/images/society-logo.png"
                 :mobileMenuOpen="mobileMenuOpen"
                 :canLogin="canLogin"
                 :canRegister="canRegister"
@@ -172,22 +173,18 @@ const toggleMobileMenu = () => {
                                 <h3 class="text-2xl md:text-3xl font-semibold">Stay in the loop.</h3>
                             </div>
 
-                            <div class="w-full md:w-auto">
-                                <form @submit.prevent="submitForm" class="flex">
-                                    <input
-                                        v-model="email"
-                                        type="email"
-                                        placeholder="Email"
-                                        class="py-3 px-5 border border-gray-300 rounded-l-full flex-grow text-sm md:text-base focus:outline-none"
-                                    >
-                                    <button
-                                        type="submit"
-                                        class="bg-black text-white rounded-r-full px-6 py-3 text-sm md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200"
-                                    >
-                                        Join Now
-                                    </button>
-                                </form>
-                            </div>
+                            <!-- Email Form -->
+                            <EmailSubscription
+                                :has-error="!isFormValid"
+                                theme="dark"
+                                button-text="Join Now"
+                                placeholder="Email"
+                                max-width="max-w-md"
+                                @submit="(value) => {
+                                    email = value;
+                                    submitForm();
+                                }"
+                            />
                         </div>
                     </div>
                 </section>

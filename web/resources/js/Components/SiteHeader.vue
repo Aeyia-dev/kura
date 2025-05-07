@@ -79,19 +79,21 @@ const toggleMobileMenu = () => {
 
 <template>
     <header class="w-full p-4 md:p-6 lg:p-8">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-between items-top">
             <!-- Logo (image or text) -->
             <div class="w-40 md:w-64 lg:w-auto lg:max-w-md">
                 <!-- Text logo -->
-                <h1 v-if="logoType === 'text'" class="text-white text-4xl md:text-5xl font-bold">
-                    {{ logoText }}
-                </h1>
-                <!-- Image logo -->
-                <img v-else :src="logoImagePath" alt="AEYIA Logo" class="w-full">
+                <a href="/holding">
+                    <h1 v-if="logoType === 'text'" class="text-white text-4xl md:text-5xl font-bold">
+                        {{ logoText }}
+                    </h1>
+                    <!-- Image logo -->
+                    <img v-else :src="logoImagePath" alt="AEYIA Logo" class="w-full">
+                </a>
             </div>
 
             <!-- Navigation Menu - Hidden on mobile, visible on tablet/desktop -->
-            <nav class="hidden md:flex items-start space-x-6 lg:space-x-8">
+            <nav class="hidden md:flex items-start space-x-6 lg:space-x-8 mt-10">
                 <NavigationLinks
                     :isMobile="false"
                     :showMenuLinks="showMenuLinks"

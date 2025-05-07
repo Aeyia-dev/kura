@@ -56,7 +56,7 @@ defineProps({
     <!-- Mobile version -->
     <template v-if="isMobile">
         <!-- Only show Home link if showMenuLinks is true -->
-        <a v-if="showMenuLinks" href="/" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Home</a>
+        <a v-if="showMenuLinks" href="/holding" @click="closeMenu" class="text-white text-3xl font-medium hover:text-white/80 transition-colors text-left">Home</a>
 
         <!-- Menu links conditionally displayed -->
         <template v-if="showMenuLinks">

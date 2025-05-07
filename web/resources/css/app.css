@@ -2,6 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Matter Font */
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterRegular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterThin.otf') format('opentype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterLight.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterMedium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterSemiBold.otf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterBold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterHeavy.otf') format('opentype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Matter';
+    src: url('/fonts/matter/MatterBlack.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 [x-cloak] {
     display: none;
 }

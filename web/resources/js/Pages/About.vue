@@ -6,6 +6,7 @@ import SiteHeader from '@/Components/SiteHeader.vue';
 import SiteFooter from '@/Components/SiteFooter.vue';
 import MobileMenu from '@/Components/MobileMenu.vue';
 import BackgroundImage from '@/Components/BackgroundImage.vue';
+import EmailSubscription from '@/Components/EmailSubscription.vue';
 
 // Props passed from controller
 const props = defineProps({
@@ -119,22 +120,17 @@ const toggleMobileMenu = () => {
                         </p>
 
                         <!-- Email Form -->
-                        <div class="w-full max-w-md mt-8">
-                            <form @submit.prevent="submitForm" class="flex rounded-full overflow-hidden border border-white">
-                                <input
-                                    v-model="email"
-                                    type="email"
-                                    placeholder="Email"
-                                    class="bg-transparent text-white py-3 px-5 flex-grow outline-none placeholder-white/60 border-none text-sm md:text-base focus:ring-0 focus:outline-none w-1/2"
-                                />
-                                <button
-                                    type="submit"
-                                    class="bg-white text-gray-900 px-6 py-3 text-sm md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200 w-1/2"
-                                >
-                                    Join Now
-                                </button>
-                            </form>
-                        </div>
+                        <EmailSubscription
+                            :has-error="!isFormValid"
+                            theme="light"
+                            button-text="Join Now"
+                            placeholder="Email"
+                            max-width="max-w-md"
+                            @submit="(value) => {
+                                email = value;
+                                submitForm();
+                            }"
+                        />
                     </div>
                 </div>
             </section>
