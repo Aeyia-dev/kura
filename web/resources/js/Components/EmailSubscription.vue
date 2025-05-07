@@ -40,8 +40,17 @@ const props = defineProps({
     maxWidth: {
         type: String,
         default: 'max-w-md'
+    },
+    /**
+     * Horizontal alignment (mx-auto, ml-auto, mr-auto)
+     */
+    align: {
+      type: String,
+      default: 'mx-auto',
+      validator: (value) => ['mx-auto', 'ml-auto', 'mr-auto'].includes(value)
     }
 });
+
 
 const emit = defineEmits(['submit']);
 
@@ -76,7 +85,7 @@ const getColorClasses = () => {
 </script>
 
 <template>
-    <div :class="['w-full', maxWidth, 'mx-auto']">
+    <div :class="['w-full', maxWidth, align]">
         <form @submit.prevent="submitForm"
               :class="['flex items-center border rounded-full overflow-hidden shadow-sm', getColorClasses().border]">
             <input

@@ -23,6 +23,7 @@ const email = ref('');
 const errorMessage = ref('');
 const isFormValid = ref(true);
 const showErrorModal = ref(false);
+const imageName = ref('desktop-background-01-with-bar.jpg')
 
 const resetForm = () => {
     email.value = '';
@@ -78,7 +79,12 @@ const toggleMobileMenu = () => {
     <!-- Main container -->
     <div class="relative h-screen overflow-hidden bg-[#212026]">
         <!-- Background image with CharcoalAeyia background color -->
-        <BackgroundImage imageName="desktop-background-01-with-bar.jpg" :fixed="true" backgroundColor="bg-[#212026]" />
+        <div class="hidden md:block">
+            <BackgroundImage imageName="desktop-background-01-with-bar.jpg" :fixed="true" :offsetPx="-280" backgroundColor="bg-[#212026]" />
+        </div>
+        <div class="md:hidden">
+            <BackgroundImage imageName="desktop-background-01.jpg" :fixed="true" :offsetPx="680" />
+        </div>
 
         <!-- No need for global overlay with the BackgroundImage60 component -->
 
@@ -111,12 +117,13 @@ const toggleMobileMenu = () => {
                 <!-- Centered column with left-aligned text -->
                 <div class="w-full max-w-2xl mx-auto lg:mx-0 lg:ml-[40%]">
                     <div class="text-left">
-                        <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
+                        <h1 class="text-white text-4xl lg:text-5xl mb-8">
                             AEYIA™ is a global wellness company reimagining human potentiality and wellbeing by connecting insights, people, and transformative experiences.
                         </h1>
 
-                        <p class="text-white text-xl md:text-2xl font-medium mt-8 mb-12">
-                            Elevated wellness™ – launching soon.
+                        <p class="text-white text-2xl font-medium mt-8 mb-24">
+                            Elevated wellness™ –
+                             <br class="sm:hidden">launching soon.
                         </p>
 
                         <!-- Email Form -->
@@ -126,17 +133,19 @@ const toggleMobileMenu = () => {
                             button-text="Join Now"
                             placeholder="Email"
                             max-width="max-w-md"
+                            align="mr-auto"
                             @submit="(value) => {
                                 email = value;
                                 submitForm();
                             }"
                         />
+
                     </div>
                 </div>
             </section>
 
             <!-- Footer with transparent background -->
-            <SiteFooter style="transparent" />
+            <SiteFooter :style="'white'" />
         </div>
     </div>
 

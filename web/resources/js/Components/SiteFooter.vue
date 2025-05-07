@@ -31,10 +31,9 @@ const currentYear = new Date().getFullYear();
 </script>
 
 <template>
-    <!-- Transparent footer - used in Holding page -->
     <footer :class="['w-full px-4 md:px-8 py-6 md:py-10', getColorClasses(style)]">
         <!-- Social Media Icons -->
-        <div class="flex justify-center space-x-6 mb-8 mt-20">
+        <div class="md:hidden flex justify-center space-x-6 mb-8 mt-20">
             <SocialIcons :dark="style === 'white'" size="md" />
         </div>
 
