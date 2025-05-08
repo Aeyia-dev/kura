@@ -9,7 +9,16 @@ $team_members = [
     ['name' => 'Sylvia Martini', 'email' => 'sylvia@aeyia.com', 'phone' => '0420525918'],
     ['name' => 'Ryan Barraclough', 'email' => 'ryan@aeyia.com', 'phone' => '0420987054'],
     ['name' => 'Mia Weber', 'email' => 'mia@aeyia.com', 'phone' => '0412205944'],
-    ['name' => 'Mitch Barraclough', 'email' => 'mitch@aeyia.com', 'phone' => '0431283271']
+    ['name' => 'Mitch Barraclough', 'email' => 'mitch@aeyia.com', 'phone' => '0431283271'],
+    ['name' => 'AEYIA™️ Team', 'email' => 'hello@aeyia.com', 'phone' => ''],
+    ['name' => 'AEYIA™️ Team', 'email' => 'admin@aeyia.com', 'phone' => ''],
+    ['name' => 'Customer Experience', 'email' => 'customers@aeyia.com', 'phone' => ''],
+    ['name' => 'Community Support', 'email' => 'support@aeyia.com', 'phone' => ''],
+    ['name' => 'AEYIA™️ Team', 'email' => 'professionals@aeyia.com', 'phone' => ''],
+    ['name' => 'AEYIA™️ Team', 'email' => 'applications@aeyia.com', 'phone' => ''],
+    ['name' => 'Leah Rettenmaier', 'email' => 'society@aeyia.com', 'phone' => '0412589075'],
+    ['name' => 'AEYIA™️ Team - Legal', 'email' => 'legal@aeyia.com', 'phone' => '0291883962'],
+    ['name' => 'AEYIA™️ Team - Tech', 'email' => 'tech@aeyia.com', 'phone' => '']
 ];
 
 // Get selected team member if form submitted
@@ -35,12 +44,28 @@ function generateSignature($name, $email, $phone) {
     // S3 BUCKET URL
     $s3BaseUrl = "https://aeyia-email-signatures.s3.ap-southeast-2.amazonaws.com";
 
+    // HTML for name section (only display if name is not empty)
+    $nameHtml = !empty($name) ?
+        '<div style="font-size: large !important; color: #212025; font-weight: normal;">' . htmlspecialchars($name) . '<span style="display:none"></br>Aeyia</span></div>' :
+        '<div style="font-size: large !important; color: #212025; font-weight: normal;">AEYIA<span style="display:none"></br>Aeyia</span></div>';
+
+    // Phone row HTML (only display if phone is not empty)
+    $phoneRowHtml = !empty($phone) ?
+        '<tr style="vertical-align: middle; height: 25px;">
+            <td width="30" style="vertical-align: middle;">
+                <img src="' . $s3BaseUrl . '/phone.png" alt="" style="width: 1.1rem !important; display: block;">
+            </td>
+            <td style="padding: 0px;">
+                <a href="tel:' . htmlspecialchars($phone) . '" style="font-size: small !important; color: #212025; text-decoration-line: none;">' . htmlspecialchars($phone) . '</a></span>
+            </td>
+        </tr>' : '';
+
     return '
 <div style="font-family: Arial, Helvetica, sans-serif; color: #212025; width: 100%; max-width: 600px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
     <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; width: 100%">
         <tr>
             <td style="vertical-align: top;">
-                <div style="font-size: large !important; color: #212025; font-weight: normal;">' . htmlspecialchars($name) . '<span style="display:none"></br>Aeyia</span></div>
+                ' . $nameHtml . '
 
                 <div style="padding-top: 15px;">
                     <a href="https://www.instagram.com/aeyia_/" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
@@ -65,14 +90,7 @@ function generateSignature($name, $email, $phone) {
             <td style="vertical-align: top;">
                 <table cellpadding="0" cellspacing="0" border="0" style="vertical-align: -webkit-baseline-middle;">
                     <tbody>
-                        <tr style="vertical-align: middle; height: 25px;">
-                            <td width="30" style="vertical-align: middle;">
-                                <img src="' . $s3BaseUrl . '/phone.png" alt="" style="width: 1.1rem !important; display: block;">
-                            </td>
-                            <td style="padding: 0px;">
-                                <a href="tel:' . htmlspecialchars($phone) . '" style="font-size: small !important; color: #212025; text-decoration-line: none;">' . htmlspecialchars($phone) . '</a></span>
-                            </td>
-                        </tr>
+                        ' . $phoneRowHtml . '
                         <tr style="vertical-align: middle; height: 25px;">
                             <td width="30" style="vertical-align: middle;">
                                 <img src="' . $s3BaseUrl . '/mail.png" alt="" style="width: 1.1rem !important; display: block;">
@@ -111,7 +129,9 @@ function generateSignature($name, $email, $phone) {
     <table cellpadding="0" cellspacing="0" border="0" style="margin-top: 15px;" border=1 bg-color="red">
         <tr>
             <td>
-                <img src="' . $s3BaseUrl . '/aeyia-logo.png" alt="AEYIA" style="max-width: 250px; height: auto; border: 0;">
+                ' . ($email == 'society@aeyia.com' ?
+                '<img src="' . $s3BaseUrl . '/society-logo-graphite.png" alt="AEYIA Society" style="max-width: 250px; height: auto; border: 0;">' :
+                '<img src="' . $s3BaseUrl . '/aeyia-logo.png" alt="AEYIA" style="max-width: 250px; height: auto; border: 0;">') . '
             </td>
         </tr>
     </table>
@@ -225,12 +245,23 @@ function generateSignature($name, $email, $phone) {
     <div class="container">
             <h1 style="padding: 20px 20px 0 20px; margin-top: 0;">AEYIA Email Signature Generator</h1>
 
+            <h2 style="text-align: center; margin-top: 0;">Team Members</h2>
             <form method="get" class="team-buttons">
-                @foreach ($team_members as $index => $member)
+                @foreach (array_slice($team_members, 0, 9) as $index => $member)
                     @php
                         $firstName = explode(' ', $member['name'])[0];
                     @endphp
                     <button type="submit" name="member_id" value="{{ $index }}" class="btn">{{ $firstName }}</button>
+                @endforeach
+            </form>
+
+            <h2 style="text-align: center; margin-top: 20px;">Department Emails</h2>
+            <form method="get" class="team-buttons">
+                @foreach (array_slice($team_members, 9) as $index => $member)
+                    @php
+                        $departmentName = ucwords(str_replace('@aeyia.com', '', $member['email']));
+                    @endphp
+                    <button type="submit" name="member_id" value="{{ $index + 9 }}" class="btn" style="background-color: #6b5b95;">{{ $departmentName }}</button>
                 @endforeach
             </form>
 
