@@ -30,7 +30,7 @@ const toggleMobileMenu = () => {
     <!-- Main container -->
     <div class="relative h-screen overflow-hidden">
         <!-- Background image -->
-        <BackgroundImage imageNumber="03" :fixed="false" />
+        <BackgroundImage  imageName="desktop-background-03.jpg" :fixed="false" />
 
         <!-- Overlay for better text readability -->
         <div class="absolute inset-0 z-10 bg-black bg-opacity-20"></div>
