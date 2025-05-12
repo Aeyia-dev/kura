@@ -66,8 +66,8 @@ const currentYear = new Date().getFullYear();
 
             <!-- Legal Links -->
             <div class="flex space-x-4">
-                <a href="#" class="text-xs font-medium">Terms & Conditions</a>
-                <a href="#" class="text-xs font-medium">Privacy</a>
+                <a href="/terms" class="text-xs font-medium">Terms & Conditions</a>
+                <a href="/terms#privacy-policy" class="text-xs font-medium">Privacy Policy</a>
             </div>
         </div>
 
@@ -88,8 +88,8 @@ const currentYear = new Date().getFullYear();
 
                 <!-- Legal Links - On right side -->
                 <div class="flex space-x-4 items-end">
-                    <a href="#" class="text-xs font-medium">Terms & Conditions</a>
-                    <a href="#" class="text-xs font-medium">Privacy</a>
+                    <a href="/terms" class="text-xs font-medium">Terms & Conditions</a>
+                    <a href="/terms#privacy-policy" class="text-xs font-medium">Privacy Policy</a>
                 </div>
             </div>
         </div>
