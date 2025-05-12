@@ -48,13 +48,36 @@ const isValidEmail = (email) => {
 };
 
 // Form submission
-const submitForm = () => {
+const submitForm = async () => {
     if (!validateForm()) {
         return;
     }
 
-    // Show success modal
-    showSuccessModal.value = true;
+    try {
+        // In Inertia/Laravel applications, Axios is pre-configured with CSRF protection
+        // Import axios from bootstrap.js which is already configured with CSRF
+        const axios = window.axios;
+
+        const response = await axios.post('/api/contact', {
+            fullName: form.value.fullName,
+            email: form.value.email,
+            phone: form.value.phone,
+            message: form.value.message
+        });
+
+        const data = response.data;
+
+        if (data.success) {
+            // Show success modal
+            showSuccessModal.value = true;
+        } else {
+            // Handle error response
+            errors.value.submit = data.message || 'Failed to submit form. Please try again.';
+        }
+    } catch (error) {
+        console.error('Error submitting form:', error);
+        errors.value.submit = error.response?.data?.message || 'An error occurred. Please try again later.';
+    }
 };
 
 // Reset form after submission
@@ -225,6 +248,11 @@ const toggleMobileMenu = () => {
                             Write Email
                         </a>
                     </div>
+
+                    <!-- Form submission error -->
+                    <div v-if="errors.submit" class="mt-2 text-red-600 text-sm">
+                        {{ errors.submit }}
+                    </div>
                 </form>
 
                 <!-- Contact Information -->
@@ -235,8 +263,8 @@ const toggleMobileMenu = () => {
                 </div>
 
                 <!-- Social Media Icons -->
-                <div class="hidden md:block pt-10"><SiteFooter :style="'white'" position="normal" /></div>
-                <div class="md:hidden"><SiteFooter position="normal" /></div>
+                <div class="hidden md:block pt-10"><SiteFooter :style="'white'" position="sticky" /></div>
+                <div class="md:hidden"><SiteFooter position="sticky" /></div>
 
             </div>
         </div>

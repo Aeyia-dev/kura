@@ -11,6 +11,7 @@
     "require": {
         "php": "^8.2",
         "aws/aws-sdk-php": "^3.342",
+        "hubspot/api-client": "^10.1",
         "inertiajs/inertia-laravel": "^2.0",
         "klaviyo/api": "^14.0",
         "laravel/framework": "^12.0",

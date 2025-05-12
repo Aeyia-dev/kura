@@ -18,4 +18,19 @@ return [
             'aeyia' => 'Aeyia Website Signup Form',
         ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | HubSpot Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Configuration values for HubSpot CRM integration
+    |
+    */
+    'hubspot' => [
+        'access_token' => env('HUBSPOT_CONTACT_FORM_SECRET'),
+        'sources' => [
+            'contact_form' => 'Website Contact Form',
+        ],
+    ],
 ];
