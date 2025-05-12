@@ -11,12 +11,13 @@ Route::get('/', function () {
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
     ]);
-});
+})->name('landing');
 
 Route::get('/holding', [DefaultController::class, 'holding'])->name('holding');
 Route::get('/society', [DefaultController::class, 'society'])->name('society');
 Route::get('/about', [DefaultController::class, 'about'])->name('about');
 Route::get('/contact', [DefaultController::class, 'contact'])->name('contact');
+Route::get('/terms', [DefaultController::class, 'termsAndConditions'])->name('terms');
 
 Route::middleware([
     'auth:sanctum',

@@ -19,6 +19,12 @@ const techSpikes = [
         demoLink: '/email-signatures'
     },
     {
+        title: 'Production Holding Site',
+        description: 'aeyia.com and society.aeyia.com pre-launch holding sights with email capture and contact page',
+        status: 'in-progress',
+        demoLink: '/holding'
+    },
+    {
         title: 'Video Session Platform',
         description: 'Determine the best video platform for secure therapy sessions',
         status: 'in-progress',
@@ -222,19 +228,13 @@ const getStatusDisplay = (status) => {
                                       :class="[getStatusClasses(spike.status).bg, getStatusClasses(spike.status).text]">
                                     {{ getStatusDisplay(spike.status) }}
                                 </span>
-                                <Link
-                                    v-if="spike.demoLink === '/email-signatures'"
-                                    :href="route('email-signatures')"
-                                    class="text-xs text-blue-600 hover:underline ml-2"
-                                >
-                                    View →
-                                </Link>
                                 <a
-                                    v-else-if="spike.demoLink"
+                                    v-if="spike.demoLink"
                                     :href="spike.demoLink"
+                                    target="_blank"
                                     class="text-xs text-blue-600 hover:underline ml-2"
                                 >
-                                    View Demo →
+                                    {{ spike.status == 'completed' ? "View →" :  "View Demo →" }}
                                 </a>
                             </div>
                         </div>

@@ -26,4 +26,6 @@ npm run build #--omit=dev
 sudo -u www-data php artisan cache:clear
 php artisan config:clear && php artisan route:clear && php artisan view:clear
 php artisan config:cache && php artisan route:cache && php artisan view:cache
+# sudo chown -R www-data:ubuntu .
 sudo service apache2 restart
+# sudo service php8.3-fpm restart

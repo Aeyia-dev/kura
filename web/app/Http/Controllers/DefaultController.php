@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\KlaviyoService;
 use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -59,6 +62,16 @@ class DefaultController extends Controller
     public function contact()
     {
         return Inertia::render('Contact');
+    }
+
+    /**
+     * Display the terms and conditions page.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function termsAndConditions()
+    {
+        return view('terms-conditions');
     }
 
     /**

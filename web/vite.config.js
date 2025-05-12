@@ -17,4 +17,20 @@ export default defineConfig({
             },
         }),
     ],
+    build: {
+        // Don't try to process URLs that start with / during build
+        assetsInlineLimit: 0,
+        rollupOptions: {
+            external: [
+                '/fonts/matter/MatterRegular.otf',
+                '/fonts/matter/MatterThin.otf',
+                '/fonts/matter/MatterLight.otf',
+                '/fonts/matter/MatterMedium.otf',
+                '/fonts/matter/MatterSemiBold.otf',
+                '/fonts/matter/MatterBold.otf',
+                '/fonts/matter/MatterHeavy.otf',
+                '/fonts/matter/MatterBlack.otf'
+            ]
+        }
+    }
 });
