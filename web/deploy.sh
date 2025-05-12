@@ -12,12 +12,12 @@ fi
 
 echo "Deploying for $APP_ENV"
 
-if [ "$APP_ENV" = "production" ]; then
-    echo "Running composer in production mode..."
-    composer install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --optimize-autoloader
-else
+if [ "$APP_ENV" = "local" ]; then
     echo "Running composer in non-production mode..."
     composer install
+else
+    echo "Running composer in production mode..."
+    composer install --no-ansi --no-dev --no-interaction --no-plugins --no-progress --no-scripts --optimize-autoloader
 fi
 
 php artisan migrate
