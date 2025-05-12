@@ -23,8 +23,14 @@ fi
 php artisan migrate
 npm ci #--omit=dev
 npm run build #--omit=dev
+# Clear all caches first
 sudo -u www-data php artisan cache:clear
 php artisan config:clear && php artisan route:clear && php artisan view:clear
+
+# Clear bootstrap cache specifically to avoid dev provider issues
+rm -f bootstrap/cache/*.php
+
+# Rebuild caches
 php artisan config:cache && php artisan route:cache && php artisan view:cache
 # sudo chown -R www-data:ubuntu .
 sudo service apache2 restart
