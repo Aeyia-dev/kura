@@ -125,7 +125,7 @@ const toggleMobileMenu = () => {
                 <section class="bg-white px-4 py-12">
                     <div class="max-w-5xl lg:px-16 mx-auto">
                         <div class="flex flex-col md:flex-row  justify-between">
-                            <div class="mb-16 md:mb-0 text-left">
+                            <div class="mb-8 md:mb-0 text-left">
                                 <h3 class="text-3xl font-semibold">Stay in the loop.</h3>
                             </div>
 
