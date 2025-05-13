@@ -188,17 +188,17 @@ const getColorClasses = () => {
                     type="email"
                     :placeholder="placeholder"
                     :class="[
-                        'bg-transparent py-3.5 md:py-3 px-5 flex-grow outline-none border-none text-base md:text-base focus:ring-0 focus:outline-none',
+                        'bg-transparent py-3.5 md:py-3 px-3 sm:px-4 md:px-5 flex-grow outline-none border-none text-base md:text-base focus:ring-0 focus:outline-none',
                         getColorClasses().text,
                         getColorClasses().placeholder
                     ]"
                 >
-                <div class="p-1 pr-1.5">
+                <div class="p-1 pr-1">
                     <button
                         type="submit"
                         :disabled="isSubmitting"
                         :class="[
-                            'rounded-full px-6 py-3 text-base md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200',
+                            'rounded-full px-3 sm:px-4 md:px-6 py-3 text-sm sm:text-base md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200',
                             getColorClasses().buttonBg,
                             getColorClasses().buttonText,
                             isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
