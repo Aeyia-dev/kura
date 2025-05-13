@@ -101,7 +101,7 @@ defineProps({
             </template>
             <template v-else>
                 <Link :href="route('login')" class="text-white hover:bg-white/20 px-4 py-2 rounded-full text-sm transition-colors duration-200">
-                    Log in
+                    Log&nbsp;in
                 </Link>
                 <Link v-if="canRegister" :href="route('register')" class="text-white bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm hover:bg-white/40 transition-colors duration-200">
                     Register
