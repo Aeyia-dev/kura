@@ -79,7 +79,7 @@ const toggleMobileMenu = () => {
                         theme="light"
                         button-text="Join Now"
                         placeholder="Email"
-                        max-width="max-w-md"
+                        max-width="max-w-xs sm:max-w-sm md:max-w-md"
                         :validate-domain="true"
                         success-message="Thank you for joining our waitlist!"
                     />
@@ -104,7 +104,7 @@ const toggleMobileMenu = () => {
                         theme="light"
                         button-text="Join Now"
                         placeholder="Email"
-                        max-width="max-w-md"
+                        max-width="max-w-xs sm:max-w-sm md:max-w-md"
                         :validate-domain="true"
                         success-message="Thank you for joining our waitlist!"
                     />
@@ -129,7 +129,7 @@ const toggleMobileMenu = () => {
                         theme="light"
                         button-text="Join Now"
                         placeholder="Email"
-                        max-width="max-w-md"
+                        max-width="max-w-xs sm:max-w-sm md:max-w-md"
                         :validate-domain="true"
                         success-message="Thank you for joining our waitlist!"
                     />
