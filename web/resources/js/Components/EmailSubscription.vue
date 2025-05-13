@@ -169,14 +169,14 @@ const getColorClasses = () => {
             text: showError ? 'text-red-300' : 'text-white',
             placeholder: 'placeholder-styling-light',
             buttonBg: 'bg-white',
-            buttonText: 'text-gray-900'
+            buttonText: 'text-charcoal'
         };
     } else {
         return {
             border: showError ? 'border-red-500' : 'border-gray-800',
             text: showError ? 'text-red-600' : 'text-gray-800',
             placeholder: 'placeholder-styling-dark',
-            buttonBg: 'bg-gray-800',
+            buttonBg: 'bg-charcoal',
             buttonText: 'text-white'
         };
     }

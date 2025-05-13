@@ -82,18 +82,18 @@ const toggleMobileMenu = () => {
                 <section class="bg-white py-12 px-12 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
                         <div class="mb-8">
-                            <p class="text-gray-800 text-2xl mb-6">
+                            <p class="text-charcoal text-2xl mb-6">
                                 We believe that even the smallest changes can spark powerful
                                 transformations. That's why our mission is to make transformative tools,
                                 habits, insights, and support more accessible.
                             </p>
 
-                            <p class="text-gray-800 text-2xl md:text-xl mb-6">
+                            <p class="text-charcoal text-2xl md:text-xl mb-6">
                                 Real change often begins with a single step - and everyone deserves the
                                 chance to take it.
                             </p>
 
-                            <p class="text-gray-800 font-medium text-xl md:text-base">
+                            <p class="text-charcoal font-medium text-xl md:text-base">
                                 AEYIA™ Society is a DGRI registered charity committed to expanding access to educational tools, online
                                 resources and support services for individuals experiencing hardship, social disadvantages, mental health
                                 challenges and vulnerable life circumstances. This initiative is currently evolving and will be available soon.
@@ -103,16 +103,16 @@ const toggleMobileMenu = () => {
                 </section>
 
                 <!-- Contact Section -->
-                <section class="bg-white py-12 px-8 md:px-8 lg:px-16">
+                <section class="bg-white py-6 px-8 md:px-8 lg:px-16">
                     <div class="max-w-5xl mx-auto">
-                        <div class="bg-[#e9e3db] bg-opacity-35 py-12 px-4 md:px-8 lg:px-16 rounded-[15px]">
+                        <div class="bg-[#e9e3db] bg-opacity-35 py-10 px-4 md:px-8 lg:px-16 rounded-[15px]">
                             <div class="flex flex-col md:flex-row justify-between">
                                 <div class="mb-8 md:mb-0 ml-5">
                                     <h3 class="text-5xl md:text-3xl font-semibold mb-4">Contact us.</h3>
                                     <p class="text-md text-gray-700 font-semibold">society@aeyia.com</p>
                                 </div>
 
-                                <div class="mb-8 md:mb-0 ml-5 md:mr-16">
+                                <div class="mb-4 md:mb-0 ml-5 md:mr-16">
                                     <p class="text-gray-700 mb-2 font-semibold">ABN: 14628727542</p>
                                     <a href="#" class="text-gray-700 underline text-xs">See more information</a>
                                 </div>

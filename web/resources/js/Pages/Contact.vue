@@ -147,16 +147,16 @@ const toggleMobileMenu = () => {
 
                     <!-- Navigation Menu - Hidden on mobile, visible on tablet/desktop -->
                     <nav class="hidden md:flex items-center space-x-6 lg:space-x-8 md:ml-auto  mt-10">
-                        <a href="/society" class="text-gray-800 text-2xl font-medium">society</a>
-                        <a href="/about" class="text-gray-800 text-2xl font-medium">about</a>
-                        <a href="/contact" class="text-gray-800 text-2xl font-medium">contact</a>
+                        <a href="/society" class="text-charcoal text-2xl font-medium">society</a>
+                        <a href="/about" class="text-charcoal text-2xl font-medium">about</a>
+                        <a href="/contact" class="text-charcoal text-2xl font-medium">contact</a>
                     </nav>
 
                     <!-- Mobile Menu Button - Only visible on mobile -->
                     <button
                         @click="toggleMobileMenu"
                         type="button"
-                        class="md:hidden text-gray-800 p-2 focus:outline-none"
+                        class="md:hidden text-charcoal p-2 focus:outline-none"
                     >
                         <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -193,7 +193,7 @@ const toggleMobileMenu = () => {
                             v-model="form.fullName"
                             type="text"
                             placeholder="Full Name"
-                            class="w-full px-4 border border-gray-600 rounded-lg focus:outline-none"
+                            class="w-full px-4 border border-charcoal text-charcoal rounded-lg focus:outline-none"
                         />
                     </div>
 
@@ -203,7 +203,7 @@ const toggleMobileMenu = () => {
                             v-model="form.email"
                             type="email"
                             placeholder="Email"
-                            class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none"
+                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-lg focus:outline-none"
                         />
                     </div>
 
@@ -213,7 +213,7 @@ const toggleMobileMenu = () => {
                             v-model="form.phone"
                             type="tel"
                             placeholder="Phone"
-                            class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none"
+                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-lg focus:outline-none"
                         />
                     </div>
 
@@ -223,7 +223,7 @@ const toggleMobileMenu = () => {
                             v-model="form.message"
                             placeholder="Message"
                             rows="5"
-                            class="w-full px-4 py-3 border border-gray-600 rounded-lg focus:outline-none resize-none"
+                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-lg focus:outline-none resize-none"
                         ></textarea>
                     </div>
 
@@ -231,13 +231,13 @@ const toggleMobileMenu = () => {
                     <div class="flex space-x-4 pt-2">
                         <button
                             type="submit"
-                            class="px-6 py-3 bg-black text-white font-medium rounded-lg"
+                            class="px-6 py-3 bg-charcoal text-white font-medium rounded-lg"
                         >
                             Send Message
                         </button>
                         <a
                             href="mailto:hello@aeyia.com"
-                            class="px-6 py-3 bg-white text-black font-medium rounded-lg border border-black"
+                            class="px-6 py-3 bg-white text-charcoal font-medium rounded-lg border border-charcoal"
                         >
                             Write Email
                         </a>
@@ -286,7 +286,7 @@ const toggleMobileMenu = () => {
             <div class="flex justify-end">
                 <button
                     @click="closeSuccessModal"
-                    class="inline-flex items-center px-4 py-2 bg-black text-white rounded-lg font-semibold text-xs uppercase tracking-widest"
+                    class="inline-flex items-center px-4 py-2 bg-charcoal text-white rounded-lg font-semibold text-xs uppercase tracking-widest"
                 >
                     Close
                 </button>
@@ -302,7 +302,7 @@ textarea:focus,
 button:focus {
     outline: none !important;
     box-shadow: none !important;
-    border-color: black !important;
+    border-color: #212026 !important;
     ring-width: 0 !important;
 }
 /* Add this CSS to your stylesheet */

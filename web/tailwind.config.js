@@ -18,6 +18,9 @@ export default {
                 sans: ['Matter', ...defaultTheme.fontFamily.sans],
                 matter: ['Matter', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                charcoal: '#212026',
+            },
         },
     },
 
