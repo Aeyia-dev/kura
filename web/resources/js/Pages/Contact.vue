@@ -263,8 +263,13 @@ const toggleMobileMenu = () => {
                 </div>
 
                 <!-- Social Media Icons -->
-                <div class="hidden md:block pt-10"><SiteFooter :style="'white'" position="sticky" /></div>
-                <div class="md:hidden"><SiteFooter position="sticky" /></div>
+                <div class="hidden md:block pt-24"><SiteFooter :style="'white'" position="sticky" /></div>
+
+                <div class="md:hidden">
+                    <!-- Spacer to push footer down -->
+                    <div class="py-56"></div>
+                    <SiteFooter position="sticky" />
+                </div>
 
             </div>
         </div>
