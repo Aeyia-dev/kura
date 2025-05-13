@@ -30,7 +30,7 @@ const toggleMobileMenu = () => {
     <Head title="AEYIA - About Us" />
 
     <!-- Main container -->
-    <div class="relative h-screen overflow-hidden bg-[#212026]">
+    <div class="relative min-h-screen overflow-y-auto bg-[#212026]">
         <!-- Background image with CharcoalAeyia background color -->
         <div class="hidden md:block">
             <BackgroundImage imageName="desktop-background-01-with-bar.jpg" :fixed="true" :offsetPx="-280" backgroundColor="bg-[#212026]" />
@@ -42,7 +42,7 @@ const toggleMobileMenu = () => {
         <!-- No need for global overlay with the BackgroundImage60 component -->
 
         <!-- Content Container -->
-        <div class="relative z-20 flex flex-col h-full">
+        <div class="relative z-20 flex flex-col min-h-screen">
             <!-- Header -->
             <SiteHeader
                 logoType="image"
@@ -89,13 +89,15 @@ const toggleMobileMenu = () => {
                             :validate-domain="true"
                             success-message="Thank you for joining our newsletter!"
                         />
-
                     </div>
                 </div>
             </section>
 
+            <!-- Spacer to push footer down -->
+            <div class="py-44 md:py-32 lg:py-40"></div>
+
             <!-- Footer with transparent background -->
-            <SiteFooter white />
+            <SiteFooter position="normal" style="white" />
         </div>
     </div>
 
