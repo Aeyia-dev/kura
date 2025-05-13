@@ -58,7 +58,7 @@ const toggleMobileMenu = () => {
 
             <!-- Hero Section -->
             <section class="flex flex-col items-center min-h-[80vh] px-4 py-8 relative">
-                <div class="absolute bottom-14 md:bottom-20 mx-8">
+                <div class="absolute bottom-14 md:bottom-20 mx-4">
                     <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold max-w-5xl mx-auto mb-8 ">
                         Small changes.
                         <br class="sm:hidden">Big transformations.
