@@ -76,6 +76,7 @@ const emit = defineEmits(['redirect']);
 const email = ref('');
 const isSubmitting = ref(false);
 const errorMessage = ref('');
+const successMessage = ref('');
 
 // Modal state
 const showModal = ref(false);
@@ -91,7 +92,7 @@ const closeModal = () => {
 const submitForm = async () => {
     // Reset error state
     errorMessage.value = '';
-    
+
     // Basic email validation
     if (!email.value || !email.value.includes('@')) {
         errorMessage.value = 'Please enter a valid email address.';
@@ -128,7 +129,8 @@ const submitForm = async () => {
                 // Normal success
                 isSuccess.value = true;
                 modalTitle.value = 'Thank You';
-                errorMessage.value = props.successMessage;
+                successMessage.value = props.successMessage;
+                errorMessage.value = ''; // Clear error message on success
                 showModal.value = true;
                 email.value = ''; // Clear the form on success
             }
@@ -158,18 +160,21 @@ const submitForm = async () => {
 
 // Get the color classes based on the theme
 const getColorClasses = () => {
+    // Only show error styling when there's an error message AND we're not in a success state
+    const showError = errorMessage.value && !isSuccess.value;
+
     if (props.theme === 'light') {
         return {
-            border: errorMessage.value ? 'border-red-500' : 'border-white',
-            text: errorMessage.value ? 'text-red-300' : 'text-white',
+            border: showError ? 'border-red-500' : 'border-white',
+            text: showError ? 'text-red-300' : 'text-white',
             placeholder: 'placeholder-styling-light',
             buttonBg: 'bg-white',
             buttonText: 'text-gray-900'
         };
     } else {
         return {
-            border: errorMessage.value ? 'border-red-500' : 'border-gray-800',
-            text: errorMessage.value ? 'text-red-600' : 'text-gray-800',
+            border: showError ? 'border-red-500' : 'border-gray-800',
+            text: showError ? 'text-red-600' : 'text-gray-800',
             placeholder: 'placeholder-styling-dark',
             buttonBg: 'bg-gray-800',
             buttonText: 'text-white'
@@ -225,7 +230,7 @@ const getColorClasses = () => {
                     <h3 class="text-lg font-medium text-gray-900">{{ modalTitle }}</h3>
                 </div>
                 <div class="mb-6">
-                    <p class="text-gray-600">{{ errorMessage }}</p>
+                    <p class="text-gray-600">{{ isSuccess ? successMessage : errorMessage }}</p>
                 </div>
                 <div class="flex justify-end">
                     <button
