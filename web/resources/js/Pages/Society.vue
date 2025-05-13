@@ -122,25 +122,27 @@ const toggleMobileMenu = () => {
                 </section>
 
                 <!-- Newsletter Section -->
-                <section class="bg-white py-12 px-8 md:px-8 lg:px-16">
-                    <div class="max-w-5xl mx-auto">
+                <section class="bg-white px-4 py-12">
+                    <div class="max-w-5xl lg:px-16 mx-auto">
                         <div class="flex flex-col md:flex-row  justify-between">
                             <div class="mb-16 md:mb-0 text-left">
                                 <h3 class="text-3xl font-semibold">Stay in the loop.</h3>
                             </div>
+
+                            <!-- Email Form -->
+                            <EmailSubscription
+                                theme="dark"
+                                button-text="Join Now"
+                                placeholder="Email"
+                                max-width="max-w-md"
+                                list-source="society"
+                                :validate-domain="true"
+                                success-message="Thank you for joining our newsletter!"
+                            />
+
                         </div>
                     </div>
 
-                    <!-- Email Form -->
-                    <EmailSubscription
-                        theme="dark"
-                        button-text="Join Now"
-                        placeholder="Email"
-                        max-width="max-w-md"
-                        list-source="society"
-                        :validate-domain="true"
-                        success-message="Thank you for joining our newsletter!"
-                    />
 
                 </section>
             </main>
