@@ -5,6 +5,7 @@ import Modal from '@/Components/Modal.vue';
 import SocialIcons from '@/Components/SocialIcons.vue';
 import BackgroundImage from '@/Components/BackgroundImage.vue';
 import SiteFooter from '@/Components/SiteFooter.vue';
+import MobileMenu from '@/Components/MobileMenu.vue';
 
 // Form handling and validation state
 const form = ref({
@@ -167,27 +168,20 @@ const toggleMobileMenu = () => {
                 </div>
             </div>
 
-            <!-- Mobile Menu Overlay -->
-            <div v-if="mobileMenuOpen" class="fixed inset-0 bg-white z-50 p-6">
-                <div class="flex justify-between items-center mb-10">
-                    <div class="text-2xl font-bold text-gray-800">
-                        aeyia
-                    </div>
-                    <button @click="toggleMobileMenu" class="p-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                </div>
-                <nav class="flex flex-col space-y-6 text-xl">
-                    <a href="/society" class="text-gray-800 text-3xl font-medium hover:text-gray-600 transition-colors text-left">society</a>
-                    <a href="/about" class="text-gray-800 text-3xl font-medium hover:text-gray-600 transition-colors text-left">about</a>
-                    <a href="/contact" class="text-gray-800 text-3xl font-medium hover:text-gray-600 transition-colors text-left">contact</a>
-                </nav>
-            </div>
+            <!-- Mobile Menu Component -->
+            <MobileMenu
+                :isOpen="mobileMenuOpen"
+                logoType="text"
+                logoText="aeyia"
+                :showMenuLinks="true"
+                :canLogin="false"
+                :canRegister="false"
+                :authUser="null"
+                @close="toggleMobileMenu"
+            />
 
             <!-- Contact Form Area -->
-            <div class="flex-grow flex flex-col px-6 md:px-10 py-6">
+            <div class="flex-grow flex flex-col px-6 md:px-10">
                 <div class="mb-8">
                     <h1 class="text-3xl font-bold">Contact us.</h1>
                 </div>
