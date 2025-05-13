@@ -28,15 +28,12 @@ const toggleMobileMenu = () => {
     <Head title="AEYIA - Elevate Well" />
 
     <!-- Main container -->
-    <div class="relative h-screen overflow-hidden">
-        <!-- Background image -->
-        <BackgroundImage imageName="desktop-background-03.jpg" :fixed="false" />
-
-        <!-- Overlay for better text readability -->
-        <div class="absolute inset-0 z-10 bg-black bg-opacity-20"></div>
+    <div class="relative min-h-screen overflow-y-auto bg-black">
+        <!-- Background image - notice the change to fixed="true" to make it stay in viewport -->
+        <BackgroundImage imageName="desktop-background-03.jpg" :fixed="true" />
 
         <!-- Content Container -->
-        <div class="relative z-20 flex flex-col h-full">
+        <div class="relative z-20 flex flex-col min-h-screen">
             <!-- Header -->
             <SiteHeader
                 logoType="image"
@@ -60,7 +57,7 @@ const toggleMobileMenu = () => {
             />
 
             <!-- Main Content - Centered -->
-            <main class="flex-grow flex flex-col justify-center items-center text-center px-4 pt-72 md:pt-0">
+            <main class="flex-grow flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-0">
                 <div class="max-w-4xl mx-auto">
                     <!-- Main Headline -->
                     <h1 class="text-white text-5xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 md:mb-4">
