@@ -112,7 +112,7 @@ const toggleMobileMenu = () => {
                                     <p class="text-md text-gray-700 font-semibold">society@aeyia.com</p>
                                 </div>
 
-                                <div class="mb-4 md:mb-0 ml-5 md:mr-16">
+                                <div class="my-6 md:mb-0 ml-5 md:mr-16">
                                     <p class="text-gray-700 mb-2 font-semibold">ABN: 14628727542</p>
                                     <a href="#" class="text-gray-700 underline text-xs">See more information</a>
                                 </div>
