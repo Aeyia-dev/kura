@@ -128,19 +128,20 @@ const toggleMobileMenu = () => {
                             <div class="mb-16 md:mb-0 text-left">
                                 <h3 class="text-3xl font-semibold">Stay in the loop.</h3>
                             </div>
-
-                            <!-- Email Form -->
-                            <EmailSubscription
-                                theme="dark"
-                                button-text="Join Now"
-                                placeholder="Email"
-                                max-width="max-w-md"
-                                list-source="society"
-                                :validate-domain="true"
-                                success-message="Thank you for joining our newsletter!"
-                            />
                         </div>
                     </div>
+
+                    <!-- Email Form -->
+                    <EmailSubscription
+                        theme="dark"
+                        button-text="Join Now"
+                        placeholder="Email"
+                        max-width="max-w-md"
+                        list-source="society"
+                        :validate-domain="true"
+                        success-message="Thank you for joining our newsletter!"
+                    />
+
                 </section>
             </main>
 
