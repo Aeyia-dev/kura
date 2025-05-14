@@ -53,8 +53,8 @@ Current action:
   - ✅ check "contact us" font is medium
   - ✅ hamburger too low
   - ✅ logo too big
+  - ✅ footer not finished - sticky, full width, social icons separate, float down on responive
   - [ ] fixed RHS width, flexible image bar
-  - [ ] footer not finished - sticky, full width, social icons separate, float down on responive
 
 ## Mon May 12 13:08:52
 

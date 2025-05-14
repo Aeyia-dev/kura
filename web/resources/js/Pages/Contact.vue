@@ -2,8 +2,6 @@
 import { Head } from '@inertiajs/vue3';
 import { ref } from 'vue';
 import Modal from '@/Components/Modal.vue';
-import SocialIcons from '@/Components/SocialIcons.vue';
-import BackgroundImage from '@/Components/BackgroundImage.vue';
 import SiteFooter from '@/Components/SiteFooter.vue';
 import MobileMenu from '@/Components/MobileMenu.vue';
 
@@ -106,10 +104,6 @@ const toggleMobileMenu = () => {
 
 <template>
     <Head title="AEYIA - Contact Us" />
-    <div class="md:hidden">
-        <BackgroundImage imageName="desktop-background-04.jpg" :fixed="true" :offsetPx="900" />
-    </div>
-
     <div class="flex flex-col md:flex-row h-screen">
         <div class="hidden md:block w-1/2 h-full relative">
             <!-- Background Image -->
@@ -256,18 +250,23 @@ const toggleMobileMenu = () => {
                     <p class="text-sm font-medium mb-6">Charity Enquiries: <a href="mailto:society@aeyia.com">society@aeyia.com</a></p>
                 </div>
 
-                <!-- Social Media Icons -->
+                <!-- Social Media Icons for desktop -->
                 <div class="hidden md:block pt-24"><SiteFooter :style="'white'" position="sticky" /></div>
+            </div>
 
-                <div class="md:hidden">
-                    <!-- Spacer to push footer down -->
-                    <div class="py-56"></div>
-                    <SiteFooter position="sticky" />
+                <!-- Mobile background with footer -->
+                <div class="md:hidden mt-8">
+                    <div
+                        class="relative w-full bg-cover bg-center flex items-end"
+                        style="background-image: url('/images/background/optimized/mobile/mobile-background-04.webp'); height: 500px;"
+                    >
+                        <SiteFooter :style="'transparent'" position="normal" />
+                    </div>
                 </div>
 
-            </div>
         </div>
     </div>
+
 
     <!-- Success Modal -->
     <Modal :show="showSuccessModal" @close="closeSuccessModal" max-width="md">
