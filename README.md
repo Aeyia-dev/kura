@@ -108,6 +108,7 @@ docker run --rm \
 
 ## Deploy Envs
 
+Public key `ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH55IprbJ9DkYF0nu6uPRjziGROjlFUaYrmv315sFEey tech@aeyia.com`
 ssh-add  ~/.ssh/aeyia_ed25519
 ssh ubuntu@13.54.98.88
 ssh ubuntu@dev.aeyia.com
