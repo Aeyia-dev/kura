@@ -23,7 +23,7 @@ Current action:
 
 - sitewide
   - [ ] All buttons charcoal
-  - [ ] only medium fonts (600) - no heavier
+  - ✅ only medium fonts (500) - no heavier
 - landing page
   - ✅ Remove email subscribe from dev
   - [ ] email subscribe replace modal with byline message under input
@@ -48,11 +48,13 @@ Current action:
   - [ ] responsive mode for ipad and down (portrait?)
   - [ ] sticky footer - too low on decktop, too high on mobile
 - Contact
+  - ✅ tighten up form input spacing
+  - ✅ 15px radius buttons
+  - ✅ check "contact us" font is medium
+  - ✅ hamburger too low
+  - ✅ logo too big
   - [ ] fixed RHS width, flexible image bar
-  - [ ] tighten up form input spacing
   - [ ] footer not finished - sticky, full width, social icons separate, float down on responive
-  - [ ] check "contact us" font is medium
-  - [ ] hamburger too low
 
 ## Mon May 12 13:08:52
 

@@ -123,8 +123,8 @@ const toggleMobileMenu = () => {
         <!-- Right Side - Contact Form  -->
         <div class="w-full md:w-1/2 flex flex-col z-10" >
             <!-- Header Navigation -->
-            <div class="w-full p-4 md:p-6 lg:p-8">
-                <div class="flex justify-end items-center">
+            <div class="w-full px-4 md:p-6 lg:p-8">
+                <div class="flex justify-between items-start">
                 <!-- Logo overlay -->
                 <div class="hidden md:block absolute top-0 left-0 p-6 z-20">
                     <a href="/holding">
@@ -140,7 +140,7 @@ const toggleMobileMenu = () => {
                         <img
                             src="/images/aeyia-logo.png"
                             alt="AEYIA Logo"
-                            style="display: block; width: 100%; max-width: none;"
+                            style="display: block; height: 8rem; max-width: none;"
                         />
                     </a>
                 </div>
@@ -156,12 +156,12 @@ const toggleMobileMenu = () => {
                     <button
                         @click="toggleMobileMenu"
                         type="button"
-                        class="md:hidden text-charcoal p-2 focus:outline-none"
+                        class="md:hidden text-charcoal py-6 focus:outline-none self-start"
                     >
-                        <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg v-if="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
-                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
                     </button>
@@ -183,17 +183,17 @@ const toggleMobileMenu = () => {
             <!-- Contact Form Area -->
             <div class="flex-grow flex flex-col px-6 md:px-10">
                 <div class="mb-8">
-                    <h1 class="text-3xl font-bold">Contact us.</h1>
+                    <h1 class="text-3xl font-medium">Contact us.</h1>
                 </div>
 
-                <form @submit.prevent="submitForm" class="space-y-6 mb-8">
+                <form @submit.prevent="submitForm" class="space-y-3 mb-8">
                     <!-- Full Name Field -->
                     <div>
                         <input
                             v-model="form.fullName"
                             type="text"
                             placeholder="Full Name"
-                            class="w-full px-4 border border-charcoal text-charcoal rounded-lg focus:outline-none"
+                            class="w-full px-4 border border-charcoal text-charcoal rounded-15 focus:outline-none"
                         />
                     </div>
 
@@ -203,7 +203,7 @@ const toggleMobileMenu = () => {
                             v-model="form.email"
                             type="email"
                             placeholder="Email"
-                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-lg focus:outline-none"
+                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-15 focus:outline-none"
                         />
                     </div>
 
@@ -213,7 +213,7 @@ const toggleMobileMenu = () => {
                             v-model="form.phone"
                             type="tel"
                             placeholder="Phone"
-                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-lg focus:outline-none"
+                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-15 focus:outline-none"
                         />
                     </div>
 
@@ -223,21 +223,21 @@ const toggleMobileMenu = () => {
                             v-model="form.message"
                             placeholder="Message"
                             rows="5"
-                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-lg focus:outline-none resize-none"
+                            class="w-full px-4 py-3 border border-charcoal text-charcoal rounded-15 focus:outline-none resize-none"
                         ></textarea>
                     </div>
 
                     <!-- Submit Buttons -->
-                    <div class="flex space-x-4 pt-2">
+                    <div class="flex space-x-4 pt-0">
                         <button
                             type="submit"
-                            class="px-6 py-3 bg-charcoal text-white font-medium rounded-lg"
+                            class="px-6 py-3 bg-charcoal text-white font-medium rounded-15"
                         >
                             Send Message
                         </button>
                         <a
                             href="mailto:hello@aeyia.com"
-                            class="px-6 py-3 bg-white text-charcoal font-medium rounded-lg border border-charcoal"
+                            class="px-6 py-3 bg-white text-charcoal font-medium rounded-15 border border-charcoal"
                         >
                             Write Email
                         </a>
@@ -251,9 +251,9 @@ const toggleMobileMenu = () => {
 
                 <!-- Contact Information -->
                 <div class="mt-5">
-                    <p class="text-sm font-semibold mb-2"><a href="mailto:hello@aeyia.com">hello@aeyia.com</a></p>
-                    <p class="text-sm font-semibold mb-2">6/7 Grevillea Street,<br/>Byron Bay, NSW, Australia</p>
-                    <p class="text-sm font-semibold mb-6">Charity Enquiries: <a href="mailto:society@aeyia.com">society@aeyia.com</a></p>
+                    <p class="text-sm font-medium mb-2"><a href="mailto:hello@aeyia.com">hello@aeyia.com</a></p>
+                    <p class="text-sm font-medium mb-2">6/7 Grevillea Street,<br/>Byron Bay, NSW, Australia</p>
+                    <p class="text-sm font-medium mb-6">Charity Enquiries: <a href="mailto:society@aeyia.com">society@aeyia.com</a></p>
                 </div>
 
                 <!-- Social Media Icons -->
@@ -286,7 +286,7 @@ const toggleMobileMenu = () => {
             <div class="flex justify-end">
                 <button
                     @click="closeSuccessModal"
-                    class="inline-flex items-center px-4 py-2 bg-charcoal text-white rounded-lg font-semibold text-xs uppercase tracking-widest"
+                    class="inline-flex items-center px-4 py-2 bg-charcoal text-white rounded-15 font-medium text-xs uppercase tracking-widest"
                 >
                     Close
                 </button>
