@@ -5,7 +5,6 @@ import SiteHeader from '@/Components/SiteHeader.vue';
 import SiteFooter from '@/Components/SiteFooter.vue';
 import MobileMenu from '@/Components/MobileMenu.vue';
 import BackgroundImage from '@/Components/BackgroundImage.vue';
-import EmailSubscription from '@/Components/EmailSubscription.vue';
 
 // Props passed from controller
 const props = defineProps({
@@ -73,16 +72,6 @@ const toggleMobileMenu = () => {
                     <p class="text-white text-lg md:text-xl lg:text-2xl font-medium leading-snug mb-8 md:mb-10 mx-auto max-w-2xl">
                         Coming soon — we're excited to share what we've been working on.
                     </p>
-
-                    <!-- Email Form -->
-                    <EmailSubscription
-                        theme="light"
-                        button-text="Join Now"
-                        placeholder="Email"
-                        max-width="max-w-xs sm:max-w-sm md:max-w-md"
-                        :validate-domain="true"
-                        success-message="Thank you for joining our waitlist!"
-                    />
                 </div>
             </main>
 
