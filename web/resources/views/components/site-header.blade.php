@@ -23,7 +23,7 @@
     <!-- Mobile header with logo and menu button -->
     <div class="mobile-header">
       <a href="/holding" class="logo">
-        <img src="/images/logos/aeyia_logo_black.png" alt="AEYIA Logo" style="height: 40px;">
+        <img src="/images/logos/aeyia_logo_black.png" alt="AEYIA Logo" style="height: 80px;">
       </a>
       <button id="mobile-menu-toggle" class="menu-toggle" aria-label="Toggle menu">
         <span class="menu-icon"></span>
