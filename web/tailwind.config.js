@@ -20,6 +20,7 @@ export default {
             },
             colors: {
                 charcoal: '#212026',
+                dust: '#e9e3db',
             },
         },
     },

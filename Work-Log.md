@@ -34,13 +34,13 @@ Current action:
   - ✅ add logo
   - ✅ fix mobile menu
 - Society
-  - [ ] Contact box Dust #e9e3db 35%
-  - [ ] push text down below chin
-  - [ ] push image up - widen?
-  - [ ] check "stay in the loop" is medium weight
-  - [ ] push ABN down to baseline of Contact Us - use line height etc
-  - [ ] tighten responsive padding esp below signup form
-  - [ ] 1024 breakpoint logo to large
+  - ✅ Contact box Dust #e9e3db 35%
+  - ✅ push text down below chin
+  - ✅ push image up - widen?
+  - ✅ check "stay in the loop" is medium weight
+  - ✅ push ABN down to baseline of Contact Us - use line height etc
+  - ✅ tighten responsive padding esp below signup form
+  - ✅ 1024 breakpoint logo to large
 - About
   - [ ] side by side layout - use fixed LHS width, flexible grey bar
   - [ ] keep face on screen when resizing responive view
