@@ -175,7 +175,7 @@ const toggleMobileMenu = () => {
             />
 
             <!-- Contact Form Area -->
-            <div class="flex-grow flex flex-col px-6 md:px-10">
+            <div class="flex-grow flex flex-col px-6 py-10 md:px-10">
                 <div class="mb-8">
                     <h1 class="text-3xl font-medium">Contact us.</h1>
                 </div>
