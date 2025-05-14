@@ -34,7 +34,7 @@ onMounted(() => {
 <template>
     <AppLayout title="Email Signatures">
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            <h2 class="font-medium text-xl text-gray-800 leading-tight">
                 Email Signatures
             </h2>
         </template>

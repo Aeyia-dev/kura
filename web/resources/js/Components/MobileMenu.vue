@@ -84,7 +84,7 @@ const closeMenu = () => {
             <!-- Logo (image or text) -->
             <div class="w-48 md:w-64 lg:w-auto lg:max-w-md">
                 <!-- Text logo -->
-                <h1 v-if="logoType === 'text'" class="text-white text-4xl md:text-5xl font-bold">
+                <h1 v-if="logoType === 'text'" class="text-white text-4xl md:text-5xl font-medium">
                     {{ logoText }}
                 </h1>
                 <!-- Image logo -->

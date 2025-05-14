@@ -57,7 +57,7 @@ const toggleMobileMenu = () => {
                 <!-- Hero Content -->
                 <section class="flex flex-col items-center px-4 py-8 relative min-h-[30rem] max-h-[50rem] md:min-h-[50rem] md:max-h-[70rem] lg:min-h-[70rem] lg:max-h-[90rem]">
                     <div class="absolute bottom-14 md:bottom-20 mx-4">
-                        <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-semibold max-w-5xl mx-auto mb-8 ">
+                        <h2 class="text-white text-4xl md:text-5xl lg:text-6xl font-medium max-w-5xl mx-auto mb-8 ">
                             Small changes.
                             <br class="lg:hidden">Big transformations.
                         </h2>
@@ -107,12 +107,12 @@ const toggleMobileMenu = () => {
                         <div class="bg-dust bg-opacity-35 py-10 px-4 md:px-8 lg:px-16 rounded-[15px]">
                             <div class="flex flex-col md:flex-row justify-between">
                                 <div class="mb-8 md:mb-0 ml-5">
-                                    <h3 class="text-5xl md:text-3xl font-semibold mb-4">Contact us.</h3>
-                                    <p class="text-md text-gray-700 font-semibold">society@aeyia.com</p>
+                                    <h3 class="text-5xl md:text-3xl font-medium mb-4">Contact us.</h3>
+                                    <p class="text-md text-gray-700 font-medium">society@aeyia.com</p>
                                 </div>
 
                                 <div class="mt-3 md:mb-0 ml-5 md:mr-16">
-                                    <p class="text-gray-700 mb-2 font-semibold">ABN: 14628727542</p>
+                                    <p class="text-gray-700 mb-2 font-medium">ABN: 14628727542</p>
                                     <a href="#" class="text-gray-700 underline text-xs">See more information</a>
                                 </div>
                             </div>
@@ -125,7 +125,7 @@ const toggleMobileMenu = () => {
                     <div class="max-w-5xl lg:px-16 mx-auto">
                         <div class="flex flex-col md:flex-row  justify-between">
                             <div class="px-4 mb-8 md:mb-0 text-left">
-                                <h3 class="text-3xl font-semibold">Stay in the loop.</h3>
+                                <h3 class="text-3xl font-medium">Stay in the loop.</h3>
                             </div>
 
                             <!-- Email Form -->

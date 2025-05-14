@@ -60,7 +60,7 @@ const toggleMobileMenu = () => {
             <main class="flex-grow flex flex-col justify-center items-center text-center px-4 pt-24 md:pt-0">
                 <div class="max-w-4xl mx-auto">
                     <!-- Main Headline -->
-                    <h1 class="text-white text-5xl md:text-5xl lg:text-6xl font-semibold tracking-tight mb-3 md:mb-4">
+                    <h1 class="text-white text-5xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-3 md:mb-4">
                         Elevate well.<span class="text-3xl md:text-3xl lg:text-4xl align-top">™</span>
                     </h1>
 
