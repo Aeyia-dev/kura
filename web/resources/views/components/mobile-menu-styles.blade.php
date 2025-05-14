@@ -11,7 +11,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--black);
+    background-color: var(--charcoal);
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -141,7 +141,7 @@
       display: block;
       width: 100%;
       height: 2px;
-      background-color: var(--black);
+      background-color: var(--charcoal);
       position: absolute;
       transition: all 0.3s;
     }

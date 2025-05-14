@@ -21,6 +21,39 @@
 Current action:
 - Holding site QA
 
+- sitewide
+  - [ ] All buttons charcoal
+  - [ ] only medium fonts (600) - no heavier
+- landing page
+  - ✅ Remove email subscribe from dev
+  - [ ] email subscribe replace modal with byline message under input
+- T&Cs
+  - ✅ nav box edges rounded 15px
+  - ✅ All buttons charcoal
+  - ✅ only medium fonts (600) - no heavier
+  - ✅ add logo
+  - ✅ fix mobile menu
+- Society
+  - [ ] Contact box Dust #e9e3db 35%
+  - [ ] push text down below chin
+  - [ ] push image up - widen?
+  - [ ] check "stay in the loop" is medium weight
+  - [ ] push ABN down to baseline of Contact Us - use line height etc
+  - [ ] tighten responsive padding esp below signup form
+  - [ ] 1024 breakpoint logo to large
+- About
+  - [ ] side by side layout - use fixed LHS width, flexible grey bar
+  - [ ] keep face on screen when resizing responive view
+  - [ ] move hero text over to right and down - see whatsapp image guide.
+  - [ ] responsive mode for ipad and down (portrait?)
+  - [ ] sticky footer - too low on decktop, too high on mobile
+- Contact
+  - [ ] fixed RHS width, flexible image bar
+  - [ ] tighten up form input spacing
+  - [ ] footer not finished - sticky, full width, social icons separate, float down on responive
+  - [ ] check "contact us" font is medium
+  - [ ] hamburger too low
+
 ## Mon May 12 13:08:52
 
 Current action:

@@ -5,13 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms & Conditions - AEYIA</title>
   <style>
+    /* Matter Font */
+    @font-face {
+        font-family: 'Matter';
+        src: url('/fonts/matter/MatterRegular.otf') format('opentype');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Matter';
+        src: url('/fonts/matter/MatterThin.otf') format('opentype');
+        font-weight: 100;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Matter';
+        src: url('/fonts/matter/MatterLight.otf') format('opentype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'Matter';
+        src: url('/fonts/matter/MatterMedium.otf') format('opentype');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+
     /* Base styles */
     :root {
-      --primary-text: rgba(33, 32, 38, 1);
+      --primary-text: #212026;
       --white: #ffffff;
-      --black: #000000;
-      --heading-font: 'Matter TRIAL', sans-serif;
-      --body-font: 'Matter SQ TRIAL', sans-serif;
+      --charcoal: #212026;
+      --heading-font: 'Matter', sans-serif;
+      --body-font: 'Matter', sans-serif;
       --container-width: 1200px;
       --spacing-sm: 0.5rem;
       --spacing-md: 1rem;
@@ -79,6 +112,12 @@
       align-items: center;
     }
 
+    .header-flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .mobile-header {
       display: none;
     }
@@ -136,7 +175,8 @@
     }
 
     .terms-toc li.active {
-      background-color: var(--black);
+      background-color: var(--charcoal);
+      border-radius: 15px;
     }
 
     .terms-toc li.active a {
@@ -160,7 +200,7 @@
     .terms-section h3 {
       margin-top: var(--spacing-lg);
       margin-bottom: var(--spacing-sm);
-      font-weight: 600;
+      font-weight: 500;
     }
 
     .info-text {
@@ -170,7 +210,7 @@
     
     /* Terms and Conditions Styling */
     .numbered-heading {
-      font-weight: 600;
+      font-weight: 500;
       font-size: 1.2rem;
       margin-top: var(--spacing-lg);
       margin-bottom: var(--spacing-sm);
@@ -270,8 +310,6 @@
       height: 52px;
     }
     
-    /* We apply brightness(0) filter directly to the icons to make them black like in the Vue component */
-    
     /* Copyright and legal links at bottom */
     .footer-bottom {
       width: 100%;
@@ -332,6 +370,9 @@
     }
 
     @media (max-width: 767px) {
+      .header-flex-container {
+        display: none;
+      }
       .desktop-nav {
         display: none;
       }
@@ -365,7 +406,7 @@
         display: block;
         width: 100%;
         height: 2px;
-        background-color: var(--black);
+        background-color: var(--charcoal);
         position: absolute;
         transition: all 0.3s;
       }
@@ -736,6 +777,19 @@
   <script>
     // Table of contents navigation
     document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded in terms-conditions');
+
+      // Initialize mobile menu - ensure this runs after the DOM is fully loaded
+      setTimeout(function() {
+        console.log('Attempting to initialize mobile menu');
+        if (typeof window.initMobileMenu === 'function') {
+          console.log('InitMobileMenu function found, calling it');
+          window.initMobileMenu();
+        } else {
+          console.log('InitMobileMenu function not found');
+        }
+      }, 200);
+
       const tocLinks = document.querySelectorAll('.terms-toc a');
       tocLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -759,6 +813,18 @@
           }
         });
       });
+
+      // Manually ensure the menu toggle button works
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuToggle && mobileMenu) {
+        console.log('Adding direct click handler to mobile menu toggle');
+        menuToggle.addEventListener('click', function() {
+          console.log('Mobile menu toggle clicked');
+          mobileMenu.classList.add('active');
+          document.body.classList.add('mobile-menu-open');
+        });
+      }
     });
   </script>
 </body>

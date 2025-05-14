@@ -41,45 +41,51 @@
 <script>
   // Add this script if it's not already included elsewhere
   document.addEventListener('DOMContentLoaded', function() {
-    if (typeof window.initMobileMenu !== 'function') {
-      window.initMobileMenu = function() {
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuToggle = document.getElementById('mobile-menu-toggle');
-        const menuClose = document.getElementById('mobile-menu-close');
-        
-        // Function to open mobile menu
-        function openMobileMenu() {
-          mobileMenu.classList.add('active');
-          document.body.classList.add('mobile-menu-open');
-        }
-        
-        // Function to close mobile menu
-        function closeMobileMenu() {
-          mobileMenu.classList.remove('active');
-          document.body.classList.remove('mobile-menu-open');
-        }
-        
-        // Add event listeners
-        if (menuToggle) {
-          menuToggle.addEventListener('click', openMobileMenu);
-        }
-        
-        if (menuClose) {
-          menuClose.addEventListener('click', closeMobileMenu);
-        }
-        
-        // Add click event to all mobile nav links
-        const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-        mobileNavLinks.forEach(link => {
-          link.addEventListener('click', closeMobileMenu);
-        });
-        
-        // Make closeMobileMenu function global for onclick attributes
-        window.closeMobileMenu = closeMobileMenu;
-      };
+    // Define the initialization function
+    window.initMobileMenu = function() {
+      console.log('Mobile menu init called');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuToggle = document.getElementById('mobile-menu-toggle');
+      const menuClose = document.getElementById('mobile-menu-close');
       
-      // Initialize mobile menu
+      // Function to open mobile menu
+      function openMobileMenu() {
+        console.log('Opening mobile menu');
+        mobileMenu.classList.add('active');
+        document.body.classList.add('mobile-menu-open');
+      }
+
+      // Function to close mobile menu
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('mobile-menu-open');
+      }
+
+      // Add event listeners
+      if (menuToggle) {
+        console.log('Adding click listener to menu toggle');
+        menuToggle.addEventListener('click', openMobileMenu);
+      } else {
+        console.log('Menu toggle not found');
+      }
+
+      if (menuClose) {
+        menuClose.addEventListener('click', closeMobileMenu);
+      }
+
+      // Add click event to all mobile nav links
+      const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
+      mobileNavLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // Make closeMobileMenu function global for onclick attributes
+      window.closeMobileMenu = closeMobileMenu;
+    };
+
+    // Wait for DOM to be fully loaded before initializing
+    setTimeout(function() {
       window.initMobileMenu();
-    }
+    }, 100);
   });
 </script>
