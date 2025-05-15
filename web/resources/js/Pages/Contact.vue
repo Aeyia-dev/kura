@@ -260,7 +260,7 @@ const toggleMobileMenu = () => {
                         class="relative w-full bg-cover bg-center flex items-end"
                         style="background-image: url('/images/background/optimized/mobile/mobile-background-04.webp'); height: 500px;"
                     >
-                        <SiteFooter :style="'transparent'" position="normal" />
+                        <SiteFooter style="transparent" position="normal" />
                     </div>
                 </div>
 

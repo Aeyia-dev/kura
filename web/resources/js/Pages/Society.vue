@@ -147,7 +147,7 @@ const toggleMobileMenu = () => {
             </main>
 
             <!-- Footer -->
-            <SiteFooter :style="'white'" />
+            <SiteFooter style="white" />
         </div>
     </div>
 

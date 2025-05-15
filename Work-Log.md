@@ -19,46 +19,48 @@
 ## Wed May 14 11:10:29
 
 Current action:
-- Holding site QA
 
+- Holding site QA
 - sitewide
   - [ ] All buttons charcoal
   - ✅ only medium fonts (500) - no heavier
-- landing page
+- Landing page
   - ✅ Remove email subscribe from dev
   - [ ] email subscribe replace modal with byline message under input
 - T&Cs
   - ✅ nav box edges rounded 15px
   - ✅ All buttons charcoal
-  - ✅ only medium fonts (600) - no heavier
-  - ✅ add logo
+  - ✅ only medium fonts (500) - no heavier
   - ✅ fix mobile menu
+  - ✅ add logo so we can get back
 - Society
   - ✅ Contact box Dust #e9e3db 35%
   - ✅ push text down below chin
-  - ✅ push image up - widen?
+  - ✅ push image up - widen x
   - ✅ check "stay in the loop" is medium weight
   - ✅ push ABN down to baseline of Contact Us - use line height etc
   - ✅ tighten responsive padding esp below signup form
   - ✅ 1024 breakpoint logo to large
 - About
-  - [ ] side by side layout - use fixed LHS width, flexible grey bar
-  - [ ] keep face on screen when resizing responive view
-  - [ ] move hero text over to right and down - see whatsapp image guide.
-  - [ ] responsive mode for ipad and down (portrait?)
-  - [ ] sticky footer - too low on decktop, too high on mobile
+  - ✅ side by side layout - use fixed LHS width, flexible grey bar
+  - ✅ keep face on screen when resizing responive view
+  - ✅ move hero text over to right and down - see whatsapp image guide.
+  - ✅ responsive mode for ipad and down (portrait?)
+  - ✅ sticky footer - too low on decktop, too high on mobile
 - Contact
   - ✅ tighten up form input spacing
   - ✅ 15px radius buttons
   - ✅ check "contact us" font is medium
   - ✅ hamburger too low
+  - ✅ hamburger too small
   - ✅ logo too big
   - ✅ footer not finished - sticky, full width, social icons separate, float down on responive
-  - [ ] fixed RHS width, flexible image bar
+  - ✅ fixed RHS width, flexible image bar
 
 ## Mon May 12 13:08:52
 
 Current action:
+
 - [ ] get a prod holding site online
   - ✅ aeyia.com and society.aeyia.com DNS
     - ✅ Test
@@ -84,6 +86,7 @@ Current action:
 ## Thu May 01 11:11:19
 
 Current action:
+
 - ✅ round favicons
 - ✅ rename images for SEO
 - [ ] get a prod holding site online

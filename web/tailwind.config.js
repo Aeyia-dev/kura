@@ -22,6 +22,9 @@ export default {
                 charcoal: '#212026',
                 dust: '#e9e3db',
             },
+            borderRadius: {
+                '15': '15px',
+            }
         },
     },
 
