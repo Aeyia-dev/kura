@@ -497,7 +497,7 @@
       <!-- Content sections -->
       <div class="terms-content">
         <section id="aeyia" class="terms-section">
-          <h2>AEYIA – Website Terms of Use</h2>
+          <h2>AEYIA&trade; – Website Terms of Use</h2>
           
           <div class="terms-content">
             <p class="numbered-heading">1. General</p>
