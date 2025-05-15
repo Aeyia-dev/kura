@@ -24,7 +24,10 @@ export default {
             },
             borderRadius: {
                 '15': '15px',
-            }
+            },
+            screens: {
+                'lg': '1025px',  // Force iPad to tablet view
+            },
         },
     },
 

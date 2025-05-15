@@ -84,7 +84,7 @@ const toggleMobileMenu = () => {
                     <SiteFooter position="sticky" style="white" class="hidden lg:block"/>
                 </section>
 
-                <section class="bg-res-image flex-grow flex flex-col pt-8 px-8 lg:hidden ">
+                <section class="bg-res-image flex-grow flex flex-col pt-8 px-8 lg:hidden">
                     <!-- Email Form -->
                     <EmailSubscription
                         theme="light"
@@ -135,43 +135,39 @@ button:focus {
     background-position: left top;
     background-size: cover;
     background-repeat: no-repeat;
-    z-index: -1; /* Changed from 0 to -1 to place it behind all content */
+    z-index: -1;
 }
 
-/* Add this to ensure content in .bg-hero appears above the background */
 .bg-hero > * {
     position: relative;
     z-index: 1;
 }
 .bg-res-image {
-    background-color: #212026;
-    background-image: none;
-    min-height: 30rem; /* Slightly smaller height for tablets */
+    background-position: center -20rem;
+    background-image: url('/images/background/optimized/tablet/tablet-background-01.jpg');
+    min-height: 50rem;
 }
 
-@media (max-width: 1025px) {
+
+@media (max-width: 1024px) {
     .bg-hero::before {
         background-image: none;
     }
     .bg-res-image {
-        background-position: center -20rem;
-        background-image: url('/images/background/optimized/tablet/tablet-background-01.jpg');
-        min-height: 40rem; /* Slightly smaller height for tablets */
+        min-height: 40rem;
     }
 }
-
-
 @media (max-width: 767px) {
+    .hero-content {
+        width: 100%;
+        padding: 0 1rem;
+    }
     .bg-res-image {
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100%;
         background-image: url('/images/background/optimized/mobile/mobile-background-01.jpg');
-        min-height: 28rem; /* Slightly smaller height for tablets */
-    }
-    .hero-content {
-        width: 100%;
-        padding: 0 1rem;
+        min-height: 28rem;
     }
 }
 </style>
