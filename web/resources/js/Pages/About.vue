@@ -143,7 +143,8 @@ button:focus {
     z-index: 1;
 }
 .bg-res-image {
-    background-position: center -20rem;
+    background-position: center top;
+    background-size: 100%;
     background-image: url('/images/background/optimized/tablet/tablet-background-01.jpg');
     min-height: 50rem;
 }
