@@ -8,7 +8,7 @@ defineProps({
     /**
      * Footer style: 'transparent' for overlay on background image, 'white' for white background
      */
-    style: {
+    theme: {
         type: String,
         default: 'transparent',
         validator: (value) => ['transparent', 'white'].includes(value)
@@ -32,9 +32,9 @@ defineProps({
 /**
  * Get CSS classes based on footer style
  */
-const getColorClasses = (style) => {
-    return style === 'white'
-        ? 'text-gray-700'
+const getColorClasses = (theme) => {
+    return theme === 'white'
+        ? 'text-charcoal'
         : 'text-white';
 };
 
@@ -47,13 +47,13 @@ const currentYear = new Date().getFullYear();
 <template>
     <footer :class="[
         'w-full px-4 md:px-8 py-6 md:py-10 z-10',
-        getColorClasses(style),
+        getColorClasses(theme),
         position === 'fixed' ? 'fixed bottom-0 left-0' : '',
         position === 'sticky' ? 'mt-auto' : ''
     ]">
         <!-- Social Media Icons -->
         <div class="md:hidden flex justify-center space-x-6 mb-8 mt-20">
-            <SocialIcons :dark="style === 'white'" size="md" />
+            <SocialIcons :dark="theme === 'white'" size="md" />
         </div>
 
         <div class="flex justify-between md:hidden">
@@ -83,7 +83,7 @@ const currentYear = new Date().getFullYear();
 
                 <!-- Social Media Icons - Centered -->
                 <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 mb-6 mt-20">
-                    <SocialIcons :dark="style === 'white'" size="lg" />
+                    <SocialIcons :dark="theme === 'white'" size="lg" />
                 </div>
 
                 <!-- Legal Links - On right side -->

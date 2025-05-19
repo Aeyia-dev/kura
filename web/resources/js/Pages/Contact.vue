@@ -251,7 +251,7 @@ const toggleMobileMenu = () => {
                 </div>
 
                 <!-- Social Media Icons for desktop -->
-                <div class="hidden md:block pt-24"><SiteFooter :style="'white'" position="sticky" /></div>
+                <div class="hidden md:block pt-24"><SiteFooter theme="white" position="sticky" /></div>
             </div>
 
                 <!-- Mobile background with footer -->
@@ -260,7 +260,7 @@ const toggleMobileMenu = () => {
                         class="relative w-full bg-cover bg-center flex items-end"
                         style="background-image: url('/images/background/optimized/mobile/mobile-background-04.webp'); height: 500px;"
                     >
-                        <SiteFooter style="transparent" position="normal" />
+                        <SiteFooter theme="transparent" position="normal" />
                     </div>
                 </div>
 

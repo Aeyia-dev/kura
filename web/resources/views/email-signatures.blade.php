@@ -68,16 +68,16 @@ function generateSignature($name, $email, $phone) {
                 ' . $nameHtml . '
 
                 <div style="padding-top: 15px;">
-                    <a href="https://www.instagram.com/aeyia_/" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
+                    <a href="' . config('aeyia.social.instagram') . '" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
                         <img src="' . $s3BaseUrl . '/instagram.png" alt="Instagram" style="width: 1.3rem !important; border: 0;">
                     </a>
-                    <a href="http://www.facebook.com/aeyia.au" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
+                    <a href="' . config('aeyia.social.facebook') . '" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
                         <img src="' . $s3BaseUrl . '/facebook.png" alt="Facebook" style="width: 1.3rem !important; border: 0;">
                     </a>
-                    <a href="http://www.tiktok.com/@aeyia__" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
+                    <a href="' . config('aeyia.social.tiktok') . '" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
                         <img src="' . $s3BaseUrl . '/tiktok.png" alt="TikTok" style="width: 1.3rem !important; border: 0;">
                     </a>
-                    <a href="https://www.youtube.com/@AEYIAWellness" style="text-decoration: none !important; display: inline-block;">
+                    <a href="' . config('aeyia.social.youtube') . '" style="text-decoration: none !important; display: inline-block;">
                         <img src="' . $s3BaseUrl . '/youtube.png" alt="YouTube" style="width: 1.3rem !important; border: 0;">
                     </a>
                 </div>

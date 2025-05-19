@@ -81,7 +81,7 @@ const toggleMobileMenu = () => {
 
                         </div>
                     </div>
-                    <SiteFooter position="sticky" style="white" class="hidden lg:block"/>
+                    <SiteFooter position="sticky" theme="white" class="hidden lg:block"/>
                 </section>
 
                 <section class="bg-res-image flex-grow flex flex-col pt-8 px-8 lg:hidden">
@@ -96,7 +96,7 @@ const toggleMobileMenu = () => {
                         success-message="Thank you for joining our newsletter!"
                     />
 
-                    <SiteFooter position="sticky" style="white" />
+                    <SiteFooter position="sticky" theme="white" />
                 </section>
             </div>
         </div>

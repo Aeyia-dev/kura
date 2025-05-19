@@ -82,7 +82,7 @@ const toggleMobileMenu = () => {
             </main>
 
             <!-- Footer -->
-            <SiteFooter style="transparent" position="normal"/>
+            <SiteFooter theme="transparent" position="normal"/>
         </div>
     </div>
 

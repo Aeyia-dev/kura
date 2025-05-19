@@ -33,4 +33,19 @@ return [
             'contact_form' => 'Website Contact Form',
         ],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Social Media Links
+    |--------------------------------------------------------------------------
+    |
+    | Social media profile URLs
+    |
+    */
+    'social' => [
+        'instagram' => env('SOCIAL_INSTAGRAM', 'https://www.instagram.com/aeyia__'),
+        'facebook' => env('SOCIAL_FACEBOOK', 'http://www.facebook.com/aeyia.au'),
+        'youtube' => env('SOCIAL_YOUTUBE', 'https://www.youtube.com/@AEYIAWellness'),
+        'tiktok' => env('SOCIAL_TIKTOK', 'http://www.tiktok.com/@aeyia__'),
+    ],
 ];

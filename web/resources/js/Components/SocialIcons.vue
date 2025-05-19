@@ -2,6 +2,8 @@
 /**
  * Social icons component for reuse across the site
  */
+import { usePage } from '@inertiajs/vue3';
+
 defineProps({
     /**
      * Use dark icons instead of white/default
@@ -23,23 +25,26 @@ defineProps({
      */
     socialLinks: {
         type: Array,
-        default: () => [
-            {
-                url: '//www.facebook.com/aeyia.au',
-                alt: 'Facebook',
-                icon: '/images/landing/social-facebook.png'
-            },
-            {
-                url: '//www.instagram.com/aeyia_/',
-                alt: 'Instagram',
-                icon: '/images/landing/social-instagram.png'
-            },
-            {
-                url: '//www.youtube.com/@AEYIAWellness',
-                alt: 'YouTube',
-                icon: '/images/landing/social-youtube.png'
-            }
-        ]
+        default: () => {
+            const social = usePage().props.config.social;
+            return [
+                {
+                    url: social.facebook,
+                    alt: 'Facebook',
+                    icon: '/images/landing/social-facebook.png'
+                },
+                {
+                    url: social.instagram,
+                    alt: 'Instagram',
+                    icon: '/images/landing/social-instagram.png'
+                },
+                {
+                    url: social.youtube,
+                    alt: 'YouTube',
+                    icon: '/images/landing/social-youtube.png'
+                }
+            ];
+        }
     }
 });
 
