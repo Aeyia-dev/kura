@@ -57,7 +57,7 @@ const toggleMobileMenu = () => {
                 <!-- Hero Content -->
                 <section class="flex flex-col items-center py-8 relative min-h-[30rem] max-h-[50rem] md:min-h-[50rem] md:max-h-[70rem] lg:min-h-[70rem] lg:max-h-[90rem]">
                     <div class="absolute bottom-14 md:bottom-20 w-full px-6 md:px-12 lg:px-20">
-                        <h2 class="text-white text-4xl md:text-5xl lg:text-7xl font-medium mx-auto mb-8">
+                        <h2 class="text-white text-4xl md:text-5xl lg:text-7xl font-medium mb-8 text-center">
                             Small changes.
                             <br class="lg:hidden">Big transformations.
                         </h2>
