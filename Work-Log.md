@@ -26,7 +26,8 @@ Current action:
   - ✅ only medium fonts (500) - no heavier
 - Landing page
   - ✅ Remove email subscribe from dev
-  - [ ] email subscribe replace modal with byline message under input
+  - ✅ email subscribe replace modal with byline message under input
+  - ✅ drop the hero text to match figma
 - T&Cs
   - ✅ nav box edges rounded 15px
   - ✅ All buttons charcoal

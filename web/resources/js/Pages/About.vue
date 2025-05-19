@@ -76,7 +76,7 @@ const toggleMobileMenu = () => {
                                 max-width="max-w-md"
                                 align="mr-auto"
                                 :validate-domain="true"
-                                success-message="Thank you for joining our newsletter!"
+                                success-message="Thanks for signing up, we’ll be in touch soon!"
                             />
 
                         </div>
@@ -93,7 +93,7 @@ const toggleMobileMenu = () => {
                         max-width="max-w-md"
                         align="mx-auto"
                         :validate-domain="true"
-                        success-message="Thank you for joining our newsletter!"
+                        success-message="Thanks for signing up, we’ll be in touch soon!"
                     />
 
                     <SiteFooter position="sticky" theme="white" />

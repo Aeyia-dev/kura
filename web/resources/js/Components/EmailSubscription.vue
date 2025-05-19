@@ -5,7 +5,6 @@
  */
 import { ref } from 'vue';
 import axios from 'axios';
-import Modal from '@/Components/Modal.vue';
 
 const props = defineProps({
     /**
@@ -78,15 +77,8 @@ const isSubmitting = ref(false);
 const errorMessage = ref('');
 const successMessage = ref('');
 
-// Modal state
-const showModal = ref(false);
-const modalTitle = ref('');
+// Message state - replacing modal functionality
 const isSuccess = ref(false);
-
-// Close the modal
-const closeModal = () => {
-    showModal.value = false;
-};
 
 // Submit the form
 const submitForm = async () => {
@@ -96,9 +88,7 @@ const submitForm = async () => {
     // Basic email validation
     if (!email.value || !email.value.includes('@')) {
         errorMessage.value = 'Please enter a valid email address.';
-        modalTitle.value = 'Error';
         isSuccess.value = false;
-        showModal.value = true;
         return;
     }
 
@@ -128,31 +118,23 @@ const submitForm = async () => {
             } else {
                 // Normal success
                 isSuccess.value = true;
-                modalTitle.value = 'Thank You';
                 successMessage.value = props.successMessage;
                 errorMessage.value = ''; // Clear error message on success
-                showModal.value = true;
                 email.value = ''; // Clear the form on success
             }
         } else {
             // Handle restricted domain case separately
             if (response.data.restricted) {
                 isSuccess.value = false;
-                modalTitle.value = 'Registration Limited';
                 errorMessage.value = response.data.message;
-                showModal.value = true;
             } else {
                 isSuccess.value = false;
-                modalTitle.value = 'Error';
                 errorMessage.value = response.data.message || 'An error occurred';
-                showModal.value = true;
             }
         }
     } catch (error) {
         isSuccess.value = false;
-        modalTitle.value = 'Error';
         errorMessage.value = error.response?.data?.message || 'Failed to subscribe';
-        showModal.value = true;
     } finally {
         isSubmitting.value = false;
     }
@@ -213,35 +195,20 @@ const getColorClasses = () => {
                     </button>
                 </div>
             </form>
-        </div>
 
-        <!-- Notification Modal - Now included in the component -->
-        <Modal :show="showModal" @close="closeModal" max-width="md">
-            <div class="p-6">
-                <div class="flex items-center mb-4">
-                    <div :class="['rounded-full p-2 mr-3', isSuccess ? 'bg-green-100' : 'bg-red-100']">
-                        <svg v-if="!isSuccess" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                        </svg>
-                        <svg v-else xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                        </svg>
-                    </div>
-                    <h3 class="text-lg font-medium text-gray-900">{{ modalTitle }}</h3>
-                </div>
-                <div class="mb-6">
-                    <p class="text-gray-600">{{ isSuccess ? successMessage : errorMessage }}</p>
-                </div>
-                <div class="flex justify-end">
-                    <button
-                        @click="closeModal"
-                        class="inline-flex items-center px-4 py-2 bg-white border border-gray-300 rounded-md font-medium text-xs text-gray-700 uppercase tracking-widest shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-25 transition ease-in-out duration-150"
-                    >
-                        Close
-                    </button>
-                </div>
+            <!-- Message area below the form - replaces the modal -->
+            <div v-if="isSuccess || errorMessage" class="ml-6 mt-2 text-left">
+                <p v-if="isSuccess"
+                :class="[
+                'text-sm',
+                getColorClasses().text
+                ]"
+                >
+                    {{ successMessage }}
+                </p>
+                <p v-if="errorMessage && !isSuccess" class="text-sm text-red-600">{{ errorMessage }}</p>
             </div>
-        </Modal>
+        </div>
     </div>
 </template>
 

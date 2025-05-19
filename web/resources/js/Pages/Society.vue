@@ -136,7 +136,7 @@ const toggleMobileMenu = () => {
                                 max-width="max-w-md"
                                 list-source="society"
                                 :validate-domain="true"
-                                success-message="Thank you for joining our newsletter!"
+                                success-message="Thanks for signing up, we’ll be in touch soon!"
                             />
 
                         </div>

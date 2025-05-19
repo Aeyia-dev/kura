@@ -61,7 +61,7 @@ const toggleMobileMenu = () => {
             />
 
             <!-- Main Content - Centered -->
-            <main class="flex-grow flex flex-col justify-center items-center text-center px-4 mb-24">
+            <main class="flex-grow flex flex-col justify-center items-center text-center px-4 mb-24 mt-60">
                 <div class="max-w-4xl mx-auto">
                     <!-- Main Headline -->
                     <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight mb-3 md:mb-4">
