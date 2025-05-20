@@ -2,11 +2,11 @@
 // Define team members array
 $team_members = [
     ['name' => 'Leah Rettenmaier', 'email' => 'leah@aeyia.com', 'phone' => '0412589075'],
-    ['name' => 'Kurtis Rettenmaier', 'email' => 'kurt@aeyia.com', 'phone' => '0432525567'],
+    ['name' => 'Kurt Rettenmaier', 'email' => 'kurt@aeyia.com', 'phone' => '0432525567'],
     ['name' => 'Michael Dundas', 'email' => 'michael@aeyia.com', 'phone' => '0418922321'],
     ['name' => 'Sarah Thompson', 'email' => 'sarah@aeyia.com', 'phone' => '0435870220'],
     ['name' => 'Jerram Watters', 'email' => 'jerram@aeyia.com', 'phone' => '0402569390'],
-    ['name' => 'Sylvia Martini', 'email' => 'sylvia@aeyia.com', 'phone' => '0420525918'],
+    ['name' => 'Silvia Martini', 'email' => 'silvia@aeyia.com', 'phone' => '0420525918'],
     ['name' => 'Ryan Barraclough', 'email' => 'ryan@aeyia.com', 'phone' => '0420987054'],
     ['name' => 'Mia Weber', 'email' => 'mia@aeyia.com', 'phone' => '0412205944'],
     ['name' => 'Mitch Barraclough', 'email' => 'mitch@aeyia.com', 'phone' => '0431283271'],
