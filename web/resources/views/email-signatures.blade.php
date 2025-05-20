@@ -319,9 +319,10 @@ function generateSignature($name, $email, $phone) {
                     <li>In Finder click Go > Library, go to Library/Mail/V10/MailData/</li>
                     <li>Open latest signature file in Text Edit: eg Right click XXXX94BB-B047-4CDC-964F-6A09683B437A.mailsignature > open with Text Edit</li>
                     <li>Copy formatted signature above, paste into <a href="/paste.html" target="_blank">paste.html</a>, copy html</li>
-                    <li>Update signature file with HTML</li>
-                    <li>Click Text Edit top bar near file name and "Lock file"</li>
-                    <li>Open mac mail and signature will load</li>
+                    <li>Copy HTML Source from bottom panel</li>
+                    <li>Below the headers eg Mime-Version you can see the signature HTML you added earlier - paste over with the HTML you copied earlier</li>
+                    <li>Save the file. Click Text Edit top bar near file name and select "Lock file"</li>
+                    <li>Open mac mail and signature will load on new emails</li>
                 </ol>
                 <p><strong>Note:</strong> This version uses Amazon S3 to host the signature images, ensuring they'll appear correctly for email recipients.</p>
             </div>
