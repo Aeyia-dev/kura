@@ -46,22 +46,22 @@ function generateSignature($name, $email, $phone) {
 
     // HTML for name section (only display if name is not empty)
     $nameHtml = !empty($name) ?
-        '<div style="font-size: large !important; color: #212025; font-weight: normal;">' . htmlspecialchars($name) . '<span style="display:none"></br>Aeyia</span></div>' :
-        '<div style="font-size: large !important; color: #212025; font-weight: normal;">AEYIA<span style="display:none"></br>Aeyia</span></div>';
+        '<div style="font-size: large !important; color: #212026; font-weight: normal;">' . htmlspecialchars($name) . '</div>' :
+        '<div style="font-size: large !important; color: #212026; font-weight: normal;">AEYIA</div>';
 
     // Phone row HTML (only display if phone is not empty)
     $phoneRowHtml = !empty($phone) ?
         '<tr style="vertical-align: middle; height: 25px;">
             <td width="30" style="vertical-align: middle;">
-                <img src="' . $s3BaseUrl . '/phone.png" alt="" style="width: 1.1rem !important; display: block;">
+                <img src="' . $s3BaseUrl . '/mail-phone.png" alt="" style="width: 1.1rem !important; display: block;">
             </td>
             <td style="padding: 0px;">
-                <a href="tel:' . htmlspecialchars($phone) . '" style="font-size: small !important; color: #212025; text-decoration-line: none;">' . htmlspecialchars($phone) . '</a></span>
+                <a href="tel:' . htmlspecialchars($phone) . '" style="font-size: small !important; color: #212026; text-decoration-line: none;">' . htmlspecialchars($phone) . '</a></span>
             </td>
         </tr>' : '';
 
     return '
-<div style="font-family: Arial, Helvetica, sans-serif; color: #212025; width: 100%; max-width: 600px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
+<div style="font-family: Arial, Helvetica, sans-serif; color: #212026; width: 100%; max-width: 600px; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;">
     <table cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; width: 100%">
         <tr>
             <td style="vertical-align: top;">
@@ -69,16 +69,16 @@ function generateSignature($name, $email, $phone) {
 
                 <div style="padding-top: 15px;">
                     <a href="' . config('aeyia.social.instagram') . '" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
-                        <img src="' . $s3BaseUrl . '/instagram.png" alt="Instagram" style="width: 1.3rem !important; border: 0;">
+                        <img src="' . $s3BaseUrl . '/mail-instagram.png" alt="Instagram" style="width: 1.3rem !important; border: 0;">
                     </a>
                     <a href="' . config('aeyia.social.facebook') . '" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
-                        <img src="' . $s3BaseUrl . '/facebook.png" alt="Facebook" style="width: 1.3rem !important; border: 0;">
+                        <img src="' . $s3BaseUrl . '/mail-facebook.png" alt="Facebook" style="width: 1.3rem !important; border: 0;">
                     </a>
                     <a href="' . config('aeyia.social.tiktok') . '" style="text-decoration: none !important; display: inline-block; margin-right: 3px;">
-                        <img src="' . $s3BaseUrl . '/tiktok.png" alt="TikTok" style="width: 1.3rem !important; border: 0;">
+                        <img src="' . $s3BaseUrl . '/mail-tiktok.png" alt="TikTok" style="width: 1.3rem !important; border: 0;">
                     </a>
                     <a href="' . config('aeyia.social.youtube') . '" style="text-decoration: none !important; display: inline-block;">
-                        <img src="' . $s3BaseUrl . '/youtube.png" alt="YouTube" style="width: 1.3rem !important; border: 0;">
+                        <img src="' . $s3BaseUrl . '/mail-youtube.png" alt="YouTube" style="width: 1.3rem !important; border: 0;">
                     </a>
                 </div>
             </td>
@@ -93,28 +93,28 @@ function generateSignature($name, $email, $phone) {
                         ' . $phoneRowHtml . '
                         <tr style="vertical-align: middle; height: 25px;">
                             <td width="30" style="vertical-align: middle;">
-                                <img src="' . $s3BaseUrl . '/mail.png" alt="" style="width: 1.1rem !important; display: block;">
+                                <img src="' . $s3BaseUrl . '/mail-mail.png" alt="" style="width: 1.1rem !important; display: block;">
                             </td>
                             <td style="padding: 0px;">
-                                <a href="mailto:' . htmlspecialchars($email) . '" style="font-size: small !important; color: #212025; text-decoration: none !important;">' . htmlspecialchars($email) . '</a>
+                                <a href="mailto:' . htmlspecialchars($email) . '" style="font-size: small !important; color: #212026; text-decoration: none !important;">' . htmlspecialchars($email) . '</a>
                             </td>
                         </tr>
                         <tr style="vertical-align: middle; height: 25px;">
                             <td width="30" style="vertical-align: middle;">
-                                <img src="' . $s3BaseUrl . '/web.png" alt="" style="width: 1.1rem !important; display: block;">
+                                <img src="' . $s3BaseUrl . '/mail-web.png" alt="" style="width: 1.1rem !important; display: block;">
                             </td>
                             <td style="padding: 0px;">
-                                <a href="http://www.aeyia.com" style="font-size: small !important; color: #212025; text-decoration: none !important;">www.aeyia.com</a>
+                                <a href="http://www.aeyia.com" style="font-size: small !important; color: #212026; text-decoration: none !important;">www.aeyia.com</a>
                             </td>
                         </tr>
                         <tr style="vertical-align: middle; height: 25px;">
                             <td width="30" style="vertical-align: middle;">
                                 <a href="https://maps.google.com/?q=6/7 Grevillea Street, Byron Bay, NSW 2481" style="text-decoration: none !important;" target="_blank">
-                                    <img src="' . $s3BaseUrl . '/map.png" alt="" style="width: 1.1rem !important; display: block;">
+                                    <img src="' . $s3BaseUrl . '/mail-map.png" alt="" style="width: 1.1rem !important; display: block;">
                                 </a>
                             </td>
                             <td style="padding: 0px;">
-                                <a href="https://maps.google.com/?q=6/7 Grevillea Street, Byron Bay, NSW 2481" style="font-size: small !important; color: #212025; text-decoration: none !important;" target="_blank">
+                                <a href="https://maps.google.com/?q=6/7 Grevillea Street, Byron Bay, NSW 2481" style="font-size: small !important; color: #212026; text-decoration: none !important;" target="_blank">
                                     6/7 Grevillea Street, Byron Bay
                                 </a>
                             </td>
@@ -130,8 +130,8 @@ function generateSignature($name, $email, $phone) {
         <tr>
             <td>
                 ' . ($email == 'society@aeyia.com' ?
-                '<img src="' . $s3BaseUrl . '/society-logo-graphite.png" alt="AEYIA Society" style="max-width: 250px; height: auto; border: 0;">' :
-                '<img src="' . $s3BaseUrl . '/aeyia-logo.png" alt="AEYIA" style="max-width: 250px; height: auto; border: 0;">') . '
+                '<img src="' . $s3BaseUrl . '/mail-society-logo.png" alt="AEYIA Society" style="max-width: 250px; height: auto; border: 0;">' :
+                '<img src="' . $s3BaseUrl . '/mail-aeyia-logo.png" alt="AEYIA" style="max-width: 250px; height: auto; border: 0;">') . '
             </td>
         </tr>
     </table>
@@ -142,7 +142,7 @@ function generateSignature($name, $email, $phone) {
             <td>
                 <p style="font-size: 10px !important; color: #808080; margin: 0; padding-bottom: 5px;">AEYIA respectfully acknowledges the Traditional Owners of the land on which we live and work. We pay our respects to Elders past, present, and future and recognise their ongoing connection to land, waters, and culture. Their wisdom and resilience continue to inspire and guide us.</p>
                 <p style="font-size: 10px !important; color: #808080; margin: 0; padding-bottom: 5px;">CONFIDENTIALITY NOTICE: The contents of this email are confidential to the ordinary user of the email address to which it is addressed and may also be privileged. If you are not the addressee of this email, you may not copy, forward, disclose or otherwise use it or any part of it in any form whatsoever. If you have received this email by error, please email the sender by replying to this message.</p>
-                <p style="font-size: 10px !important; color: #808080; margin: 0;">Please consider the environment before printing this e-mail. <br/>v0.11</p>
+                <p style="font-size: 10px !important; color: #808080; margin: 0;">Please consider the environment before printing this e-mail.</p>
             </td>
         </tr>
     </table>
@@ -302,6 +302,25 @@ function generateSignature($name, $email, $phone) {
                     <li>Click "Create new" or edit an existing signature</li>
                     <li>Paste the copied signature in the editor</li>
                     <li>Scroll down and click "Save Changes"</li>
+                </ol>
+                <p><strong>Note:</strong> This version uses Amazon S3 to host the signature images, ensuring they'll appear correctly for email recipients.</p>
+            </div>
+
+            <div class="instructions" id="instructions" style="margin: 20px;">
+                <h3>How to add this signature to Mac Mail:</h3>
+                <ol>
+                    <li>Open Mac Mail, then Mail > Settings > Signatures</li>
+                    <li>Click + icon to create signature in Mac Mail, name it AEYIA</li>
+                    <li>Add some placeholder text like "New Aeyia placeholder signature"</li>
+                    <li>Ensure "Choose Signature" dropdown is set to your new signature</li>
+                    <li>Click "Place signature above quoted text", close Settings</li>
+                    <li>Mail > Quit Mail</li>
+                    <li>In Finder click Go > Library, go to Library/Mail/V10/MailData/</li>
+                    <li>Open latest signature file in Text Edit: eg Right click XXXX94BB-B047-4CDC-964F-6A09683B437A.mailsignature > open with Text Edit</li>
+                    <li>Copy formatted signature above, paste into <a href="/paste.html" target="_blank">paste.html</a>, copy html</li>
+                    <li>Update signature file with HTML</li>
+                    <li>Click Text Edit top bar near file name and "Lock file"</li>
+                    <li>Open mac mail and signature will load</li>
                 </ol>
                 <p><strong>Note:</strong> This version uses Amazon S3 to host the signature images, ensuring they'll appear correctly for email recipients.</p>
             </div>

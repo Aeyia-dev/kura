@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clipboard Debug</title>
+    <style>
+        #debug-area {
+            border: 1px solid black;
+            padding: 20px;
+            min-height: 300px;
+            white-space: pre-wrap;
+        }
+        #html-output {
+            margin-top: 20px;
+            border: 1px solid blue;
+            padding: 10px;
+            background: #f0f0f0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Clipboard Content Debugger</h1>
+    <h2>Paste your clipboard content below:</h2>
+    <div id="debug-area" contenteditable="true"></div>
+    <h2>HTML Source of Pasted Content:</h2>
+    <pre id="html-output"></pre>
+    <script>
+        const debugArea = document.getElementById('debug-area');
+        const htmlOutput = document.getElementById('html-output');
+        debugArea.addEventListener('paste', function(e) {
+            // Wait a moment for the paste to complete
+            setTimeout(() => {
+                // Show the HTML source
+                htmlOutput.textContent = debugArea.innerHTML;
+            }, 100);
+        });
+    </script>
+</body>
+</html>

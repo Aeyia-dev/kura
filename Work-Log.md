@@ -19,11 +19,19 @@
 ## Wed May 14 11:10:29
 
 Current action:
-
+- Email signatures
+  - dark mode transparency fix
+    - ✅ fix social icons with https://www.photopea.com/
+    - [ ] contact icons dont work well in dark mode, need a different design
+  - ✅ Mac Mail solution
 - Holding site QA
 - sitewide
   - [ ] All buttons charcoal
   - ✅ only medium fonts (500) - no heavier
+  - [ ] GA4
+  - [ ] Meta Pixel
+  - [ ] Klavio tracking
+  - [ ] Hubspot tracking?
 - Landing page
   - ✅ Remove email subscribe from dev
   - ✅ email subscribe replace modal with byline message under input
@@ -42,6 +50,8 @@ Current action:
   - ✅ push ABN down to baseline of Contact Us - use line height etc
   - ✅ tighten responsive padding esp below signup form
   - ✅ 1024 breakpoint logo to large
+  - ✅ widen the hero font but keep on one line
+  - ✅ test the society klavio list
 - About
   - ✅ side by side layout - use fixed LHS width, flexible grey bar
   - ✅ keep face on screen when resizing responive view
@@ -57,6 +67,8 @@ Current action:
   - ✅ logo too big
   - ✅ footer not finished - sticky, full width, social icons separate, float down on responive
   - ✅ fixed RHS width, flexible image bar
+  - [ ] footer should be across the entire page
+
 
 ## Mon May 12 13:08:52
 
