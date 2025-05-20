@@ -309,6 +309,7 @@ function generateSignature($name, $email, $phone) {
             <div class="instructions" id="instructions" style="margin: 20px;">
                 <h3>How to add this signature to Mac Mail:</h3>
                 <ol>
+                    <li><a href="https://youtu.be/Y7kho6OT1qk?si=6ZtJwvMRWn_xYipO&t=36"target="_blank">Video walk through</a></li>
                     <li>Open Mac Mail, then Mail > Settings > Signatures</li>
                     <li>Click + icon to create signature in Mac Mail, name it AEYIA</li>
                     <li>Add some placeholder text like "New Aeyia placeholder signature"</li>
