@@ -160,8 +160,8 @@ const getStatusDisplay = (status) => {
 
             <p class="mt-6 text-gray-500 leading-relaxed">
                 <strong><em>Kura</em></strong>
-                <br/>Maori: <i>school</i>
                 <br/>Japanese: <i>storehouse</i> or <i>treasure house</i>.
+                <br/>Maori: <i>place of learning, school</i>
             </p>
 
 

@@ -26,6 +26,13 @@ defineProps({
         type: String,
         default: 'normal',
         validator: (value) => ['normal', 'sticky', 'fixed'].includes(value)
+    },
+    /**
+     * Whether to show social icons in the footer
+     */
+    showSocialIcons: {
+        type: Boolean,
+        default: true
     }
 });
 
@@ -52,7 +59,7 @@ const currentYear = new Date().getFullYear();
         position === 'sticky' ? 'mt-auto' : ''
     ]">
         <!-- Social Media Icons -->
-        <div class="md:hidden flex justify-center space-x-6 mb-8 mt-20">
+        <div v-if="showSocialIcons" class="md:hidden flex justify-center space-x-6 mb-8 mt-20">
             <SocialIcons :dark="theme === 'white'" size="md" />
         </div>
 
@@ -82,7 +89,7 @@ const currentYear = new Date().getFullYear();
                 </div>
 
                 <!-- Social Media Icons - Centered -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 bottom-0 mb-6 mt-20">
+                <div v-if="showSocialIcons" class="absolute left-1/2 transform -translate-x-1/2 bottom-0 mb-6 mt-20">
                     <SocialIcons :dark="theme === 'white'" size="lg" />
                 </div>
 

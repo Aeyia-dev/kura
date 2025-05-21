@@ -4,6 +4,7 @@ import { ref } from 'vue';
 import Modal from '@/Components/Modal.vue';
 import SiteFooter from '@/Components/SiteFooter.vue';
 import MobileMenu from '@/Components/MobileMenu.vue';
+import SocialIcons from '@/Components/SocialIcons.vue';
 
 // Form handling and validation state
 const form = ref({
@@ -250,8 +251,10 @@ const toggleMobileMenu = () => {
                     <p class="text-sm font-medium mb-6">Charity Enquiries: <a href="mailto:society@aeyia.com">society@aeyia.com</a></p>
                 </div>
 
-                <!-- Social Media Icons for desktop -->
-                <div class="hidden md:block pt-24"><SiteFooter theme="white" position="sticky" /></div>
+                <!-- Social Icons for desktop LHS -->
+                <div class="hidden md:block pt-8">
+                    <SocialIcons dark size="lg" />
+                </div>
             </div>
 
                 <!-- Mobile background with footer -->
@@ -260,8 +263,13 @@ const toggleMobileMenu = () => {
                         class="relative w-full bg-cover bg-center flex items-end"
                         style="background-image: url('/images/background/optimized/mobile/mobile-background-04.webp'); height: 500px;"
                     >
-                        <SiteFooter theme="transparent" position="normal" />
+                        <SiteFooter theme="white" position="normal" />
                     </div>
+                </div>
+
+                <!-- Full width footer for desktop -->
+                <div class="hidden md:block fixed bottom-0 left-0 w-full z-20">
+                    <SiteFooter theme="white" position="normal" :showSocialIcons="false" />
                 </div>
 
         </div>

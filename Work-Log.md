@@ -25,6 +25,8 @@ Current action:
     - [ ] contact icons dont work well in dark mode, need a different design
   - ✅ Mac Mail solution
 - Holding site QA
+  - [ ] logo size between desktop and mobile
+  - [ ] getting a funny double nav on mobile insopector?
 - sitewide
   - [ ] All buttons charcoal
   - ✅ only medium fonts (500) - no heavier
@@ -67,7 +69,7 @@ Current action:
   - ✅ logo too big
   - ✅ footer not finished - sticky, full width, social icons separate, float down on responive
   - ✅ fixed RHS width, flexible image bar
-  - [ ] footer should be across the entire page
+  - ✅ footer should be across the entire page
 
 
 ## Mon May 12 13:08:52
