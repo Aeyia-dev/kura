@@ -5,7 +5,6 @@ import SiteHeader from '@/Components/SiteHeader.vue';
 import SiteFooter from '@/Components/SiteFooter.vue';
 import MobileMenu from '@/Components/MobileMenu.vue';
 import EmailSubscription from '@/Components/EmailSubscription.vue';
-import SocialIcons from '@/Components/SocialIcons.vue';
 
 // Props passed from controller
 const props = defineProps({
@@ -80,14 +79,9 @@ const toggleMobileMenu = () => {
                                 success-message="Thanks for signing up, we’ll be in touch soon!"
                             />
 
-                            <!-- Social Icons for desktop LHS -->
-                            <div class="hidden md:block pt-24">
-                                <SocialIcons size="lg" />
-                            </div>
-
                         </div>
                     </div>
-                    <SiteFooter position="sticky" theme="transparent" :showSocialIcons="false" class="hidden lg:block"/>
+                    <SiteFooter position="sticky" theme="transparent" class="hidden lg:block"/>
                 </section>
 
                 <section class="bg-res-image flex-grow flex flex-col pt-8 px-8 lg:hidden">
