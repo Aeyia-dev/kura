@@ -30,7 +30,7 @@ const toggleMobileMenu = () => {
     <!-- Main container -->
     <div class="relative min-h-screen overflow-y-auto bg-black">
         <!-- Background image - notice the change to fixed="true" to make it stay in viewport -->
-        <BackgroundImage imageName="desktop-background-03.jpg" :fixed="true" />
+        <BackgroundImage imageName="background-03.webp" :fixed="true" />
 
         <!-- Content Container -->
         <div class="relative z-20 flex flex-col min-h-screen">
@@ -76,7 +76,7 @@ const toggleMobileMenu = () => {
                         placeholder="Email"
                         max-width="max-w-md"
                         :validate-domain="true"
-                        success-message="Thanks for signing up, we’ll be in touch soon!"
+                        success-message="Thanks for signing up, we'll be in touch soon!"
                     />
                 </div>
             </main>
@@ -87,4 +87,3 @@ const toggleMobileMenu = () => {
     </div>
 
 </template>
-

@@ -28,6 +28,17 @@ const toggleMobileMenu = () => {
 
     <!-- Main container -->
     <div class="relative min-h-screen overflow-auto bg-charcoal">
+        <!-- Mobile Menu - Moved outside the content container to be fixed relative to viewport -->
+        <MobileMenu
+            :isOpen="mobileMenuOpen"
+            logoType="image"
+            logoImagePath="/images/landing/aeyia-logo-white.png"
+            :canLogin="canLogin"
+            :canRegister="canRegister"
+            :authUser="$page.props.auth.user"
+            @close="toggleMobileMenu"
+        />
+
         <!-- Content Container -->
         <div class="relative z-20 flex flex-col min-h-screen">
             <!-- Background Image Container that contains both header and hero -->
@@ -41,17 +52,6 @@ const toggleMobileMenu = () => {
                     :canRegister="canRegister"
                     :authUser="$page.props.auth.user"
                     @toggle-mobile-menu="toggleMobileMenu"
-                />
-
-                <!-- Mobile Menu -->
-                <MobileMenu
-                    :isOpen="mobileMenuOpen"
-                    logoType="image"
-                    logoImagePath="/images/landing/aeyia-logo-white.png"
-                    :canLogin="canLogin"
-                    :canRegister="canRegister"
-                    :authUser="$page.props.auth.user"
-                    @close="toggleMobileMenu"
                 />
 
                 <!-- Hero Section -->
@@ -131,7 +131,7 @@ button:focus {
     left: -200px;
     width: 1000px; /* Fixed width of 1000px */
     height: 140%;
-    background-image: url('/images/background/optimized/desktop/desktop-background-01.jpg');
+    background-image: url('/images/background/optimized/desktop/background-01.webp');
     background-position: left top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -145,7 +145,7 @@ button:focus {
 .bg-res-image {
     background-position: center top;
     background-size: 100%;
-    background-image: url('/images/background/optimized/tablet/tablet-background-01.jpg');
+    background-image: url('/images/background/optimized/tablet/background-01.webp');
     min-height: 50rem;
 }
 
@@ -167,7 +167,7 @@ button:focus {
         background-repeat: no-repeat;
         background-position: center top;
         background-size: 100%;
-        background-image: url('/images/background/optimized/mobile/mobile-background-01.jpg');
+        background-image: url('/images/background/optimized/mobile/background-01.webp');
         min-height: 28rem;
     }
 }

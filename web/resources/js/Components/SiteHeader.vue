@@ -83,8 +83,7 @@ const toggleMobileMenu = () => {
             <!-- Logo (image or text) -->
             <div>
                 <a href="/holding">
-                    <!-- Image logo -->
-                    <img :src="logoImagePath" alt="AEYIA Logo" class="h-20 sm:h-28">
+                    <img :src="logoImagePath" alt="AEYIA Logo" class="h-28 md:h-48">
                 </a>
             </div>
 

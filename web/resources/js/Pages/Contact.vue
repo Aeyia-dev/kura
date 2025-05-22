@@ -109,7 +109,7 @@ const toggleMobileMenu = () => {
         <div class="hidden md:block w-1/2 h-full relative">
             <!-- Background Image -->
             <img
-                src="/images/background/optimized/desktop/desktop-background-04.jpg"
+                src="/images/background/optimized/tablet/background-04.webp"
                 alt="Background"
                 class="w-full h-full object-cover"
             />
@@ -261,7 +261,7 @@ const toggleMobileMenu = () => {
                 <div class="md:hidden mt-8">
                     <div
                         class="relative w-full bg-cover bg-center flex items-end"
-                        style="background-image: url('/images/background/optimized/mobile/mobile-background-04.webp'); height: 500px;"
+                        style="background-image: url('/images/background/optimized/mobile/background-04.webp'); height: 500px;"
                     >
                         <SiteFooter theme="white" position="normal" />
                     </div>

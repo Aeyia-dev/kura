@@ -28,7 +28,7 @@ Current action:
   - [ ] logo size between desktop and mobile
   - [ ] getting a funny double nav on mobile insopector?
 - sitewide
-  - [ ] All buttons charcoal
+  - ✅ All buttons charcoal
   - ✅ only medium fonts (500) - no heavier
   - [ ] GA4
   - [ ] Meta Pixel

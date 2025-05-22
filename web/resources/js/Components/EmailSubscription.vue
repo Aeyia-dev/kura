@@ -185,7 +185,7 @@ const getColorClasses = () => {
                         type="submit"
                         :disabled="isSubmitting"
                         :class="[
-                            'rounded-full px-3 sm:px-4 md:px-6 py-3 text-sm sm:text-base md:text-base font-medium whitespace-nowrap hover:bg-opacity-90 transition-colors duration-200',
+                            'rounded-full px-3 sm:px-4 md:px-6 py-3 text-sm sm:text-base md:text-base font-medium whitespace-nowrap hover:bg-opacity-40 transition-colors duration-200',
                             getColorClasses().buttonBg,
                             getColorClasses().buttonText,
                             isSubmitting ? 'opacity-70 cursor-not-allowed' : ''

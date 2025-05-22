@@ -80,16 +80,11 @@ const closeMenu = () => {
 <template>
     <div v-if="isOpen" class="fixed inset-0 bg-black z-50 flex flex-col">
         <!-- Close button -->
-        <div class="p-4 md:p-6 lg:p-8 flex justify-between items-center">
+        <div class="p-4 md:p-6 lg:p-8 flex justify-between items-start">
             <!-- Logo (image or text) -->
-            <div class="w-48 md:w-64 lg:w-auto lg:max-w-md">
-                <!-- Text logo -->
-                <h1 v-if="logoType === 'text'" class="text-white text-4xl md:text-5xl font-medium">
-                    {{ logoText }}
-                </h1>
-                <!-- Image logo -->
-                <img v-else :src="logoImagePath" alt="AEYIA Logo" class="w-full">
-            </div>
+            <a href="/holding">
+                <img :src="logoImagePath" alt="AEYIA Logo" class="h-28 md:h-48">
+            </a>
 
             <!-- Close button -->
             <button

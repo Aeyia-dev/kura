@@ -32,7 +32,7 @@ const toggleMobileMenu = () => {
         <div class="absolute inset-0 bg-gray-800"></div>
 
         <!-- Background image -->
-        <BackgroundImage imageName="desktop-background-03.jpg" :fixed="false" />
+        <BackgroundImage imageName="background-03.webp" :fixed="false" />
 
         <!-- Content Container -->
         <div class="relative z-20 flex flex-col h-full">

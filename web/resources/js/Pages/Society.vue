@@ -165,7 +165,7 @@ button:focus {
 
 /* Create a proper header background that extends across the hero section */
 .bg-hero {
-    background-image: url('/images/background/optimized/desktop/desktop-background-02.jpg');
+    background-image: url('/images/background/optimized/desktop/background-02.webp');
     background-position: center -10vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -179,7 +179,7 @@ button:focus {
 @media (max-width: 1199px) {
     .bg-hero {
         background-position: center -5vh;
-        background-image: url('/images/background/optimized/tablet/tablet-background-02.jpg');
+        background-image: url('/images/background/optimized/tablet/background-02.webp');
         min-height: 40rem; /* Slightly smaller height for tablets */
     }
 }
@@ -187,7 +187,7 @@ button:focus {
 @media (max-width: 767px) {
     .bg-hero {
         background-position: center -5vh;
-        background-image: url('/images/background/optimized/mobile/mobile-background-02.jpg');
+        background-image: url('/images/background/optimized/mobile/background-02.webp');
         min-height: 35rem; /* Smaller height for mobile devices */
     }
 }

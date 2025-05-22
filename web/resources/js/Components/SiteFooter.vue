@@ -53,7 +53,7 @@ const currentYear = new Date().getFullYear();
 
 <template>
     <footer :class="[
-        'w-full px-4 md:px-8 py-6 md:py-10 z-10',
+        'w-full px-2 py-0 md:py-2 z-10',
         getColorClasses(theme),
         position === 'fixed' ? 'fixed bottom-0 left-0' : '',
         position === 'sticky' ? 'mt-auto' : ''
